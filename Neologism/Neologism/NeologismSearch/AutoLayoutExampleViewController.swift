@@ -32,7 +32,6 @@ class AutoLayoutExampleViewController: UIViewController {
         
     }
     
-    
     @discardableResult // 반환타입을 무시할 수 있는 함수
     func getRandomWord() -> String {
         let random = ["111", "222", "333"]
@@ -100,8 +99,6 @@ class AutoLayoutExampleViewController: UIViewController {
         backgoroundImageView.contentMode = .scaleAspectFit
         view.addSubview(resultLable)
     }
-    
-    func
     
     @IBAction func tappedSearchButton(_ sender: UIButton) {
         exampleTextField.text = sender.currentTitle
