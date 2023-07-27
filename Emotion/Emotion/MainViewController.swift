@@ -13,8 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet var emotionButton: [UIButton]!
     @IBOutlet var resetButton: UIButton!
     
-    let EmtionImageList = EmtionImageName.allCases
-    let PulldownButtonTitleList = PulldownButtonTitle.allCases
+    let pulldownButtonTitleList = PulldownButtonTitle.allCases
+    let emtionImageNameList = EmtionImageName.allCases
     
     //CustomColorArray
     let EmtionColorList = [
@@ -25,21 +25,6 @@ class MainViewController: UIViewController {
         UIColor.customIndigo
     ]
     
-    var result1Value = 0
-    var result2Value = 0
-    var result3Value = 0
-    var result4Value = 0
-    var result5Value = 0
-    
-    enum resultValues: Int, CaseIterable {
-        case result1Value
-        case result2Value
-        case result3Value
-        case result4Value
-        case result5Value
-    }
-    
-    let resultValueList = resultValues.allCases
     
     //viewDidLoad
     override func viewDidLoad() {
@@ -50,15 +35,14 @@ class MainViewController: UIViewController {
         applyEmotionButtonColor()
         emotionButtonStyle()
         pulldownButtonStyle()
-        resetButtonStyle()    }
+        resetButtonStyle()
+        
+    }
     
     //ButtonImage
     func applyEmotionButtonImage() {
         for (index, emotionButton) in emotionButton.enumerated() {
-            guard let emotionImage = EmtionImageName(rawValue: "emoji\(index + 1)") else {
-                continue
-            }
-            emotionButton.setImage(UIImage(named: emotionImage.rawValue), for: .normal)
+            emotionButton.setImage(UIImage(named: emtionImageNameList[index].rawValue), for: .normal)
         }
     }
     
@@ -103,71 +87,62 @@ class MainViewController: UIViewController {
         
         //ButtonTitle
         for (index, button) in pulldownButton.enumerated() {
-            button.setTitle(PulldownButtonTitleList[index].rawValue, for: .normal)
+            button.setTitle(pulldownButtonTitleList[index].rawValue, for: .normal)
         }
     }
     
     
     //Action
     @IBAction func tappedEmotionButton(_ sender: UIButton) {
-        if sender == emotionButton[0] {
-            result1Value += 1
-            print("result1Value:", result1Value)
-        } else if sender == emotionButton[1] {
-            result2Value += 1
-            print("result2Value:", result2Value)
-        } else if sender == emotionButton[2] {
-            result3Value += 1
-            print("result3Value:", result3Value)
-        } else if sender == emotionButton[3] {
-            result4Value += 1
-            print("result4Value:", result4Value)
-        } else if sender == emotionButton[4] {
-            result5Value += 1
-            print("result5Value:", result5Value)
-        }
+        guard let index = emotionButton.firstIndex(of: sender) else { return }
+        let resultKey = ResultValues.allCases[index].rawValue
+        let count = UserDefaults.standard.integer(forKey: resultKey)
+        UserDefaults.standard.setValue(count + 1, forKey: resultKey)
+        print("emotion\(index + 1)Count:", UserDefaults.standard.integer(forKey: resultKey))
     }
     
     @IBAction func tappedPulldownButton(_ sender: UIButton) {
-        if sender == pulldownButton[0] {
-            result1Value += 1
-            result2Value += 1
-            result3Value += 1
-            result4Value += 1
-            result5Value += 1
-        } else if sender == pulldownButton[1] {
-            result1Value += 5
-            result2Value += 5
-            result3Value += 5
-            result4Value += 5
-            result5Value += 5
-        } else if sender == pulldownButton[2] {
-            result1Value += 10
-            result2Value += 10
-            result3Value += 10
-            result4Value += 10
-            result5Value += 10
-        }
+        let value1 = UserDefaults.standard.integer(forKey: ResultValues.result1Value.rawValue)
+        let value2 = UserDefaults.standard.integer(forKey: ResultValues.result2Value.rawValue)
+        let value3 = UserDefaults.standard.integer(forKey: ResultValues.result3Value.rawValue)
+        let value4 = UserDefaults.standard.integer(forKey: ResultValues.result4Value.rawValue)
+        let value5 = UserDefaults.standard.integer(forKey: ResultValues.result5Value.rawValue)
+        var values = [value1, value2, value3, value4, value5]
         
-        print("result1Value:", result1Value)
-        print("result2Value:", result2Value)
-        print("result3Value:", result3Value)
-        print("result4Value:", result4Value)
-        print("result5Value:", result5Value)
+        if sender == pulldownButton[0] {
+            for index in 0..<values.count {
+                values[index] += 1
+                UserDefaults.standard.setValue(values[index], forKey: "\(ResultValues.allCases[index])")
+                print(#function, "emotion\(index + 1)Count", UserDefaults.standard.integer(forKey: "\(ResultValues.allCases[index])"))
+            }
+        } else if sender == pulldownButton[1] {
+            for index in 0..<values.count {
+                values[index] += 5
+                UserDefaults.standard.setValue(values[index], forKey: "\(ResultValues.allCases[index])")
+                print(#function, "emotion\(index + 1)Count", UserDefaults.standard.integer(forKey: "\(ResultValues.allCases[index])"))
+            }
+        } else if sender == pulldownButton[2] {
+            for index in 0..<values.count {
+                values[index] += 10
+                UserDefaults.standard.setValue(values[index], forKey: "\(ResultValues.allCases[index])")
+                print(#function, "emotion\(index + 1)Count", UserDefaults.standard.integer(forKey: "\(ResultValues.allCases[index])"))
+            }
+        }
     }
     
     @IBAction func tappedResetButton(_ sender: UIButton) {
-        result1Value = 0
-        result2Value = 0
-        result3Value = 0
-        result4Value = 0
-        result5Value = 0
+        let value1 = UserDefaults.standard.integer(forKey: ResultValues.result1Value.rawValue)
+        let value2 = UserDefaults.standard.integer(forKey: ResultValues.result2Value.rawValue)
+        let value3 = UserDefaults.standard.integer(forKey: ResultValues.result3Value.rawValue)
+        let value4 = UserDefaults.standard.integer(forKey: ResultValues.result4Value.rawValue)
+        let value5 = UserDefaults.standard.integer(forKey: ResultValues.result5Value.rawValue)
+        var values = [value1, value2, value3, value4, value5]
         
-        print("result1Value:", result1Value)
-        print("result2Value:", result2Value)
-        print("result3Value:", result3Value)
-        print("result4Value:", result4Value)
-        print("result5Value:", result5Value)
+        for index in 0..<values.count {
+            values[index] = 0
+            UserDefaults.standard.setValue(values[index], forKey: "\(ResultValues.allCases[index])")
+            print(#function, "emotion\(index + 1)Count", UserDefaults.standard.integer(forKey: "\(ResultValues.allCases[index])"))
+        }
     }
     
     

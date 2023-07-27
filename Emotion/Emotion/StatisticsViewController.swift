@@ -12,7 +12,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet var scoreLable: [UILabel]!
     @IBOutlet var emotionTypeLable: [UILabel]!
     
-    let emotionTypeTitleLableList = emotionTypeLableTitle.allCases
+    let EmotionLableTypeList = EmotionLableType.allCases
     
     //CustomColorArray
     let EmtionColorList = [
@@ -48,9 +48,8 @@ class StatisticsViewController: UIViewController {
     
     //LableTitle
     func applyEmotionTitleLable() {
-        print(EmtionImageName.완전행복지수, #function)
         for (index, lable) in emotionTypeLable.enumerated() {
-            let title = emotionTypeTitleLableList
+            let title = EmotionLableTypeList
             lable.text = "\(title[index])"
         }
     }
