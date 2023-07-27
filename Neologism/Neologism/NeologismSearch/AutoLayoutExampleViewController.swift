@@ -10,19 +10,15 @@ import UIKit
 class AutoLayoutExampleViewController: UIViewController {
     
     @IBOutlet var resultLable: UILabel!
-    
     @IBOutlet var exampleTextField: UITextField!
-    
     @IBOutlet var keywordButton: [UIButton]!
     @IBOutlet var searchButton: UIButton!
-    
     @IBOutlet var backgoroundImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Style
         keywordButtonStyle()
         exampleTextFieldStyle()
         resultLableStyle()
@@ -106,8 +102,6 @@ class AutoLayoutExampleViewController: UIViewController {
     }
     
     @IBAction func tappedKeywordButton(_ sender: UIButton) {
-        //        print(sender.currentTitle)
-        //        print(sender.titleLabel?.text)
         
         //2. 버튼 클릭시 텍스트필드의 텍스트에 버튼 타이틀이 들어가는 기능
         exampleTextField.text = sender.currentTitle
@@ -119,63 +113,61 @@ class AutoLayoutExampleViewController: UIViewController {
     @IBAction func clickedExampleTextField(_ sender: UITextField) {
         //        print("DidEndOnExit - 키보드를 나갔을때")
         
-        //        switch exampleTextField.text {
-        //            // exampleTextField.text == sender.text
-        //            // JMT, jmt 같은 결과를 보여주기 위해서
-        //            // 다 소문자로 바꿔서 서치 .lowercased()
-        //
-        //        case "통모짜핫도그":
-        //            resultLable.text = "'나 요즘 통 못 자' 를\n명랑핫도그 통모짜핫도그와\n발음이 비슷해서 쓰는 말"
-        //        case "요즘잘자쿨냥이":
-        //            resultLable.text = "'통모짜핫도그'의 반댓말\n요즘 잘잔다를 귀엽게 표현한 말"
-        //        case "오우예 씨몬":
-        //            resultLable.text = "C'mon(커몬)을\n 씨몬으로 발음하면 생기는 일\nMZ 사이에서 감탄사처럼 쓰이는 말"
-        //        case "꾸웨엑?":
-        //            resultLable.text = "'후회해?'라는 뜻\n후회해? 를 꾸웨엑? 으로\n잘못 알아들으며 생긴 밈"
-        //        case "디토합니다":
-        //            resultLable.text = "공감의 표현 (= 인정합니다)\n예시) A: 퇴근하고 싶다.. B: 디토합니다."
-        //        case "어라랍스터?":
-        //            resultLable.text = "요즘 애들의 감탄사\n예시) 어라랍스터? 이런 게 있었나??"
-        //        case "추구미":
-        //            resultLable.text = "'내가 원하는 이미지'라는 뜻\n예시) 와, 이 스타일 완전 내 추구미 🫢"
-        //        default:
-        //            resultLable.text = "ERROR"
-        //            print("Error-\(#file)-\(#function)")
-        //        }
-        
-        let wordData: [String: String] = [
-            "통모짜핫도그": "'나 요즘 통 못 자' 를\n명랑핫도그 통모짜핫도그와\n발음이 비슷해서 쓰는 말",
-            "요즘잘자쿨냥이": "'통모짜핫도그'의 반댓말\n요즘 잘잔다를 귀엽게 표현한 말",
-            "오우예 씨몬": "C'mon(커몬)을\n씨몬으로 발음하면 생기는 일\nMZ 사이에서 감탄사처럼 쓰이는 말",
-            "꾸웨엑?": "'후회해?'라는 뜻\n후회해? 를 꾸웨엑? 으로\n잘못 알아들으며 생긴 밈",
-            "디토합니다": "공감의 표현 (= 인정합니다)\n예시) A: 퇴근하고 싶다.. B: 디토합니다.",
-            "어라랍스터?": "요즘 애들의 감탄사\n예시) 어라랍스터? 이런 게 있었나??"
-        ]
-        
-        for index in wordData {
-            if exampleTextField.text == index.key {
-                resultLable.text = index.value
-            }
-        }
-        
-//        if let inputText = exampleTextField.text {
-//            if inputText.isEmpty {
-//                resultLable.text = "검색어를 입력해주세요. 😭"
-//            } else if inputText.count == 1 {
-//                resultLable.text = "한 글자 이상 입력해주세요. 😢"
-//            } else if inputText == " " {
-//                resultLable.text = "빈칸"
-//            }
-//        } else {
-//            print("Error-\(#file)-\(#function)")
-//        }
-        
-       
         /*
          1. 버튼 만들기
          2. 버튼 클릭시 텍필에 표시 - tappedKeywordButton
          3. 결과 레이블에 보여주기 - clickedExampleTextField
          */
+        switch exampleTextField.text {
+            // exampleTextField.text == sender.text
+            // JMT, jmt 같은 결과를 보여주기 위해서
+            // 다 소문자로 바꿔서 서치 .lowercased()
+            
+        case "통모짜핫도그", "통모짜 핫도그":
+            resultLable.text = "'나 요즘 통 못 자' 를\n명랑핫도그 통모짜핫도그와\n발음이 비슷해서 쓰는 말"
+        case "요즘잘자쿨냥이", "요즘 잘자 쿨냥이", "요즘잘자 쿨냥이":
+            resultLable.text = "'통모짜핫도그'의 반댓말\n요즘 잘잔다를 귀엽게 표현한 말"
+        case "오우예 씨몬", "오우예씨몬":
+            resultLable.text = "C'mon(커몬)을\n 씨몬으로 발음하면 생기는 일\nMZ 사이에서 감탄사처럼 쓰이는 말"
+        case "꾸웨엑?", "꾸웨엑":
+            resultLable.text = "'후회해?'라는 뜻\n후회해? 를 꾸웨엑? 으로\n잘못 알아들으며 생긴 밈"
+        case "디토합니다", "디토 합니다":
+            resultLable.text = "공감의 표현 (= 인정합니다)\n예시) A: 퇴근하고 싶다.. B: 디토합니다."
+        case "어라랍스터?", "어라 랍스터?", "어라랍스터":
+            resultLable.text = "요즘 애들의 감탄사\n예시) 어라랍스터? 이런 게 있었나??"
+        default:
+            resultLable.text = "ERROR"
+            print("Error-\(#file)-\(#function)")
+        }
+        
+        //        let wordData: [String: String] = [
+        //            "통모짜핫도그": "'나 요즘 통 못 자' 를\n명랑핫도그 통모짜핫도그와\n발음이 비슷해서 쓰는 말",
+        //            "요즘잘자쿨냥이": "'통모짜핫도그'의 반댓말\n요즘 잘잔다를 귀엽게 표현한 말",
+        //            "오우예 씨몬": "C'mon(커몬)을\n씨몬으로 발음하면 생기는 일\nMZ 사이에서 감탄사처럼 쓰이는 말",
+        //            "꾸웨엑?": "'후회해?'라는 뜻\n후회해? 를 꾸웨엑? 으로\n잘못 알아들으며 생긴 밈",
+        //            "디토합니다": "공감의 표현 (= 인정합니다)\n예시) A: 퇴근하고 싶다.. B: 디토합니다.",
+        //            "어라랍스터?": "요즘 애들의 감탄사\n예시) 어라랍스터? 이런 게 있었나??"
+        //        ]
+        //
+        //        for index in wordData {
+        //            if exampleTextField.text == index.key {
+        //                resultLable.text = index.value
+        //            }
+        //        }
+        
+        
+//                if let inputText = exampleTextField.text {
+//                    if inputText.isEmpty {
+//                        resultLable.text = "검색어를 입력해주세요. 😭"
+//                    } else if inputText.count == 1 {
+//                        resultLable.text = "한 글자 이상 입력해주세요. 😢"
+//                    } else if inputText == " " {
+//                        resultLable.text = "빈칸"
+//                    }
+//                } else {
+//                    print("Error-\(#file)-\(#function)")
+//                }
+        
         
     }
     
