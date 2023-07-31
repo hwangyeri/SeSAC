@@ -16,7 +16,7 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        tableView.rowHeight = 40
     }
 
     
@@ -29,8 +29,10 @@ class SettingTableViewController: UITableViewController {
             return "전체 설정"
         } else if section == 1 {
             return "개인 설정"
-        } else {
+        } else if section == 2 {
             return "기타"
+        } else {
+            return ""
         }
         
     }
@@ -41,10 +43,11 @@ class SettingTableViewController: UITableViewController {
             return allSetting.count
         } else if section == 1 {
             return userSetting.count
-        } else {
+        } else if section == 2 {
             return 1
         }
     
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

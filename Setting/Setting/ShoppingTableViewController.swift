@@ -54,6 +54,14 @@ class ShoppingTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 60
+        } else {
+            return 50
+        }
+    }
+    
     
     func mainTextFieldStyle() {
         mainTextField.backgroundColor = .none
@@ -69,8 +77,10 @@ class ShoppingTableViewController: UITableViewController {
         addButton.backgroundColor = .systemGray6
         addButton.layer.cornerRadius = 12
         //button font size
-        
+//        addButton.configuration.
     }
+    
+    
 
     @IBAction func clickedAddButton(_ sender: UIButton) {
         shoppingList.append("\(mainTextField.text ?? "error")")
