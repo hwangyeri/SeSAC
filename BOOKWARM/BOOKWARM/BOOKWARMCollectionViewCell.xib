@@ -35,11 +35,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tP-fR-jUL">
+                                <rect key="frame" x="208" y="10" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4zr-cN-V59" firstAttribute="height" secondItem="lwb-Uw-TMX" secondAttribute="height" multiplier="0.1" id="BeS-eU-Gel"/>
                             <constraint firstItem="4zr-cN-V59" firstAttribute="leading" secondItem="lwb-Uw-TMX" secondAttribute="leading" constant="20" id="KUX-ud-LSX"/>
+                            <constraint firstItem="7tP-fR-jUL" firstAttribute="top" secondItem="lwb-Uw-TMX" secondAttribute="top" constant="10" id="O7E-kr-9Q8"/>
                             <constraint firstItem="zcL-ZH-Caa" firstAttribute="height" secondItem="lwb-Uw-TMX" secondAttribute="height" multiplier="0.7" id="Wqj-QL-Uin"/>
                             <constraint firstAttribute="bottom" secondItem="zcL-ZH-Caa" secondAttribute="bottom" id="eE7-xC-af8"/>
                             <constraint firstItem="sr2-lk-qW4" firstAttribute="leading" secondItem="lwb-Uw-TMX" secondAttribute="leading" constant="10" id="hIH-xs-hrD"/>
@@ -47,6 +53,7 @@
                             <constraint firstAttribute="trailing" secondItem="zcL-ZH-Caa" secondAttribute="trailing" constant="10" id="kgD-82-w6A"/>
                             <constraint firstItem="sr2-lk-qW4" firstAttribute="top" secondItem="lwb-Uw-TMX" secondAttribute="top" constant="10" id="maH-si-jNF"/>
                             <constraint firstItem="4zr-cN-V59" firstAttribute="width" secondItem="zcL-ZH-Caa" secondAttribute="width" multiplier="1:4" id="p7g-lC-kKm"/>
+                            <constraint firstAttribute="trailing" secondItem="7tP-fR-jUL" secondAttribute="trailing" id="pJc-ye-YZQ"/>
                             <constraint firstItem="zcL-ZH-Caa" firstAttribute="leading" secondItem="4zr-cN-V59" secondAttribute="trailing" constant="20" id="pe6-VB-vd3"/>
                         </constraints>
                     </view>
@@ -62,6 +69,7 @@
             <size key="customSize" width="299" height="271"/>
             <connections>
                 <outlet property="backView" destination="lwb-Uw-TMX" id="Ffi-A8-5VG"/>
+                <outlet property="likeButton" destination="7tP-fR-jUL" id="nIb-mt-IAs"/>
                 <outlet property="mainTitleLable" destination="sr2-lk-qW4" id="Yxv-NC-xLG"/>
                 <outlet property="posterImageView" destination="zcL-ZH-Caa" id="CQq-5o-Zam"/>
                 <outlet property="subTitleLable" destination="4zr-cN-V59" id="mT9-tG-k2n"/>
