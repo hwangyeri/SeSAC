@@ -9,12 +9,33 @@ import UIKit
 
 class CustomTableViewController: UITableViewController {
     
-    let todo = ToDoInformation()
+    @IBOutlet var searchBar: UISearchBar!
+    
+    var todo = ToDoInformation() {
+        didSet { // 변수가 달라짐을 감지!
+            print("didSet")
+            tableView.reloadData()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.rowHeight = 80
+        
+        searchBar.placeholder = "할일을 입력해보세요"
+        searchBar.searchTextField.addTarget(self, action: #selector(searchBarReturnTapped), for: .editingDidEndOnExit)
+    }
+    
+    @objc func searchBarReturnTapped() {
+        //ToDo 항목을 // 식판
+        let data = ToDo(main: searchBar.text!, sub: "23.08.01", like: false, done: false)
+        //list에 추가
+        todo.list.insert(data, at: 0)
+        //UX
+        searchBar.text = ""
+        //갱신
+        //tableView.reloadData()
     }
 
     //1.
@@ -30,12 +51,40 @@ class CustomTableViewController: UITableViewController {
         
         cell.configureCell(row: row)
         
+        cell.starButton.tag = indexPath.row
+        cell.starButton.addTarget(self, action: #selector(starButtonClicked), for: .touchUpInside) // 코드로 액션 연결
+        
         return cell
+    }
+    
+    @objc
+    func starButtonClicked(_ sender: UIButton) {
+        print(#function, "\(sender.tag)")
+        
+        //todo.list[IndexPath.row].like
+        todo.list[sender.tag].like.toggle()
+        
+        //tableView.reloadData()
     }
     
     //3. 셀 선택
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
     }
+    
+    //삭제
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        //제거 -> 갱신
+        todo.list.remove(at: indexPath.row)
+        
+        //tableView.reloadData()
+    }
+    
+    
 
 }
