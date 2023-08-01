@@ -15,4 +15,10 @@ struct Movie {
     var runtime: Int
     var overview: String
     var rate: Double
+    
+    var subLableTitle: String {
+        get {
+            return "\(releaseDate) | \(runtime)분 | \(rate)점"
+        }
+    }
 }

@@ -28,6 +28,7 @@ class MovieTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier) as! MovieTableViewCell
+        let row = movieInfo.movie[indexPath.row]
         
         cell.mainLable.font = .boldSystemFont(ofSize: 18)
         cell.mainLable.numberOfLines = 1
@@ -36,10 +37,10 @@ class MovieTableViewController: UITableViewController {
         cell.overviewLable.font = .systemFont(ofSize: 13)
         cell.overviewLable.numberOfLines = 5
         
-        cell.posterImageView.image = UIImage(named: movieInfo.movie[indexPath.row].imageName)
-        cell.mainLable.text = "\(movieInfo.movie[indexPath.row].title)"
-        cell.subLable.text = "\(movieInfo.movie[indexPath.row].releaseDate) | \(movieInfo.movie[indexPath.row].runtime)분 | \(movieInfo.movie[indexPath.row].rate)점"
-        cell.overviewLable.text = "\(movieInfo.movie[indexPath.row].overview)"
+        cell.posterImageView.image = UIImage(named: row.imageName)
+        cell.mainLable.text = "\(row.title)"
+        cell.subLable.text = row.subLableTitle
+        cell.overviewLable.text = "\(row.overview)"
         
         
         return cell
