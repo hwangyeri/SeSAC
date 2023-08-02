@@ -9,19 +9,17 @@ import UIKit
 
 class BOOKWARMCollectionViewController: UICollectionViewController {
     
-    let user = "yeri"
     var movieInfo = MovieInfo() {
         didSet {
             collectionView.reloadData()
             print("didSet")
         }
     }
+    
     let colorList: [UIColor] = [UIColor.systemIndigo, UIColor.systemPink, UIColor.systemOrange, UIColor.systemMint, UIColor.systemRed, UIColor.systemPurple, UIColor.systemTeal, UIColor.systemBlue]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "\(user) 님의 책장"
 
         //XIB
         let nib = UINib(nibName: BOOKWARMCollectionViewCell.identifier, bundle: nil)
@@ -95,8 +93,7 @@ class BOOKWARMCollectionViewController: UICollectionViewController {
     
     
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: SearchViewController.identifier) as! SearchViewController
+        let vc = storyboard?.instantiateViewController(identifier: SearchViewController.identifier) as! SearchViewController
         let nav = UINavigationController(rootViewController: vc)
 
         nav.modalPresentationStyle = .fullScreen

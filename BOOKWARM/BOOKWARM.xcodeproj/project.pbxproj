@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1C58432A7A3031005A3AAF /* LookAroundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C58422A7A3031005A3AAF /* LookAroundViewController.swift */; };
+		2B1C58462A7A39C6005A3AAF /* RecentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C58442A7A39C6005A3AAF /* RecentCollectionViewCell.swift */; };
+		2B1C58472A7A39C6005A3AAF /* RecentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1C58452A7A39C6005A3AAF /* RecentCollectionViewCell.xib */; };
+		2B1C584A2A7A39F8005A3AAF /* BestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C58482A7A39F8005A3AAF /* BestTableViewCell.swift */; };
+		2B1C584B2A7A39F8005A3AAF /* BestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1C58492A7A39F8005A3AAF /* BestTableViewCell.xib */; };
 		2B8F36442A779F7900695827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36432A779F7900695827 /* AppDelegate.swift */; };
 		2B8F36462A779F7900695827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36452A779F7900695827 /* SceneDelegate.swift */; };
 		2B8F36482A779F7900695827 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36472A779F7900695827 /* SearchViewController.swift */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1C58422A7A3031005A3AAF /* LookAroundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookAroundViewController.swift; sourceTree = "<group>"; };
+		2B1C58442A7A39C6005A3AAF /* RecentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentCollectionViewCell.swift; sourceTree = "<group>"; };
+		2B1C58452A7A39C6005A3AAF /* RecentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCollectionViewCell.xib; sourceTree = "<group>"; };
+		2B1C58482A7A39F8005A3AAF /* BestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTableViewCell.swift; sourceTree = "<group>"; };
+		2B1C58492A7A39F8005A3AAF /* BestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestTableViewCell.xib; sourceTree = "<group>"; };
 		2B8F36402A779F7900695827 /* BOOKWARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOOKWARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8F36432A779F7900695827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8F36452A779F7900695827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +83,11 @@
 				2B8F36472A779F7900695827 /* SearchViewController.swift */,
 				2B8F365D2A77A09D00695827 /* DetailViewController.swift */,
 				2B8F36492A779F7900695827 /* Main.storyboard */,
+				2B1C58422A7A3031005A3AAF /* LookAroundViewController.swift */,
+				2B1C58442A7A39C6005A3AAF /* RecentCollectionViewCell.swift */,
+				2B1C58452A7A39C6005A3AAF /* RecentCollectionViewCell.xib */,
+				2B1C58482A7A39F8005A3AAF /* BestTableViewCell.swift */,
+				2B1C58492A7A39F8005A3AAF /* BestTableViewCell.xib */,
 				2B8F36572A77A06700695827 /* BOOKWARMCollectionViewController.swift */,
 				2B8F36592A77A07E00695827 /* BOOKWARMCollectionViewCell.swift */,
 				2B8F365A2A77A07E00695827 /* BOOKWARMCollectionViewCell.xib */,
@@ -101,6 +116,8 @@
 			dependencies = (
 			);
 			name = BOOKWARM;
+			packageProductDependencies = (
+			);
 			productName = BOOKWARM;
 			productReference = 2B8F36402A779F7900695827 /* BOOKWARM.app */;
 			productType = "com.apple.product-type.application";
@@ -129,6 +146,8 @@
 				Base,
 			);
 			mainGroup = 2B8F36372A779F7800695827;
+			packageReferences = (
+			);
 			productRefGroup = 2B8F36412A779F7900695827 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,8 +162,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1C58472A7A39C6005A3AAF /* RecentCollectionViewCell.xib in Resources */,
 				2B8F365C2A77A07E00695827 /* BOOKWARMCollectionViewCell.xib in Resources */,
 				2B8F36502A779F7A00695827 /* LaunchScreen.storyboard in Resources */,
+				2B1C584B2A7A39F8005A3AAF /* BestTableViewCell.xib in Resources */,
 				2B8F364D2A779F7A00695827 /* Assets.xcassets in Resources */,
 				2B8F364B2A779F7900695827 /* Main.storyboard in Resources */,
 			);
@@ -163,7 +184,10 @@
 				2B8F36442A779F7900695827 /* AppDelegate.swift in Sources */,
 				2B8F365E2A77A09D00695827 /* DetailViewController.swift in Sources */,
 				2B8F36582A77A06700695827 /* BOOKWARMCollectionViewController.swift in Sources */,
+				2B1C584A2A7A39F8005A3AAF /* BestTableViewCell.swift in Sources */,
 				2B8F36622A77A3EF00695827 /* Movie.swift in Sources */,
+				2B1C58462A7A39C6005A3AAF /* RecentCollectionViewCell.swift in Sources */,
+				2B1C58432A7A3031005A3AAF /* LookAroundViewController.swift in Sources */,
 				2B8F36462A779F7900695827 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
