@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import UIKit // UIColor때문에 import했지만 원래 Model에는 Foundation만 import
 
 struct ToDo { //식판
     var main: String
     var sub: String
     var like: Bool
     var done: Bool
+    var color: UIColor // CGFloat #FFCDe2
 }

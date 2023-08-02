@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1C583F2A79E7AF005A3AAF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C583E2A79E7AF005A3AAF /* DetailViewController.swift */; };
 		2B8F35BA2A73503E00695827 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F35B92A73503E00695827 /* CustomTableViewController.swift */; };
 		2B8F35BC2A73527200695827 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F35BB2A73527200695827 /* CustomTableViewCell.swift */; };
 		2B8F35BE2A7389C400695827 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F35BD2A7389C400695827 /* ToDo.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1C583E2A79E7AF005A3AAF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2B8F35B92A73503E00695827 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		2B8F35BB2A73527200695827 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2B8F35BD2A7389C400695827 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				2B8F35BD2A7389C400695827 /* ToDo.swift */,
 				2B8F35BF2A738A0A00695827 /* ToDoInformation.swift */,
 				2BAAFDD82A72005C000E18FD /* Main.storyboard */,
+				2B1C583E2A79E7AF005A3AAF /* DetailViewController.swift */,
 				2B8F35B92A73503E00695827 /* CustomTableViewController.swift */,
 				2B8F35BB2A73527200695827 /* CustomTableViewCell.swift */,
 				2BAAFDE82A7232E0000E18FD /* StudyTableViewController.swift */,
@@ -195,6 +198,7 @@
 				2B8F35CB2A73AB1400695827 /* MovieTableViewController.swift in Sources */,
 				2BAAFDEB2A724976000E18FD /* Extension.swift in Sources */,
 				2BAAFDD32A72005C000E18FD /* AppDelegate.swift in Sources */,
+				2B1C583F2A79E7AF005A3AAF /* DetailViewController.swift in Sources */,
 				2B8F35BA2A73503E00695827 /* CustomTableViewController.swift in Sources */,
 				2BAAFDD52A72005C000E18FD /* SceneDelegate.swift in Sources */,
 			);

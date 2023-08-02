@@ -7,6 +7,13 @@
 
 import UIKit
 
+/*
+ 230802
+ 1. 파티를 막자
+ 2. sender.tag
+ 3. 데이터 Model
+ */
+
 class CustomTableViewController: UITableViewController {
     
     @IBOutlet var searchBar: UISearchBar!
@@ -29,7 +36,7 @@ class CustomTableViewController: UITableViewController {
     
     @objc func searchBarReturnTapped() {
         //ToDo 항목을 // 식판
-        let data = ToDo(main: searchBar.text!, sub: "23.08.01", like: false, done: false)
+        let data = ToDo(main: searchBar.text!, sub: "23.08.01", like: false, done: false, color: ToDoInformation.randomBackgroundColor())
         //list에 추가
         todo.list.insert(data, at: 0)
         //UX
@@ -69,7 +76,14 @@ class CustomTableViewController: UITableViewController {
     
     //3. 셀 선택
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
+        let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        
+        vc.data = todo.list[indexPath.row]
+        
+        present(vc, animated: true)
+        
+        //tableView.reloadData() // modal 올라간 후에도 클린된 상태 처리하기
+        tableView.reloadRows(at: [indexPath], with: .none) // 전체 데이터가 아닌 선택된 셀만 reloadData
     }
     
     //삭제

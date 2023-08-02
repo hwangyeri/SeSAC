@@ -28,7 +28,24 @@ class CustomTableViewCell: UITableViewCell {
      6. Cell 연결 -> identifier 아웃렛 액션
      */
     
+    override func awakeFromNib() { // 인스턴스 메서드
+        // 매번 reload가 필요없는 정적인 디자인
+        super.awakeFromNib()
+        
+        mainTitleLable.font = .boldSystemFont(ofSize: 17)
+        mainTitleLable.textColor = .brown
+        
+    }
+    
+//    //static func -> override class
+//    override class func awakeFromNib() { // 타입 메서드
+//        <#code#>
+//    }
+    
     func configureCell(row: ToDo) {
+        
+        backView.backgroundColor = row.color
+        
         mainTitleLable.text = row.main
         subTitleLable.text = row.sub
         
