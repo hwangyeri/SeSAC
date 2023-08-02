@@ -12,8 +12,8 @@ class SearchCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "SearchCollectionViewCell")
+        let nib = UINib(nibName: SearchCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
         
         setCollectionViewLayout()
     }
