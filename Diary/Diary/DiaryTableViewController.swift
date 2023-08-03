@@ -71,22 +71,27 @@ class DiaryTableViewController: UITableViewController {
     // 셀을 선택했을때 실행하는 함수
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //DetailViewController(UIViewController) 생성해서 present 해보기!
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        //let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard?.instantiateViewController(withIdentifier: AddViewController.identifier) as! AddViewController
         //IF, let vc = DetailViewController() // Swift Flie만 가져오는 것, 구현한 나머지는 못가져옴
         
         //Pass Data
         //2. vc가 가지고 있는 프로퍼티에 데이터 추가
+        //vc.contents = list[indexPath.row]
+        vc.type = .edit
         vc.contents = list[indexPath.row]
         
-        //값 전달 시 아웃렛을 활요할 수는 없음 ㅠㅠ
+        //값 전달 시 아웃렛을 활용할 수는 없음
         //vc.contentsLable.text = list[indexPath.row]
+        // contentTextView nil 상태라서 에러, 초기화 시점이 다름
+        //vc.contentTextView.text = list[indexPath.row]
+        
         
 //        vc.modalTransitionStyle = .crossDissolve
 //        vc.modalPresentationStyle = .fullScreen
         
         navigationController?.pushViewController(vc, animated: true) //인터페이스 빌더에 네비게이션 컨트롤러가 임베드 되어 있어야만 Push가 동작합니다.
-        // 인터페이스에서 show, 코드상에서는 push
+        // 인터페이스에서 show, 코드상에서는 push, SwiftUI에서는 navigation
         // NavigationController 필수
         
     }
@@ -103,6 +108,7 @@ class DiaryTableViewController: UITableViewController {
         //nav를 사용한다면, present와 화면 전환 방식도 nav로 수정 해주어야 함!!
         let nav = UINavigationController(rootViewController: vc)
         
+        vc.type = .add
         
         //3. 화면 전환 방식 설정
 //        vc.modalTransitionStyle = .crossDissolve //madal animation
@@ -118,7 +124,7 @@ class DiaryTableViewController: UITableViewController {
         // Search 아이콘 클릭 시 SearchCollectionViewController Push!
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: SearchCollectionViewCell.identifier) as! SearchCollectionViewController
+        let vc = sb.instantiateViewController(withIdentifier: "SearchCollectionViewController") as! SearchCollectionViewController
         
         navigationController?.pushViewController(vc, animated: true)
 

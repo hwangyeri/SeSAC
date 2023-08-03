@@ -30,9 +30,9 @@ class TimelineViewController: UIViewController, UICollectionViewDelegate, UIColl
         bestCollectionView.dataSource = self
         
         //XIB 등록
-        let nib = UINib(nibName: SearchCollectionViewCell.identifier, bundle: nil)
-        todayCollectionView.register(nib, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
-        bestCollectionView.register(nib, forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
+        let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
+        todayCollectionView.register(nib, forCellWithReuseIdentifier: "SearchCollectionViewCell")
+        bestCollectionView.register(nib, forCellWithReuseIdentifier: "SearchCollectionViewCell")
         
         configureTodayCollectionViewLayout()
         configureBestCollectionViewLayout()
@@ -66,7 +66,7 @@ class TimelineViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchCollectionViewCell.identifier, for: indexPath) as! SearchCollectionViewCell // 재사용 코드
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as! SearchCollectionViewCell // 재사용 코드
        
         if collectionView == todayCollectionView {
             cell.contentLable.text = "Today: \(indexPath.item)"

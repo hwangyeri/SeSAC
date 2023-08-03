@@ -42,6 +42,7 @@ class BestTableViewCell: UITableViewCell {
         posterImageView.image = UIImage(named: row.imageName)
         //FIXME: - cornerRadius
         posterImageView.layer.cornerRadius = 15
+        posterImageView.contentMode = .scaleAspectFit
         
         mainLable.text = row.title
         subLable.text = subLableText

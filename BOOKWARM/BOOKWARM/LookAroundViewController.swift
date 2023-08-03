@@ -32,7 +32,6 @@ class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICo
         bestTableView.register(nib2, forCellReuseIdentifier: BestTableViewCell.identifier)
         
         configureRecentCollectionViewLayout()
-        configureBestTableViewLayout()
         
         lableStyle(lable: recentLable, title: "최근 본 작품")
         lableStyle(lable: bestLable, title: "요즘 인기 작품")
@@ -85,20 +84,6 @@ class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICo
         
         return cell
     }
-
-    func configureBestTableViewLayout() {
-        let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 0
-        let width = UIScreen.main.bounds.width
-        layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: width, height: width / 4)
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
-        
-        //FIXME: - tableVIewLayout 적용
-    }
-    
 
 
 }

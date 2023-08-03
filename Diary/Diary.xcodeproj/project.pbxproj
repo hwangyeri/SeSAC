@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B1C583D2A789B58005A3AAF /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C583C2A789B58005A3AAF /* SettingTableViewController.swift */; };
 		2B1C58412A79F230005A3AAF /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C58402A79F230005A3AAF /* TimelineViewController.swift */; };
+		2B1C58502A7B72BE005A3AAF /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C584F2A7B72BE005A3AAF /* LottoViewController.swift */; };
 		2B8F36112A777D7E00695827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36102A777D7E00695827 /* AppDelegate.swift */; };
 		2B8F36132A777D7E00695827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36122A777D7E00695827 /* SceneDelegate.swift */; };
 		2B8F36152A777D7F00695827 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36142A777D7F00695827 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		2B1C583C2A789B58005A3AAF /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		2B1C58402A79F230005A3AAF /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		2B1C584F2A7B72BE005A3AAF /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		2B8F360D2A777D7E00695827 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8F36102A777D7E00695827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8F36122A777D7E00695827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				2B8F36142A777D7F00695827 /* ViewController.swift */,
 				2B8F36362A7790BF00695827 /* Search */,
 				2B8F36162A777D7F00695827 /* Main.storyboard */,
+				2B1C584F2A7B72BE005A3AAF /* LottoViewController.swift */,
 				2B1C58402A79F230005A3AAF /* TimelineViewController.swift */,
 				2B1C583C2A789B58005A3AAF /* SettingTableViewController.swift */,
 				2B8F36322A77861C00695827 /* DetailViewController.swift */,
@@ -192,6 +195,7 @@
 				2B1C583D2A789B58005A3AAF /* SettingTableViewController.swift in Sources */,
 				2B8F36132A777D7E00695827 /* SceneDelegate.swift in Sources */,
 				2B8F36282A77827900695827 /* SearchCollectionViewCell.swift in Sources */,
+				2B1C58502A7B72BE005A3AAF /* LottoViewController.swift in Sources */,
 				2B8F36312A7785BE00695827 /* Extenstion+UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
