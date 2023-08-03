@@ -12,6 +12,8 @@
 		2B1C58472A7A39C6005A3AAF /* RecentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1C58452A7A39C6005A3AAF /* RecentCollectionViewCell.xib */; };
 		2B1C584A2A7A39F8005A3AAF /* BestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C58482A7A39F8005A3AAF /* BestTableViewCell.swift */; };
 		2B1C584B2A7A39F8005A3AAF /* BestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1C58492A7A39F8005A3AAF /* BestTableViewCell.xib */; };
+		2B1C58532A7C1070005A3AAF /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1C58512A7C1070005A3AAF /* SearchCollectionViewCell.swift */; };
+		2B1C58542A7C1070005A3AAF /* SearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1C58522A7C1070005A3AAF /* SearchCollectionViewCell.xib */; };
 		2B8F36442A779F7900695827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36432A779F7900695827 /* AppDelegate.swift */; };
 		2B8F36462A779F7900695827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36452A779F7900695827 /* SceneDelegate.swift */; };
 		2B8F36482A779F7900695827 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36472A779F7900695827 /* SearchViewController.swift */; };
@@ -32,6 +34,8 @@
 		2B1C58452A7A39C6005A3AAF /* RecentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentCollectionViewCell.xib; sourceTree = "<group>"; };
 		2B1C58482A7A39F8005A3AAF /* BestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestTableViewCell.swift; sourceTree = "<group>"; };
 		2B1C58492A7A39F8005A3AAF /* BestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestTableViewCell.xib; sourceTree = "<group>"; };
+		2B1C58512A7C1070005A3AAF /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		2B1C58522A7C1070005A3AAF /* SearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCollectionViewCell.xib; sourceTree = "<group>"; };
 		2B8F36402A779F7900695827 /* BOOKWARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOOKWARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8F36432A779F7900695827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8F36452A779F7900695827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				2B8F36432A779F7900695827 /* AppDelegate.swift */,
 				2B8F36452A779F7900695827 /* SceneDelegate.swift */,
 				2B8F36472A779F7900695827 /* SearchViewController.swift */,
+				2B1C58512A7C1070005A3AAF /* SearchCollectionViewCell.swift */,
+				2B1C58522A7C1070005A3AAF /* SearchCollectionViewCell.xib */,
 				2B8F365D2A77A09D00695827 /* DetailViewController.swift */,
 				2B8F36492A779F7900695827 /* Main.storyboard */,
 				2B1C58422A7A3031005A3AAF /* LookAroundViewController.swift */,
@@ -162,6 +168,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B1C58542A7C1070005A3AAF /* SearchCollectionViewCell.xib in Resources */,
 				2B1C58472A7A39C6005A3AAF /* RecentCollectionViewCell.xib in Resources */,
 				2B8F365C2A77A07E00695827 /* BOOKWARMCollectionViewCell.xib in Resources */,
 				2B8F36502A779F7A00695827 /* LaunchScreen.storyboard in Resources */,
@@ -180,6 +187,7 @@
 			files = (
 				2B8F36602A77A3B300695827 /* MovieInfo.swift in Sources */,
 				2B8F36482A779F7900695827 /* SearchViewController.swift in Sources */,
+				2B1C58532A7C1070005A3AAF /* SearchCollectionViewCell.swift in Sources */,
 				2B8F365B2A77A07E00695827 /* BOOKWARMCollectionViewCell.swift in Sources */,
 				2B8F36442A779F7900695827 /* AppDelegate.swift in Sources */,
 				2B8F365E2A77A09D00695827 /* DetailViewController.swift in Sources */,

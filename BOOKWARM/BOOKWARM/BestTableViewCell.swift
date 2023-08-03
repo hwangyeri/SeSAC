@@ -42,7 +42,7 @@ class BestTableViewCell: UITableViewCell {
         posterImageView.image = UIImage(named: row.imageName)
         //FIXME: - cornerRadius
         posterImageView.layer.cornerRadius = 15
-        posterImageView.contentMode = .scaleAspectFit
+        posterImageView.contentMode = .scaleAspectFill
         
         mainLable.text = row.title
         subLable.text = subLableText
@@ -55,7 +55,7 @@ class BestTableViewCell: UITableViewCell {
         symbol.layer.borderColor = UIColor.lightGray.cgColor
         symbol.layer.borderWidth = 0.5
         symbol.layer.backgroundColor = UIColor.white.cgColor
-        symbol.contentMode = .scaleAspectFit
+        symbol.contentMode = .scaleAspectFill
     }
     
     

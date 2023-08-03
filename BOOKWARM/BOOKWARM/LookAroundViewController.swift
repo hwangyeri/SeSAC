@@ -61,13 +61,24 @@ class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICo
         let spacing: CGFloat = 0
         let width = UIScreen.main.bounds.width - (spacing * 4)
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: width / 5, height: width / 3)
+        layout.itemSize = CGSize(width: width / 4, height: width / 3)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = spacing
         
         recentCollectionView.collectionViewLayout = layout
         recentCollectionView.isPrefetchingEnabled = true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
+        let selectedMovie = movieInfo.movie[indexPath.row]
+        
+        vc.selectedMovie = selectedMovie
+        vc.naviTitle = movieInfo.movie[indexPath.row].title
+        
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     //MARK: - tableView
@@ -85,5 +96,15 @@ class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
+        let selectedMovie = movieInfo.movie[indexPath.row]
+        
+        vc.selectedMovie = selectedMovie
+        vc.naviTitle = movieInfo.movie[indexPath.row].title
+        
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
 }

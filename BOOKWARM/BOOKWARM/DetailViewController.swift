@@ -7,11 +7,13 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextViewDelegate {
     
     static let identifier = "DetailViewController"
-    var naviTitle: String = "navi Title"
+    var naviTitle: String?
     var selectedMovie: Movie?
+    let placeholderText = " 메모장 입니다. 😎"
+    var contents: String?
     
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var mainTitleLable: UILabel!
@@ -20,10 +22,13 @@ class DetailViewController: UIViewController {
     @IBOutlet var reviewButton: UIButton!
     @IBOutlet var headerLable: UILabel!
     @IBOutlet var overviewLable: UILabel!
-    
+    @IBOutlet var memoTextView: UITextView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        memoTextView.delegate = self
         
         let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
         let chevron = UIImage(systemName: "chevron.backward")
@@ -34,18 +39,18 @@ class DetailViewController: UIViewController {
         
         if let selectedMovie = selectedMovie {
             
-            var header = "기본 정보"
+            let header = "기본 정보"
             var rate = "평균 ⭑\(selectedMovie.rate)"
             
             posterImageView.image = UIImage(named: selectedMovie.imageName)
             posterImageView.layer.cornerRadius = 12
             
             mainTitleLable.text = selectedMovie.title
-            mainTitleLable.font = .boldSystemFont(ofSize: 20)
+            mainTitleLable.font = .boldSystemFont(ofSize: 18)
             
             subTitleButton.setTitle(selectedMovie.releaseDate, for: .normal)
             subTitleButton.tintColor = .black
-            subTitleButton.titleLabel?.font = .systemFont(ofSize: 18)
+            subTitleButton.titleLabel?.font = .systemFont(ofSize: 15)
             
             headerLable.text = header
             headerLable.font = .boldSystemFont(ofSize: 15)
@@ -61,6 +66,9 @@ class DetailViewController: UIViewController {
             overviewLable.text = selectedMovie.overview
             overviewLable.numberOfLines = 0
             
+            memoTextView.text = placeholderText
+            memoTextView.textColor = .lightGray
+            memoTextView.backgroundColor = .systemGray6
         }
     }
     
@@ -69,6 +77,23 @@ class DetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func tapGestureClicked(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+        print(#function)
+    }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == placeholderText {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = placeholderText
+            textView.textColor = .lightGray
+        }
+    }
    
 }

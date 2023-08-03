@@ -11,10 +11,13 @@ class RecentCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "RecentCollectionViewCell"
     
+    var selectedMovie: Movie?
+    var naviTitle: String?
+    
     @IBOutlet var posterImageView: UIImageView!
     
     override func awakeFromNib() {
-        posterImageView.contentMode = .scaleAspectFit
+        posterImageView.contentMode = .scaleAspectFill
         //FIXME: - cornerRadius
         posterImageView.layer.cornerRadius = 20
     }
