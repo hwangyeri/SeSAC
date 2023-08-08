@@ -155,14 +155,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2v-nf-y1x">
-                                <rect key="frame" x="117" y="255" width="159" height="111"/>
+                                <rect key="frame" x="117" y="255" width="159" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qg6-BF-bd6">
-                                <rect key="frame" x="117" y="412" width="159" height="111"/>
+                                <rect key="frame" x="43" y="412" width="317" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -171,14 +171,23 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JYb-ox-Vnc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="mjQ-sU-Cim" appends="YES" id="dqf-a7-haQ"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="bonusNumLabel" destination="W2v-nf-y1x" id="Tbm-eH-uOA"/>
-                        <outlet property="dateLabel" destination="Qg6-BF-bd6" id="Pma-8d-KGA"/>
-                        <outlet property="numberTextField" destination="h0C-Ef-c4g" id="B0x-v4-M6C"/>
+                        <outlet property="drwNoLabel" destination="W2v-nf-y1x" id="hY0-4W-J77"/>
+                        <outlet property="lottoNumLabel" destination="Qg6-BF-bd6" id="5z3-NQ-udo"/>
+                        <outlet property="numberTextField" destination="h0C-Ef-c4g" id="dHC-ee-SEr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOG-yh-cX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="mjQ-sU-Cim">
+                    <connections>
+                        <action selector="tapGestureTapped:" destination="TR9-cZ-G5u" id="WKj-al-WyC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3783.969465648855" y="-27.464788732394368"/>
         </scene>
