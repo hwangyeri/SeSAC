@@ -20,6 +20,8 @@
 		2BFB4E972A809CE600F9F6A3 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E962A809CE600F9F6A3 /* APIKey.swift */; };
 		2BFB4E9C2A81C4F400F9F6A3 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E9B2A81C4F400F9F6A3 /* WeatherViewController.swift */; };
 		2BFB4E9E2A81E79300F9F6A3 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E9D2A81E79300F9F6A3 /* VideoViewController.swift */; };
+		2BFB4EA02A8255A600F9F6A3 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E9F2A8255A600F9F6A3 /* BeerViewController.swift */; };
+		2BFB4EA52A827CED00F9F6A3 /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4EA42A827CED00F9F6A3 /* BeerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		2BFB4E962A809CE600F9F6A3 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		2BFB4E9B2A81C4F400F9F6A3 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		2BFB4E9D2A81E79300F9F6A3 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		2BFB4E9F2A8255A600F9F6A3 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
+		2BFB4EA42A827CED00F9F6A3 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				2BFB4E922A809BAC00F9F6A3 /* .gitignore */,
 				2BFB4E7B2A8096DC00F9F6A3 /* Main.storyboard */,
 				2BFB4E9D2A81E79300F9F6A3 /* VideoViewController.swift */,
+				2BFB4E9F2A8255A600F9F6A3 /* BeerViewController.swift */,
+				2BFB4EA42A827CED00F9F6A3 /* BeerTableViewCell.swift */,
 				2BFB4E7E2A8096DD00F9F6A3 /* Assets.xcassets */,
 				2BFB4E802A8096DD00F9F6A3 /* LaunchScreen.storyboard */,
 				2BFB4E832A8096DD00F9F6A3 /* Info.plist */,
@@ -169,6 +175,8 @@
 			files = (
 				2BFB4E7A2A8096DC00F9F6A3 /* ViewController.swift in Sources */,
 				2BFB4E9C2A81C4F400F9F6A3 /* WeatherViewController.swift in Sources */,
+				2BFB4EA02A8255A600F9F6A3 /* BeerViewController.swift in Sources */,
+				2BFB4EA52A827CED00F9F6A3 /* BeerTableViewCell.swift in Sources */,
 				2BFB4E9E2A81E79300F9F6A3 /* VideoViewController.swift in Sources */,
 				2BFB4E762A8096DC00F9F6A3 /* AppDelegate.swift in Sources */,
 				2BFB4E782A8096DC00F9F6A3 /* SceneDelegate.swift in Sources */,
