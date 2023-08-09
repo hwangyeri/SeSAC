@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class LookAroundViewController: UIViewController {
     
     var movieInfo = MovieInfo()
     
@@ -24,6 +24,7 @@ class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICo
         recentCollectionView.dataSource = self
         bestTableView.dataSource = self
         bestTableView.delegate = self
+        bestTableView.rowHeight = 120
         
         //XIB
         let nib1 = UINib(nibName: RecentCollectionViewCell.identifier, bundle: nil)
@@ -42,8 +43,11 @@ class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICo
         lable.font = .monospacedDigitSystemFont(ofSize: 15, weight: .black)
         lable.textColor = .black
     }
+
+}
+
+extension LookAroundViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    // MARK: - collectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieInfo.movie.count
     }
@@ -81,7 +85,10 @@ class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICo
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    //MARK: - tableView
+}
+
+extension LookAroundViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieInfo.movie.count
     }
@@ -90,8 +97,6 @@ class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICo
         let cell = tableView.dequeueReusableCell(withIdentifier: BestTableViewCell.identifier) as! BestTableViewCell
         let row = movieInfo.movie[indexPath.row]
         cell.configureCell(row: row)
-        
-        tableView.rowHeight = UITableView.automaticDimension
         
         return cell
     }
@@ -103,8 +108,7 @@ class LookAroundViewController: UIViewController, UICollectionViewDelegate, UICo
         vc.selectedMovie = selectedMovie
         vc.naviTitle = movieInfo.movie[indexPath.row].title
         
-        
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
 }
