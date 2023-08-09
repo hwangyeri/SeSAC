@@ -19,7 +19,7 @@ class RecentCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         posterImageView.contentMode = .scaleAspectFill
         //FIXME: - cornerRadius
-        posterImageView.layer.cornerRadius = 20
+        posterImageView.layer.cornerRadius = 5
     }
     
     func configureCell(row: Movie) {
