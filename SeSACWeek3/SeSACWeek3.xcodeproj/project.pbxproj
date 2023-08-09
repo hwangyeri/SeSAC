@@ -22,6 +22,7 @@
 		2BFB4E9E2A81E79300F9F6A3 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E9D2A81E79300F9F6A3 /* VideoViewController.swift */; };
 		2BFB4EA02A8255A600F9F6A3 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E9F2A8255A600F9F6A3 /* BeerViewController.swift */; };
 		2BFB4EA52A827CED00F9F6A3 /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4EA42A827CED00F9F6A3 /* BeerTableViewCell.swift */; };
+		2BFB4EA72A8322F900F9F6A3 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4EA62A8322F900F9F6A3 /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		2BFB4E9D2A81E79300F9F6A3 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		2BFB4E9F2A8255A600F9F6A3 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		2BFB4EA42A827CED00F9F6A3 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
+		2BFB4EA62A8322F900F9F6A3 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				2BFB4E922A809BAC00F9F6A3 /* .gitignore */,
 				2BFB4E7B2A8096DC00F9F6A3 /* Main.storyboard */,
 				2BFB4E9D2A81E79300F9F6A3 /* VideoViewController.swift */,
+				2BFB4EA62A8322F900F9F6A3 /* VideoTableViewCell.swift */,
 				2BFB4E9F2A8255A600F9F6A3 /* BeerViewController.swift */,
 				2BFB4EA42A827CED00F9F6A3 /* BeerTableViewCell.swift */,
 				2BFB4E7E2A8096DD00F9F6A3 /* Assets.xcassets */,
@@ -181,6 +184,7 @@
 				2BFB4E762A8096DC00F9F6A3 /* AppDelegate.swift in Sources */,
 				2BFB4E782A8096DC00F9F6A3 /* SceneDelegate.swift in Sources */,
 				2BFB4E972A809CE600F9F6A3 /* APIKey.swift in Sources */,
+				2BFB4EA72A8322F900F9F6A3 /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

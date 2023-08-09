@@ -42,11 +42,11 @@ class BeerViewController: UIViewController {
                 let json = JSON(value)
                 print("JSON: \(json)")
                 
-                if let beerData = json.arrayValue.first {
+                if let beerData = json.arrayValue.first { // 항상 한가지 랜덤 데이터를 가져옴
                     let beerImageURL = beerData["image_url"].stringValue
                     let beerName = beerData["name"].stringValue
                     let beerDescription = beerData["description"].stringValue
-                    
+                    // json[0][""].~Value json 통 자체가 배열로 이루어져있음
                     let data = Beer(beerImageURL: beerImageURL, beerName: beerName, beerDescription: beerDescription)
                     self.beerList.removeAll()
                     self.beerList.append(data)
