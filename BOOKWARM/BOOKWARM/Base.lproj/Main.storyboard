@@ -317,7 +317,7 @@
             </objects>
             <point key="canvasLocation" x="5415" y="660"/>
         </scene>
-        <!--Tab 3-->
+        <!--Book Search-->
         <scene sceneID="Tug-Fy-Sod">
             <objects>
                 <viewController storyboardIdentifier="BookViewController" id="Wgg-DV-R6s" customClass="BookViewController" customModule="BOOKWARM" customModuleProvider="target" sceneMemberID="viewController">
@@ -406,7 +406,7 @@
                             <constraint firstItem="0go-nf-XNV" firstAttribute="bottom" secondItem="qbH-Uh-OGc" secondAttribute="bottom" id="woV-BA-FRw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tab 3" image="star.fill" catalog="system" id="pyN-js-TGg"/>
+                    <tabBarItem key="tabBarItem" title="Book Search" image="book" catalog="system" id="pyN-js-TGg"/>
                     <connections>
                         <outlet property="searchBar" destination="fQ9-kM-i4F" id="2l1-Nc-fQI"/>
                         <outlet property="tableView" destination="qbH-Uh-OGc" id="YaU-ix-Xnf"/>
@@ -477,6 +477,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
