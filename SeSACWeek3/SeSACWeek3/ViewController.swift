@@ -19,7 +19,9 @@ class ViewController: UIViewController {
     // 1. 아울렛 연결
     @IBOutlet var movieTableView: UITableView!
     
-    //var movieList: [String] = []
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
+    @IBOutlet var searchBar: UISearchBar!
+    
     var movieList: [Movie] = []
     
     override func viewDidLoad() {
@@ -29,14 +31,19 @@ class ViewController: UIViewController {
         // 3. 부하직원 연결
         movieTableView.delegate = self
         movieTableView.dataSource = self
-        callRequest()
         
+        //callRequest() 화면을 시작할때 더이상 서버통신x
+        indicatorView.isHidden = true
     }
     
 
-    func callRequest() {
+    func callRequest(date: String) {
+        
+        indicatorView.startAnimating()
+        indicatorView.isHidden = false
+        
         // key에 대한 관리, 매우 중요
-        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=20120101"
+        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=\(date)"
         
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
@@ -64,7 +71,9 @@ class ViewController: UIViewController {
                 self.movieList.append(data)
                 
             }
-                
+            
+            self.indicatorView.stopAnimating() // stop 하지않으면 숨김 처리되서 뒤에서 계속 돌아감
+            self.indicatorView.isHidden = true
             self.movieTableView.reloadData()
                 
             case .failure(let error):
@@ -93,4 +102,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     
+}
+
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //20220101 > 1. 8글자 2. 20233333 올바른 날짜 3. 날짜 범주
+        callRequest(date: searchBar.text!)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1F6ED82A84755C00225D96 /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F6ED72A84755C00225D96 /* TranslationViewController.swift */; };
+		2B1F6EDA2A8476AF00225D96 /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F6ED92A8476AF00225D96 /* TranslateViewController.swift */; };
 		2BFB4E762A8096DC00F9F6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E752A8096DC00F9F6A3 /* AppDelegate.swift */; };
 		2BFB4E782A8096DC00F9F6A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E772A8096DC00F9F6A3 /* SceneDelegate.swift */; };
 		2BFB4E7A2A8096DC00F9F6A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E792A8096DC00F9F6A3 /* ViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1F6ED72A84755C00225D96 /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
+		2B1F6ED92A8476AF00225D96 /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		2BFB4E722A8096DC00F9F6A3 /* SeSACWeek3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFB4E752A8096DC00F9F6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BFB4E772A8096DC00F9F6A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				2BFB4E9B2A81C4F400F9F6A3 /* WeatherViewController.swift */,
 				2BFB4E922A809BAC00F9F6A3 /* .gitignore */,
 				2BFB4E7B2A8096DC00F9F6A3 /* Main.storyboard */,
+				2B1F6ED92A8476AF00225D96 /* TranslateViewController.swift */,
+				2B1F6ED72A84755C00225D96 /* TranslationViewController.swift */,
 				2BFB4E9D2A81E79300F9F6A3 /* VideoViewController.swift */,
 				2BFB4EA62A8322F900F9F6A3 /* VideoTableViewCell.swift */,
 				2BFB4E9F2A8255A600F9F6A3 /* BeerViewController.swift */,
@@ -180,8 +186,10 @@
 				2BFB4E9C2A81C4F400F9F6A3 /* WeatherViewController.swift in Sources */,
 				2BFB4EA02A8255A600F9F6A3 /* BeerViewController.swift in Sources */,
 				2BFB4EA52A827CED00F9F6A3 /* BeerTableViewCell.swift in Sources */,
+				2B1F6ED82A84755C00225D96 /* TranslationViewController.swift in Sources */,
 				2BFB4E9E2A81E79300F9F6A3 /* VideoViewController.swift in Sources */,
 				2BFB4E762A8096DC00F9F6A3 /* AppDelegate.swift in Sources */,
+				2B1F6EDA2A8476AF00225D96 /* TranslateViewController.swift in Sources */,
 				2BFB4E782A8096DC00F9F6A3 /* SceneDelegate.swift in Sources */,
 				2BFB4E972A809CE600F9F6A3 /* APIKey.swift in Sources */,
 				2BFB4EA72A8322F900F9F6A3 /* VideoTableViewCell.swift in Sources */,
