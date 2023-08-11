@@ -9,8 +9,6 @@ import UIKit
 
 class BeerTableViewCell: UITableViewCell {
     
-    static let identifier = "BeerTableViewCell"
-    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var beerImageView: UIImageView!
     @IBOutlet var beerNameLabel: UILabel!

@@ -147,6 +147,60 @@
             </objects>
             <point key="canvasLocation" x="-196" y="668"/>
         </scene>
+        <!--Async View Controller-->
+        <scene sceneID="LTb-aI-VkN">
+            <objects>
+                <viewController storyboardIdentifier="AsyncViewController" id="WGt-jh-fTi" customClass="AsyncViewController" customModule="SeSACWeek3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A0e-Dw-CkU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5N3-qG-XzB">
+                                <rect key="frame" x="76" y="453" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zae-P8-ji2">
+                                <rect key="frame" x="98.333333333333329" y="78.999999999999986" width="196.33333333333337" height="196.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zae-P8-ji2" secondAttribute="height" multiplier="1:1" id="Uqb-ah-WkL"/>
+                                </constraints>
+                            </imageView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yq3-Co-XAI">
+                                <rect key="frame" x="76" y="620" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGb-jj-FtN">
+                                <rect key="frame" x="241" y="618" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="WGt-jh-fTi" eventType="touchUpInside" id="7Io-cs-2C6"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mwh-xF-Knk">
+                                <rect key="frame" x="76" y="317" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nlK-Mp-58U"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zae-P8-ji2" firstAttribute="width" secondItem="A0e-Dw-CkU" secondAttribute="width" multiplier="0.5" id="Yfr-vm-pQW"/>
+                            <constraint firstItem="zae-P8-ji2" firstAttribute="top" secondItem="nlK-Mp-58U" secondAttribute="top" constant="20" id="Z0V-7f-fES"/>
+                            <constraint firstItem="zae-P8-ji2" firstAttribute="centerX" secondItem="A0e-Dw-CkU" secondAttribute="centerX" id="mZh-73-y96"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="first" destination="zae-P8-ji2" id="B9j-Ia-4FJ"/>
+                        <outlet property="second" destination="Mwh-xF-Knk" id="Y7U-g6-qUd"/>
+                        <outlet property="third" destination="5N3-qG-XzB" id="MFY-g3-S7f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gS1-DJ-LBK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="650"/>
+        </scene>
         <!--Weather View Controller-->
         <scene sceneID="Kel-cl-KEx">
             <objects>

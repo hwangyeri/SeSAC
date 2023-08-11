@@ -44,54 +44,55 @@ class VideoViewController: UIViewController {
     }
 
     func callRequest(query: String, page: Int) {
-        let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)! // 한글에 대한 처리를 해야함, 옵셔널 바인딩 필요
-        let url = "https://dapi.kakao.com/v2/search/vclip?query=\(text)&size=10&page=\(page)" // 웹에서 페이지 1번 2번 버튼 눌렀을때와 같은 처리
-        let header: HTTPHeaders = ["Authorization" : "KakaoAK \(APIKey.kakaoKey)"] // headers 노출이 조금 더 안전한 편
         
-        print(url) // 데이터가 잘 바뀌는지, 필요한 시점에 서버 통신이 잘 되는 지 확인
+        KakaoAPIManager.shared.callRequest(type: .video, query: query) { json in
+            print("=======\(json)")
+        }
+        
+        //print(url) // 데이터가 잘 바뀌는지, 필요한 시점에 서버 통신이 잘 되는 지 확인
         
         // ex. validate(statusCode: 200...500) 성공 코드로 보겠다~ 설정도 가능
         // 상태 코드에 대한 처리, 예외처리에 대한 대응이 필요
-        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { response in
-            switch response.result { // response 매개변수
-            case .success(let value):
-                let json = JSON(value) // 상태 코드에 따라서 달라짐
-                print("JSON: \(json)")
-                
-                print(response.response?.statusCode) // 상태 코드가 몇번인지에 대한 정보를 얻을 수 있음
-                
-                let statusCode = response.response?.statusCode ?? 500
-                
-                if statusCode == 200 {
-                    
-                    // isEnd 다음 페이지를 늘려줘야되는지 안 늘려줘야되는지 설정해야함
-                    self.isEnd = json["meta"]["is_end"].boolValue
-                    print(json["meta"]["is_end"].boolValue)
-                    
-                    for item in json["documents"].arrayValue {
-                        
-                        let author = item["author"].stringValue
-                        let date = item["datetime"].stringValue
-                        let time = item["play_time"].intValue
-                        let thumbnail = item["thumbnail"].stringValue
-                        let title = item["title"].stringValue
-                        let link = item["url"].stringValue
-                        
-                        let data = Video(author: author, date: date, time: time, thumbnail: thumbnail, title: title, link: link)
-                        
-                        self.videoList.append(data)
-                    }
-                    
-                    self.videoTableView.reloadData()
-                } else {
-                    print("문제가 발생했어요. 잠시 후 다시 시도해주세요!!")
-                }
-        
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
+//        AF.request(url, method: .get, headers: header).validate(statusCode: 200...500).responseJSON { response in
+//            switch response.result { // response 매개변수
+//            case .success(let value):
+//                let json = JSON(value) // 상태 코드에 따라서 달라짐
+//                print("JSON: \(json)")
+//
+//                print(response.response?.statusCode) // 상태 코드가 몇번인지에 대한 정보를 얻을 수 있음
+//
+//                let statusCode = response.response?.statusCode ?? 500
+//
+//                if statusCode == 200 {
+//
+//                    // isEnd 다음 페이지를 늘려줘야되는지 안 늘려줘야되는지 설정해야함
+//                    self.isEnd = json["meta"]["is_end"].boolValue
+//                    print(json["meta"]["is_end"].boolValue)
+//
+//                    for item in json["documents"].arrayValue {
+//
+//                        let author = item["author"].stringValue
+//                        let date = item["datetime"].stringValue
+//                        let time = item["play_time"].intValue
+//                        let thumbnail = item["thumbnail"].stringValue
+//                        let title = item["title"].stringValue
+//                        let link = item["url"].stringValue
+//
+//                        let data = Video(author: author, date: date, time: time, thumbnail: thumbnail, title: title, link: link)
+//
+//                        self.videoList.append(data)
+//                    }
+//
+//                    self.videoTableView.reloadData()
+//                } else {
+//                    print("문제가 발생했어요. 잠시 후 다시 시도해주세요!!")
+//                }
+//
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
         
     }
 
@@ -118,7 +119,7 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCell") as? VideoTableViewCell else { return VideoTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier) as? VideoTableViewCell else { return VideoTableViewCell() }
         
         cell.titleLabel.text = videoList[indexPath.row].title
         cell.contentLabel.text = videoList[indexPath.row].contents
