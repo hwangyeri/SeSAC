@@ -14,8 +14,9 @@ struct Movie { // movieList -> struct Movie 로 확장, 왜 구조체를 사용�
     var release: String
 }
 
-class ViewController: UIViewController {
 
+class ViewController: UIViewController {
+    
     // 1. 아울렛 연결
     @IBOutlet var movieTableView: UITableView!
     
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     
     var movieList: [Movie] = []
+    //condable
+    var result: BoxOffice?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +39,7 @@ class ViewController: UIViewController {
         indicatorView.isHidden = true
     }
     
-
+    
     func callRequest(date: String) {
         
         indicatorView.startAnimating()
@@ -45,51 +48,45 @@ class ViewController: UIViewController {
         // key에 대한 관리, 매우 중요
         let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.boxOfficeKey)&targetDt=\(date)"
         
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-//                let name1 = json["boxOfficeResult"]["dailyBoxOfficeList"][0]["movieNm"].stringValue
-//                let name2 = json["boxOfficeResult"]["dailyBoxOfficeList"][1]["movieNm"].stringValue
-//                let name3 = json["boxOfficeResult"]["dailyBoxOfficeList"][2]["movieNm"].stringValue
-//
-//                print(name1, name2, name3)
-                //self.movieList.append(name1)
-                //self.movieList.append(name2)
-                //self.movieList.append(name3)
-                
-//                self.movieList.append(contentsOf: [name1, name2, name3])
-            
-            for item in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue { // 인덱스 접근하기 전까지의 키를 배열로 돌겠다
-                
-                let movieNm = item["movieNm"].stringValue
-                let openDt = item["openDt"].stringValue
-                
-                let data = Movie(title: movieNm, release: openDt)
-                self.movieList.append(data)
-                
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: BoxOffice.self) { response in
+                print(response.value)
+                self.result = response.value
             }
-            
-            self.indicatorView.stopAnimating() // stop 하지않으면 숨김 처리되서 뒤에서 계속 돌아감
-            self.indicatorView.isHidden = true
-            self.movieTableView.reloadData()
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
+        
+        
+        
+        //        switch response.result {
+        //            case .success(let value):
+        //                let json = JSON(value)
+        //                print("JSON: \(json)")
+        //
+        //            for item in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue { // 인덱스 접근하기 전까지의 키를 배열로 돌겠다
+        //
+        //                let movieNm = item["movieNm"].stringValue
+        //                let openDt = item["openDt"].stringValue
+        //
+        //                let data = Movie(title: movieNm, release: openDt)
+        //                self.movieList.append(data)
+        //
+        //            }
+        //
+        //            self.indicatorView.stopAnimating() // stop 하지않으면 숨김 처리되서 뒤에서 계속 돌아감
+        //            self.indicatorView.isHidden = true
+        //            self.movieTableView.reloadData()
+        //
+        //            case .failure(let error):
+        //                print(error)
+        //            }
+//                }
     }
-    
-
 }
 
 // 2. 부하직원 등록
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieList.count
+        return result!.boxOfficeResult.dailyBoxOfficeList.count //movieList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -16,6 +16,7 @@
 		2B1F6EE82A85C79100225D96 /* KakaoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F6EE72A85C79100225D96 /* KakaoAPIManager.swift */; };
 		2B1F6EEA2A85E36700225D96 /* TranslateAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F6EE92A85E36700225D96 /* TranslateAPIManager.swift */; };
 		2B1F6EEC2A85FA0B00225D96 /* AsyncViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F6EEB2A85FA0B00225D96 /* AsyncViewController.swift */; };
+		2BAC1A3B2A8A092C00A4C117 /* BoxOfficeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A3A2A8A092C00A4C117 /* BoxOfficeData.swift */; };
 		2BFB4E762A8096DC00F9F6A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E752A8096DC00F9F6A3 /* AppDelegate.swift */; };
 		2BFB4E782A8096DC00F9F6A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E772A8096DC00F9F6A3 /* SceneDelegate.swift */; };
 		2BFB4E7A2A8096DC00F9F6A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFB4E792A8096DC00F9F6A3 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		2B1F6EE72A85C79100225D96 /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		2B1F6EE92A85E36700225D96 /* TranslateAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateAPIManager.swift; sourceTree = "<group>"; };
 		2B1F6EEB2A85FA0B00225D96 /* AsyncViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncViewController.swift; sourceTree = "<group>"; };
+		2BAC1A3A2A8A092C00A4C117 /* BoxOfficeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeData.swift; sourceTree = "<group>"; };
 		2BFB4E722A8096DC00F9F6A3 /* SeSACWeek3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACWeek3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BFB4E752A8096DC00F9F6A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BFB4E772A8096DC00F9F6A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				2BFB4E752A8096DC00F9F6A3 /* AppDelegate.swift */,
 				2BFB4E772A8096DC00F9F6A3 /* SceneDelegate.swift */,
 				2BFB4E792A8096DC00F9F6A3 /* ViewController.swift */,
+				2BAC1A3A2A8A092C00A4C117 /* BoxOfficeData.swift */,
 				2BFB4E922A809BAC00F9F6A3 /* .gitignore */,
 				2BFB4E7B2A8096DC00F9F6A3 /* Main.storyboard */,
 				2BFB4E9B2A81C4F400F9F6A3 /* WeatherViewController.swift */,
@@ -227,6 +230,7 @@
 				2B1F6EE82A85C79100225D96 /* KakaoAPIManager.swift in Sources */,
 				2B1F6EEA2A85E36700225D96 /* TranslateAPIManager.swift in Sources */,
 				2BFB4E782A8096DC00F9F6A3 /* SceneDelegate.swift in Sources */,
+				2BAC1A3B2A8A092C00A4C117 /* BoxOfficeData.swift in Sources */,
 				2BFB4E972A809CE600F9F6A3 /* APIKey.swift in Sources */,
 				2BFB4EA72A8322F900F9F6A3 /* VideoTableViewCell.swift in Sources */,
 			);
