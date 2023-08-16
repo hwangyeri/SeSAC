@@ -41,10 +41,19 @@ class TrendViewController: UIViewController {
         AF.request(url, method: .get, headers: header).validate(statusCode: 200...500)
             .responseDecodable(of: BoxOffice.self) { response in
                 
-                guard let value = response.value else { return }
-                print(value)
-                self.result = response.value
-                self.trendTableView.reloadData()
+                //                guard let value = response.value else { return }
+                //                print(value)
+                //                self.result = response.value // nil error
+                //                self.trendTableView.reloadData()
+                
+                switch response.result {
+                case .success(let value):
+                    self.result = value
+                    self.trendTableView.reloadData()
+                    
+                case .failure(let error):
+                    print("API request error: \(error)")
+                }
             }
     }
 }
@@ -58,23 +67,27 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendTableViewCell.identifier) as? TrendTableViewCell else { return UITableViewCell() }
         
-        guard !(result!.results.isEmpty) else {
-            return cell
-        }
+        //        guard !(result!.results.isEmpty) else {
+        //            return cell
+        //        }
+        //
+        //        let result = movieList[indexPath.row]
+        //        cell.rateLabel.text = "\(result.voteAverage)"
+        //        cell.titleLabel.text = result.title
         
-        let result = movieList[indexPath.row]
+        let result = result!.results[indexPath.row]
         cell.rateLabel.text = "\(result.voteAverage)"
         cell.titleLabel.text = result.title
         
         return cell
     }
     
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            guard let trandCell = tableView.cellForRow(at: indexPath) as? TrendTableViewCell,
-                  let creditViewController = storyboard?.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
-    
-            present(creditViewController, animated: true, completion: nil)
-        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let trendCell = tableView.cellForRow(at: indexPath) as? TrendTableViewCell,
+              let creditViewController = storyboard?.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
+        
+        present(creditViewController, animated: true, completion: nil)
+    }
     
     
     
