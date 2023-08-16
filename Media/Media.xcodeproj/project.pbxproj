@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B32D4802A8CDB8200874689 /* TrandData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D47F2A8CDB8200874689 /* TrandData.swift */; };
+		2B32D4802A8CDB8200874689 /* TrendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D47F2A8CDB8200874689 /* TrendData.swift */; };
 		2BAC1A342A878B1000A4C117 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A332A878B1000A4C117 /* ReusableViewProtocol.swift */; };
-		2BAC1A362A878B7000A4C117 /* TrandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A352A878B7000A4C117 /* TrandTableViewCell.swift */; };
+		2BAC1A362A878B7000A4C117 /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A352A878B7000A4C117 /* TrendTableViewCell.swift */; };
 		2BAC1A392A87A0B200A4C117 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2BAC1A382A87A0B200A4C117 /* Kingfisher */; };
 		2BAC1A3D2A8A58D600A4C117 /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A3C2A8A58D600A4C117 /* CreditViewController.swift */; };
 		2BAC1A3F2A8A58E000A4C117 /* CreditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A3E2A8A58E000A4C117 /* CreditTableViewCell.swift */; };
@@ -26,13 +26,13 @@
 		2BEB59542A8776590089E607 /* TrandAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB59532A8776590089E607 /* TrandAPIManager.swift */; };
 		2BEB59572A8777640089E607 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 2BEB59562A8777640089E607 /* Alamofire */; };
 		2BEB595A2A8777710089E607 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 2BEB59592A8777710089E607 /* SwiftyJSON */; };
-		2BEB595C2A877AD00089E607 /* TrandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB595B2A877AD00089E607 /* TrandViewController.swift */; };
+		2BEB595C2A877AD00089E607 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB595B2A877AD00089E607 /* TrendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B32D47F2A8CDB8200874689 /* TrandData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandData.swift; sourceTree = "<group>"; };
+		2B32D47F2A8CDB8200874689 /* TrendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendData.swift; sourceTree = "<group>"; };
 		2BAC1A332A878B1000A4C117 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
-		2BAC1A352A878B7000A4C117 /* TrandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandTableViewCell.swift; sourceTree = "<group>"; };
+		2BAC1A352A878B7000A4C117 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
 		2BAC1A3C2A8A58D600A4C117 /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
 		2BAC1A3E2A8A58E000A4C117 /* CreditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTableViewCell.swift; sourceTree = "<group>"; };
 		2BAC1A402A8A58FE00A4C117 /* CreditAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditAPIManager.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		2BEB594F2A8775230089E607 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2BEB59512A8775E90089E607 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		2BEB59532A8776590089E607 /* TrandAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandAPIManager.swift; sourceTree = "<group>"; };
-		2BEB595B2A877AD00089E607 /* TrandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrandViewController.swift; sourceTree = "<group>"; };
+		2BEB595B2A877AD00089E607 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,13 +88,13 @@
 				2BEB593D2A87750B0089E607 /* SceneDelegate.swift */,
 				2BEB593F2A87750B0089E607 /* ViewController.swift */,
 				2BEB59412A87750B0089E607 /* Main.storyboard */,
-				2BEB595B2A877AD00089E607 /* TrandViewController.swift */,
-				2BAC1A352A878B7000A4C117 /* TrandTableViewCell.swift */,
+				2BEB595B2A877AD00089E607 /* TrendViewController.swift */,
+				2BAC1A352A878B7000A4C117 /* TrendTableViewCell.swift */,
 				2BAC1A3C2A8A58D600A4C117 /* CreditViewController.swift */,
 				2BAC1A3E2A8A58E000A4C117 /* CreditTableViewCell.swift */,
 				2BEB59532A8776590089E607 /* TrandAPIManager.swift */,
 				2BAC1A402A8A58FE00A4C117 /* CreditAPIManager.swift */,
-				2B32D47F2A8CDB8200874689 /* TrandData.swift */,
+				2B32D47F2A8CDB8200874689 /* TrendData.swift */,
 				2BAC1A422A8A681100A4C117 /* CreditData.swift */,
 				2BEB59512A8775E90089E607 /* APIKey.swift */,
 				2BAC1A332A878B1000A4C117 /* ReusableViewProtocol.swift */,
@@ -188,19 +188,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BEB595C2A877AD00089E607 /* TrandViewController.swift in Sources */,
+				2BEB595C2A877AD00089E607 /* TrendViewController.swift in Sources */,
 				2BEB59542A8776590089E607 /* TrandAPIManager.swift in Sources */,
 				2BAC1A3F2A8A58E000A4C117 /* CreditTableViewCell.swift in Sources */,
 				2BEB59402A87750B0089E607 /* ViewController.swift in Sources */,
 				2BAC1A432A8A681100A4C117 /* CreditData.swift in Sources */,
-				2B32D4802A8CDB8200874689 /* TrandData.swift in Sources */,
+				2B32D4802A8CDB8200874689 /* TrendData.swift in Sources */,
 				2BAC1A412A8A58FE00A4C117 /* CreditAPIManager.swift in Sources */,
 				2BEB593C2A87750B0089E607 /* AppDelegate.swift in Sources */,
 				2BAC1A342A878B1000A4C117 /* ReusableViewProtocol.swift in Sources */,
 				2BAC1A3D2A8A58D600A4C117 /* CreditViewController.swift in Sources */,
 				2BEB59522A8775E90089E607 /* APIKey.swift in Sources */,
 				2BEB593E2A87750B0089E607 /* SceneDelegate.swift in Sources */,
-				2BAC1A362A878B7000A4C117 /* TrandTableViewCell.swift in Sources */,
+				2BAC1A362A878B7000A4C117 /* TrendTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
