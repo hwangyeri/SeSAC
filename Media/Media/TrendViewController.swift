@@ -1,5 +1,5 @@
 //
-//  TrandViewController.swift
+//  TrendViewController.swift
 //  Media
 //
 //  Created by 황예리 on 2023/08/12.
@@ -10,23 +10,23 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-struct Trand {
+struct Trend {
     var voteAverage: Int
     var title: String
 }
 
-class TrandViewController: UIViewController {
+class TrendViewController: UIViewController {
     
-    @IBOutlet var trandTableView: UITableView!
+    @IBOutlet var trendTableView: UITableView!
     
-    var movieList: [Trand] = []
+    var movieList: [Trend] = []
     var result: BoxOffice?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        trandTableView.delegate = self
-        trandTableView.dataSource = self
+        trendTableView.delegate = self
+        trendTableView.dataSource = self
         
         callRequest()
     }
@@ -44,19 +44,19 @@ class TrandViewController: UIViewController {
                 guard let value = response.value else { return }
                 print(value)
                 self.result = response.value
-                self.trandTableView.reloadData()
+                self.trendTableView.reloadData()
             }
     }
 }
 
-extension TrandViewController: UITableViewDelegate, UITableViewDataSource {
+extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return result?.results.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TrandTableViewCell.identifier) as? TrandTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TrendTableViewCell.identifier) as? TrendTableViewCell else { return UITableViewCell() }
         
         guard !(result!.results.isEmpty) else {
             return cell
@@ -70,8 +70,8 @@ extension TrandViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            guard let trandCell = tableView.cellForRow(at: indexPath) as? TrandTableViewCell,
-            let creditViewController = storyboard?.instantiateViewController(withIdentifier: "CreditViewController") as? CreditViewController else { return }
+            guard let trandCell = tableView.cellForRow(at: indexPath) as? TrendTableViewCell,
+                  let creditViewController = storyboard?.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
     
             present(creditViewController, animated: true, completion: nil)
         }

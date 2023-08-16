@@ -1,19 +1,19 @@
 //
-//  TrandAPIManager.swift
+//  TrendAPIManager.swift
 //  Media
 //
 //  Created by 황예리 on 2023/08/12.
 //
 
-//import Foundation
-//import Alamofire
-//import SwiftyJSON
-//
-////genreAPI - https://api.themoviedb.org/3/genre/movie/list?api_key=\()
-//
-//class TrandAPIManager {
+import Foundation
+import Alamofire
+import SwiftyJSON
+
+//genreAPI - https://api.themoviedb.org/3/genre/movie/list?api_key=\()
+
+//class TrendAPIManager {
 //    
-//    static let shared = TrandAPIManager()
+//    static let shared = TrendAPIManager()
 //    
 //    private init() { }
 //

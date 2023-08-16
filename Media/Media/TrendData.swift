@@ -1,5 +1,5 @@
 //
-//  TrandData.swift
+//  TrendData.swift
 //  Media
 //
 //  Created by 황예리 on 2023/08/16.

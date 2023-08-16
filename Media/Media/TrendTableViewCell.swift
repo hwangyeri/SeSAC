@@ -1,5 +1,5 @@
 //
-//  TrandTableViewCell.swift
+//  TrendTableViewCell.swift
 //  Media
 //
 //  Created by 황예리 on 2023/08/12.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrandTableViewCell: UITableViewCell {
+class TrendTableViewCell: UITableViewCell {
 
     @IBOutlet var listButton: UIButton!
     @IBOutlet var searchButton: UIButton!
