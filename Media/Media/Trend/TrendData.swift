@@ -23,11 +23,11 @@ struct BoxOffice: Codable {
 // MARK: - Result
 struct Result: Codable {
     let adult: Bool
-    let backdropPath: String
+    let backdropPath, posterPath: String?
     let id: Int
     let title: String
-    let originalLanguage: OriginalLanguage
-    let originalTitle, overview, posterPath: String
+    let originalLanguage: String
+    let originalTitle, overview: String
     let mediaType: MediaType
     let genreIDS: [Int]
     let popularity: Double

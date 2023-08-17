@@ -9,8 +9,6 @@ import UIKit
 
 class TrendTableViewCell: UITableViewCell {
 
-    @IBOutlet var listButton: UIButton!
-    @IBOutlet var searchButton: UIButton!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var genreLabel: UILabel!
     @IBOutlet var squareView: UIView!
@@ -26,10 +24,6 @@ class TrendTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        listButton.setImage(UIImage(systemName: "list.triangle"), for: .normal)
-        listButton.setTitle("", for: .normal)
-        searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-        searchButton.setTitle("", for: .normal)
         
         dateLabel.font = .systemFont(ofSize: 13)
         dateLabel.textColor = .darkGray
