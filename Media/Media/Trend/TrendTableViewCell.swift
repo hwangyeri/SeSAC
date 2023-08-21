@@ -16,6 +16,7 @@ class TrendTableViewCell: UITableViewCell {
     @IBOutlet var shareButton: UIButton!
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var rateNumberLabel: UILabel!
+    @IBOutlet var originalTitleLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var castLabel: UILabel!
     @IBOutlet var dividerView: UIView!
@@ -59,8 +60,10 @@ class TrendTableViewCell: UITableViewCell {
         rateNumberLabel.backgroundColor = .white
         rateNumberLabel.textAlignment = .center
         
-        titleLabel.font = .boldSystemFont(ofSize: 17)
-        titleLabel.textColor = .black
+        originalTitleLabel.font = .boldSystemFont(ofSize: 17)
+        originalTitleLabel.textColor = .black
+        titleLabel.font = .boldSystemFont(ofSize: 15)
+        titleLabel.textColor = .darkGray
         castLabel.font = .systemFont(ofSize: 14)
         castLabel.textColor = .darkGray
         

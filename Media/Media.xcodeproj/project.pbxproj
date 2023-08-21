@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		2B32D4802A8CDB8200874689 /* TrendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D47F2A8CDB8200874689 /* TrendData.swift */; };
 		2B32D49C2A8E2C7B00874689 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D49B2A8E2C7B00874689 /* SearchViewController.swift */; };
+		2B32D4AD2A8F5C2300874689 /* SegmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4AC2A8F5C2300874689 /* SegmentViewController.swift */; };
+		2B32D4DA2A93745E00874689 /* SimilarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4D82A93745E00874689 /* SimilarCollectionViewCell.swift */; };
+		2B32D4DB2A93745E00874689 /* SimilarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D4D92A93745E00874689 /* SimilarCollectionViewCell.xib */; };
+		2B32D4E22A93748A00874689 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4E02A93748A00874689 /* VideoCollectionViewCell.swift */; };
+		2B32D4E32A93748A00874689 /* VideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D4E12A93748A00874689 /* VideoCollectionViewCell.xib */; };
+		2B32D4E52A9377BA00874689 /* SimilarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4E42A9377BA00874689 /* SimilarData.swift */; };
+		2B32D4E72A9378A400874689 /* VideoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4E62A9378A400874689 /* VideoData.swift */; };
+		2B32D4E92A93795F00874689 /* SimilarAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4E82A93795F00874689 /* SimilarAPIManager.swift */; };
+		2B32D4EB2A937AA600874689 /* VideoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4EA2A937AA600874689 /* VideoAPIManager.swift */; };
 		2BAC1A342A878B1000A4C117 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A332A878B1000A4C117 /* ReusableViewProtocol.swift */; };
 		2BAC1A362A878B7000A4C117 /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A352A878B7000A4C117 /* TrendTableViewCell.swift */; };
 		2BAC1A392A87A0B200A4C117 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2BAC1A382A87A0B200A4C117 /* Kingfisher */; };
@@ -33,6 +42,15 @@
 /* Begin PBXFileReference section */
 		2B32D47F2A8CDB8200874689 /* TrendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendData.swift; sourceTree = "<group>"; };
 		2B32D49B2A8E2C7B00874689 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2B32D4AC2A8F5C2300874689 /* SegmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewController.swift; sourceTree = "<group>"; };
+		2B32D4D82A93745E00874689 /* SimilarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarCollectionViewCell.swift; sourceTree = "<group>"; };
+		2B32D4D92A93745E00874689 /* SimilarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarCollectionViewCell.xib; sourceTree = "<group>"; };
+		2B32D4E02A93748A00874689 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		2B32D4E12A93748A00874689 /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
+		2B32D4E42A9377BA00874689 /* SimilarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarData.swift; sourceTree = "<group>"; };
+		2B32D4E62A9378A400874689 /* VideoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoData.swift; sourceTree = "<group>"; };
+		2B32D4E82A93795F00874689 /* SimilarAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarAPIManager.swift; sourceTree = "<group>"; };
+		2B32D4EA2A937AA600874689 /* VideoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAPIManager.swift; sourceTree = "<group>"; };
 		2BAC1A332A878B1000A4C117 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		2BAC1A352A878B7000A4C117 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
 		2BAC1A3C2A8A58D600A4C117 /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +123,38 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		2B32D4AB2A8F5BBA00874689 /* Segment */ = {
+			isa = PBXGroup;
+			children = (
+				2B32D4ED2A937B2000874689 /* Segment Data */,
+				2B32D4EC2A937B0100874689 /* Segment Network */,
+				2B32D4AC2A8F5C2300874689 /* SegmentViewController.swift */,
+				2B32D4D82A93745E00874689 /* SimilarCollectionViewCell.swift */,
+				2B32D4D92A93745E00874689 /* SimilarCollectionViewCell.xib */,
+				2B32D4E02A93748A00874689 /* VideoCollectionViewCell.swift */,
+				2B32D4E12A93748A00874689 /* VideoCollectionViewCell.xib */,
+			);
+			path = Segment;
+			sourceTree = "<group>";
+		};
+		2B32D4EC2A937B0100874689 /* Segment Network */ = {
+			isa = PBXGroup;
+			children = (
+				2B32D4E82A93795F00874689 /* SimilarAPIManager.swift */,
+				2B32D4EA2A937AA600874689 /* VideoAPIManager.swift */,
+			);
+			path = "Segment Network";
+			sourceTree = "<group>";
+		};
+		2B32D4ED2A937B2000874689 /* Segment Data */ = {
+			isa = PBXGroup;
+			children = (
+				2B32D4E42A9377BA00874689 /* SimilarData.swift */,
+				2B32D4E62A9378A400874689 /* VideoData.swift */,
+			);
+			path = "Segment Data";
+			sourceTree = "<group>";
+		};
 		2BEB592F2A87750B0089E607 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +174,7 @@
 		2BEB593A2A87750B0089E607 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				2B32D4AB2A8F5BBA00874689 /* Segment */,
 				2BEB593B2A87750B0089E607 /* AppDelegate.swift */,
 				2BEB593D2A87750B0089E607 /* SceneDelegate.swift */,
 				2BEB593F2A87750B0089E607 /* ViewController.swift */,
@@ -209,6 +260,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B32D4E32A93748A00874689 /* VideoCollectionViewCell.xib in Resources */,
+				2B32D4DB2A93745E00874689 /* SimilarCollectionViewCell.xib in Resources */,
 				2BEB59502A8775230089E607 /* .gitignore in Resources */,
 				2BEB59482A87750B0089E607 /* LaunchScreen.storyboard in Resources */,
 				2BEB59452A87750B0089E607 /* Assets.xcassets in Resources */,
@@ -223,17 +276,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B32D4E92A93795F00874689 /* SimilarAPIManager.swift in Sources */,
 				2BEB595C2A877AD00089E607 /* TrendViewController.swift in Sources */,
+				2B32D4E52A9377BA00874689 /* SimilarData.swift in Sources */,
 				2BEB59542A8776590089E607 /* TrendAPIManager.swift in Sources */,
+				2B32D4DA2A93745E00874689 /* SimilarCollectionViewCell.swift in Sources */,
 				2BAC1A3F2A8A58E000A4C117 /* CreditTableViewCell.swift in Sources */,
 				2BEB59402A87750B0089E607 /* ViewController.swift in Sources */,
 				2BAC1A432A8A681100A4C117 /* CreditData.swift in Sources */,
 				2B32D4802A8CDB8200874689 /* TrendData.swift in Sources */,
 				2BAC1A412A8A58FE00A4C117 /* CreditAPIManager.swift in Sources */,
+				2B32D4AD2A8F5C2300874689 /* SegmentViewController.swift in Sources */,
+				2B32D4E72A9378A400874689 /* VideoData.swift in Sources */,
 				2BEB593C2A87750B0089E607 /* AppDelegate.swift in Sources */,
+				2B32D4EB2A937AA600874689 /* VideoAPIManager.swift in Sources */,
 				2B32D49C2A8E2C7B00874689 /* SearchViewController.swift in Sources */,
 				2BAC1A342A878B1000A4C117 /* ReusableViewProtocol.swift in Sources */,
 				2BAC1A3D2A8A58D600A4C117 /* CreditViewController.swift in Sources */,
+				2B32D4E22A93748A00874689 /* VideoCollectionViewCell.swift in Sources */,
 				2BEB59522A8775E90089E607 /* APIKey.swift in Sources */,
 				2BEB593E2A87750B0089E607 /* SceneDelegate.swift in Sources */,
 				2BAC1A362A878B7000A4C117 /* TrendTableViewCell.swift in Sources */,

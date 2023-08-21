@@ -25,7 +25,7 @@ class TrendViewController: UIViewController {
         
         TrendAPIManager.shared.callRequest { data in
             self.trendList = data
-            print("*****list.data success", self.trendList)
+            //print("*****list.data success", self.trendList)
             self.trendTableView.reloadData()
         } failure: {
             print(#function, "error")
@@ -85,7 +85,8 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.mainImageView.kf.setImage(with: URL(string: url))
         cell.dateLabel.text = item.releaseDate
-        cell.titleLabel.text = item.originalTitle
+        cell.originalTitleLabel.text = item.originalTitle
+        cell.titleLabel.text = item.title
         cell.rateNumberLabel.text = "\(item.voteAverage)"
         cell.castLabel.text = "castAPI 넣어야함"
         

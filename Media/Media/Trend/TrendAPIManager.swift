@@ -7,7 +7,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 //genreAPI - https://api.themoviedb.org/3/genre/movie/list?api_key=\()
 
