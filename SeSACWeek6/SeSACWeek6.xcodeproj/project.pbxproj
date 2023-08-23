@@ -19,6 +19,8 @@
 		2B32D4F72A94793300874689 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4F62A94793300874689 /* LocationViewController.swift */; };
 		2B32D4FA2A94EB9B00874689 /* Examlple1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4F92A94EB9B00874689 /* Examlple1ViewController.swift */; };
 		2B32D4FC2A94F14500874689 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4FB2A94F14500874689 /* Example2ViewController.swift */; };
+		2B32D5002A95D19500874689 /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4FF2A95D19500874689 /* TheaterViewController.swift */; };
+		2B32D5022A95D1F000874689 /* TheaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5012A95D1F000874689 /* TheaterData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		2B32D4F62A94793300874689 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2B32D4F92A94EB9B00874689 /* Examlple1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Examlple1ViewController.swift; sourceTree = "<group>"; };
 		2B32D4FB2A94F14500874689 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
+		2B32D4FF2A95D19500874689 /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
+		2B32D5012A95D1F000874689 /* TheaterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		2B32D4C32A930A1600874689 /* SeSACWeek6 */ = {
 			isa = PBXGroup;
 			children = (
+				2B32D4FE2A95D16200874689 /* MapKit */,
 				2B32D4F82A94E95B00874689 /* Codebase */,
 				2B32D4F12A94464900874689 /* Test */,
 				2B32D4C42A930A1600874689 /* AppDelegate.swift */,
@@ -98,6 +103,15 @@
 				2B32D4FB2A94F14500874689 /* Example2ViewController.swift */,
 			);
 			path = Codebase;
+			sourceTree = "<group>";
+		};
+		2B32D4FE2A95D16200874689 /* MapKit */ = {
+			isa = PBXGroup;
+			children = (
+				2B32D5012A95D1F000874689 /* TheaterData.swift */,
+				2B32D4FF2A95D19500874689 /* TheaterViewController.swift */,
+			);
+			path = MapKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +196,9 @@
 				2B32D4C92A930A1600874689 /* ViewController.swift in Sources */,
 				2B32D4F72A94793300874689 /* LocationViewController.swift in Sources */,
 				2B32D4FC2A94F14500874689 /* Example2ViewController.swift in Sources */,
+				2B32D5022A95D1F000874689 /* TheaterData.swift in Sources */,
 				2B32D4FA2A94EB9B00874689 /* Examlple1ViewController.swift in Sources */,
+				2B32D5002A95D19500874689 /* TheaterViewController.swift in Sources */,
 				2B32D4C52A930A1600874689 /* AppDelegate.swift in Sources */,
 				2B32D4C72A930A1600874689 /* SceneDelegate.swift in Sources */,
 			);
