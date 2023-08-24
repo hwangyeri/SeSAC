@@ -21,6 +21,8 @@ class TheaterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
+        
         locationManager.delegate = self
 
         view.addSubview(mapView)
@@ -33,14 +35,14 @@ class TheaterViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftButton
         navigationItem.leftBarButtonItem?.tintColor = .darkGray
         navigationItem.leftBarButtonItem?.image = UIImage(systemName: "chevron.left")
-        
+
         let rightButton = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterButton))
         navigationItem.rightBarButtonItem = rightButton
         navigationItem.rightBarButtonItem?.tintColor = .darkGray
         
         checkDeviceLocationAuthrization()
         
-        let center = CLLocationCoordinate2D(latitude: 37.481250, longitude: 126.952709)
+        let center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270) // 새싹 영등포 캠퍼스
         setRegionAndAnnotation(center: center)
         setAnnotation(type: 0)
     }
@@ -52,63 +54,70 @@ class TheaterViewController: UIViewController {
     @objc func filterButton() {
         let actionSheet = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
         
-        actionSheet.addAction(UIAlertAction(title: "메가박스", style: .default) { _ in
-            self.filterMapPins(filterType: 1)
-        })
         actionSheet.addAction(UIAlertAction(title: "롯데시네마", style: .default) { _ in
-            self.filterMapPins(filterType: 2)
+            self.setAnnotation(type: 3)
+        })
+        actionSheet.addAction(UIAlertAction(title: "메가박스", style: .default) { _ in
+            self.setAnnotation(type: 2)
         })
         actionSheet.addAction(UIAlertAction(title: "CGV", style: .default) { _ in
-            self.filterMapPins(filterType: 3)
+            self.setAnnotation(type: 1)
         })
         actionSheet.addAction(UIAlertAction(title: "전체보기", style: .default) { _ in
-            self.filterMapPins(filterType: 0)
+            self.setAnnotation(type: 0)
         })
         actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel))
         
         self.present(actionSheet, animated: true, completion: nil)
     }
     
-    func filterMapPins(filterType: Int) {
-        mapView.removeAnnotations(mapView.annotations)
-        
-        switch filterType {
-        case 0: // 전체보기
-            setAnnotation(type: 0)
-        case 1: // 메가박스
-            setAnnotation(type: 1)
-        case 2: // 롯데시네마
-            setAnnotation(type: 2)
-        case 3: // CGV
-            setAnnotation(type: 3)
-        default:
-            break
-        }
-    }
-    
     func setAnnotation(type: Int) {
         let theaterListIndex = theaterList.mapAnnotations
         
-        var annotations: [MKPointAnnotation] = []
+        let annotation1 = MKPointAnnotation()
+        annotation1.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[0].latitude, longitude: theaterListIndex[0].longitude)
 
-        for index in theaterListIndex.indices {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[index].latitude, longitude: theaterListIndex[index].longitude)
-            annotations.append(annotation)
+        let annotation2 = MKPointAnnotation()
+        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[1].latitude, longitude: theaterListIndex[1].longitude)
+        
+        let annotation3 = MKPointAnnotation()
+        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[2].latitude, longitude: theaterListIndex[2].longitude)
+        
+        let annotation4 = MKPointAnnotation()
+        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[3].latitude, longitude: theaterListIndex[3].longitude)
+        
+        let annotation5 = MKPointAnnotation()
+        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[4].latitude, longitude: theaterListIndex[4].longitude)
+        
+        let annotation6 = MKPointAnnotation()
+        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[5].latitude, longitude: theaterListIndex[5].longitude)
+        
+        let annotationList = [annotation1, annotation2, annotation3, annotation4, annotation5, annotation6]
+        
+        if type == 0 { // 전체보기
+            mapView.addAnnotations(annotationList)
+        } else if type == 1 { // CGV
+            mapView.removeAnnotations(mapView.annotations)
+            mapView.addAnnotations([annotation5, annotation6])
+        } else if type == 2 {  // 메가박스
+            mapView.removeAnnotations(mapView.annotations)
+            mapView.addAnnotations([annotation3, annotation4])
+        } else if type == 3 { // 롯데시네마
+            mapView.removeAnnotations(mapView.annotations)
+            mapView.addAnnotations([annotation1, annotation2])
         }
         
-        mapView.addAnnotations(annotations)
-        print("-----", mapView.annotations)
+        print("--- annotations ---", mapView.annotations)
     }
     
     func setRegionAndAnnotation(center: CLLocationCoordinate2D) {
-        print("=========", #function)
+        print("==== Region =====", #function)
         
-        let region = MKCoordinateRegion(center: center, latitudinalMeters: 300, longitudinalMeters: 300)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()
-        annotation.title = "우리집"
+        annotation.title = "나의 현재 위치"
         annotation.coordinate = center
         mapView.addAnnotation(annotation)
     }
@@ -188,7 +197,7 @@ class TheaterViewController: UIViewController {
 extension TheaterViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("=== locations ===", locations)
+        print("=== 사용자 위치 가져오기 성공, 새로운 위치가 생기면 알려줌 ===", locations)
         
         if let coordinate = locations.last?.coordinate {
             print(coordinate)
@@ -199,7 +208,7 @@ extension TheaterViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        
+        print("=== 사용자 위치 가져오기 실패 ===", error)
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

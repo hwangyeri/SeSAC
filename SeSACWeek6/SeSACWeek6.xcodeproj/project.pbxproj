@@ -25,6 +25,7 @@
 		2B32D50C2A971CE700874689 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D50B2A971CE700874689 /* CustomViewController.swift */; };
 		2B32D50E2A971EA700874689 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D50D2A971EA700874689 /* BlackRadiusTextField.swift */; };
 		2B32D5102A972A1B00874689 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D50F2A972A1B00874689 /* CustomTableViewController.swift */; };
+		2B32D5142A975B3F00874689 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5132A975B3F00874689 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		2B32D50B2A971CE700874689 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		2B32D50D2A971EA700874689 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		2B32D50F2A972A1B00874689 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		2B32D5132A975B3F00874689 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				2B32D5012A95D1F000874689 /* TheaterData.swift */,
 				2B32D4FF2A95D19500874689 /* TheaterViewController.swift */,
+				2B32D5132A975B3F00874689 /* MainViewController.swift */,
 			);
 			path = MapKit;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				2B32D5102A972A1B00874689 /* CustomTableViewController.swift in Sources */,
 				2B32D4FC2A94F14500874689 /* Example2ViewController.swift in Sources */,
 				2B32D5072A96F13F00874689 /* GenericViewController.swift in Sources */,
+				2B32D5142A975B3F00874689 /* MainViewController.swift in Sources */,
 				2B32D50C2A971CE700874689 /* CustomViewController.swift in Sources */,
 				2B32D50E2A971EA700874689 /* BlackRadiusTextField.swift in Sources */,
 				2B32D5022A95D1F000874689 /* TheaterData.swift in Sources */,
