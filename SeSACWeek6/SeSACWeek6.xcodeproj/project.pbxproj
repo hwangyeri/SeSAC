@@ -26,6 +26,13 @@
 		2B32D50E2A971EA700874689 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D50D2A971EA700874689 /* BlackRadiusTextField.swift */; };
 		2B32D5102A972A1B00874689 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D50F2A972A1B00874689 /* CustomTableViewController.swift */; };
 		2B32D5142A975B3F00874689 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5132A975B3F00874689 /* MainViewController.swift */; };
+		2B32D5172A97BFBA00874689 /* YELFLIXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5162A97BFBA00874689 /* YELFLIXViewController.swift */; };
+		2B32D5192A97C00800874689 /* JoinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5182A97C00800874689 /* JoinTextField.swift */; };
+		2B32D51E2A97C89E00874689 /* SB 어그로OTF L.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D51B2A97C89E00874689 /* SB 어그로OTF L.otf */; };
+		2B32D51F2A97C89E00874689 /* SB 어그로OTF M.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D51C2A97C89E00874689 /* SB 어그로OTF M.otf */; };
+		2B32D5202A97C89E00874689 /* SB 어그로OTF B.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D51D2A97C89E00874689 /* SB 어그로OTF B.otf */; };
+		2B32D5262A97D0EA00874689 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5252A97D0EA00874689 /* JoinViewController.swift */; };
+		2B32D5282A97D1AF00874689 /* topButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5272A97D1AF00874689 /* topButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,13 @@
 		2B32D50D2A971EA700874689 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		2B32D50F2A972A1B00874689 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		2B32D5132A975B3F00874689 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2B32D5162A97BFBA00874689 /* YELFLIXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YELFLIXViewController.swift; sourceTree = "<group>"; };
+		2B32D5182A97C00800874689 /* JoinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTextField.swift; sourceTree = "<group>"; };
+		2B32D51B2A97C89E00874689 /* SB 어그로OTF L.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SB 어그로OTF L.otf"; sourceTree = "<group>"; };
+		2B32D51C2A97C89E00874689 /* SB 어그로OTF M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SB 어그로OTF M.otf"; sourceTree = "<group>"; };
+		2B32D51D2A97C89E00874689 /* SB 어그로OTF B.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SB 어그로OTF B.otf"; sourceTree = "<group>"; };
+		2B32D5252A97D0EA00874689 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		2B32D5272A97D1AF00874689 /* topButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +96,8 @@
 		2B32D4C32A930A1600874689 /* SeSACWeek6 */ = {
 			isa = PBXGroup;
 			children = (
+				2B32D51A2A97C88400874689 /* Font */,
+				2B32D5152A97BF1D00874689 /* YELFLIX */,
 				2B32D50A2A971CB000874689 /* CustomView */,
 				2B32D5032A96F0FB00874689 /* Generic */,
 				2B32D4FE2A95D16200874689 /* MapKit */,
@@ -144,6 +160,27 @@
 				2B32D50F2A972A1B00874689 /* CustomTableViewController.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		2B32D5152A97BF1D00874689 /* YELFLIX */ = {
+			isa = PBXGroup;
+			children = (
+				2B32D5162A97BFBA00874689 /* YELFLIXViewController.swift */,
+				2B32D5252A97D0EA00874689 /* JoinViewController.swift */,
+				2B32D5182A97C00800874689 /* JoinTextField.swift */,
+				2B32D5272A97D1AF00874689 /* topButton.swift */,
+			);
+			path = YELFLIX;
+			sourceTree = "<group>";
+		};
+		2B32D51A2A97C88400874689 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				2B32D51D2A97C89E00874689 /* SB 어그로OTF B.otf */,
+				2B32D51B2A97C89E00874689 /* SB 어그로OTF L.otf */,
+				2B32D51C2A97C89E00874689 /* SB 어그로OTF M.otf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +248,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B32D4D12A930A1700874689 /* LaunchScreen.storyboard in Resources */,
+				2B32D51F2A97C89E00874689 /* SB 어그로OTF M.otf in Resources */,
+				2B32D5202A97C89E00874689 /* SB 어그로OTF B.otf in Resources */,
+				2B32D51E2A97C89E00874689 /* SB 어그로OTF L.otf in Resources */,
 				2B32D4CE2A930A1700874689 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B32D4F52A945CAB00874689 /* TextViewController.swift in Sources */,
+				2B32D5282A97D1AF00874689 /* topButton.swift in Sources */,
 				2B32D4F32A94467B00874689 /* SnapViewController.swift in Sources */,
 				2B32D4C92A930A1600874689 /* ViewController.swift in Sources */,
 				2B32D4F72A94793300874689 /* LocationViewController.swift in Sources */,
@@ -235,7 +276,10 @@
 				2B32D5022A95D1F000874689 /* TheaterData.swift in Sources */,
 				2B32D4FA2A94EB9B00874689 /* Examlple1ViewController.swift in Sources */,
 				2B32D5092A96F16600874689 /* Extension+UIViewController.swift in Sources */,
+				2B32D5172A97BFBA00874689 /* YELFLIXViewController.swift in Sources */,
 				2B32D5002A95D19500874689 /* TheaterViewController.swift in Sources */,
+				2B32D5192A97C00800874689 /* JoinTextField.swift in Sources */,
+				2B32D5262A97D0EA00874689 /* JoinViewController.swift in Sources */,
 				2B32D4C52A930A1600874689 /* AppDelegate.swift in Sources */,
 				2B32D4C72A930A1600874689 /* SceneDelegate.swift in Sources */,
 			);

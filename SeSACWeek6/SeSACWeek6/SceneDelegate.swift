@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 스토리보드 없이 코드베이스로 구현할 수 있게 셋팅
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let vc = MainViewController()
+        let vc = YELFLIXViewController()
         let nav = UINavigationController(rootViewController: vc)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
