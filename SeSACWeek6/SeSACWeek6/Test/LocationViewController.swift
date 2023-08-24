@@ -62,6 +62,8 @@ class LocationViewController: UIViewController {
     
     @objc func cafeButtonClicked() {
         
+        let num2 = Int.random(in: 1...100) //Scope
+        
         setAnnotation(type: 1) // 1 >
         print("aaaaa")
     }
@@ -79,7 +81,8 @@ class LocationViewController: UIViewController {
         if type == 0 { //viewDidLoad
             mapView.addAnnotations([annotation1, annotation2])
         } else if type == 1 {
-            mapView.removeAnnotations(mapView.annotations)
+            //mapView.removeAnnotation(annotation1) // 동작 X // Scope, 윗줄의 annotation1 과 다름
+            mapView.removeAnnotations(mapView.annotations) // 동작 O
             mapView.addAnnotations([annotation2])
         }
     }

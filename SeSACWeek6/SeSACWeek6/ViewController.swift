@@ -82,10 +82,12 @@ class ViewController: UIViewController {
     
     @objc func signButtonClicked() {
         
-        let vc = LocationViewController()
-        let nav = UINavigationController(rootViewController: vc)
+//        let vc = TextViewController()
+//        let nav = UINavigationController(rootViewController: vc)
+//
+//        present(nav, animated: true)
         
-        present(nav, animated: true)
+        transition(viewController: GenericViewController.self, storyboard: "Main", style: .presentNavigation) // 클래스의 인스턴스를 넘겨주는게 아니라 클래스 그 자체를 넘겨주는 것
     }
 
 
