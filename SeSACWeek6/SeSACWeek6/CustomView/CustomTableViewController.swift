@@ -15,9 +15,22 @@ struct Sample {
 
 class CustomTableViewController: UIViewController {
     
-    let tableView = {
+    //호출 연산자를 붙여서 viewDidLoad 보다 클로저 구민이 먼저 실행됨
+    //CustomTableViewController 인스턴스 생성 직전에 클러저 구문이 우선 실행
+    lazy var tableView = {
         let view = UITableView()
         view.rowHeight = UITableView.automaticDimension //1.
+        view.delegate = self //자기 자신의 인스턴스
+        view.dataSource = self
+        //uinib - xib
+        view.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell") // xib 안쓰고 클래스 그 자체를 테이블뷰에 등록
+        return view
+    }()
+    
+    let imageView = {
+        let view = PosterImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        // .zero == CGRect(x: 0, y: 0, width: <#T##Int#>, height: <#T##Int#>)
+        // 이미지 뷰는 하위 뷰를 가지고 있어서 계층 구조상 필요한 코드지만 어차피 추후에 제약조건으로 이미지 크기 다시 잡음
         return view
     }()
     
@@ -33,10 +46,13 @@ class CustomTableViewController: UIViewController {
             make.edges.equalToSuperview() // 네가지 면에 0,0,0,0
         }
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        //uinib - xib
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customCell")
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            print("constraints")
+            make.size.equalTo(200)
+            make.center.equalTo(view)
+        }
+        
     }
     
 
@@ -50,10 +66,11 @@ extension CustomTableViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print(#function)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
         let row = list[indexPath.row]
-        cell.textLabel?.text = row.text
-        cell.textLabel?.numberOfLines = row.isExpand ? 0 : 2 //2.
+        cell.label.text = row.text
+        cell.label.numberOfLines = row.isExpand ? 0 : 2 //2.
+        
         return cell
     }
     

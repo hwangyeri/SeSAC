@@ -33,6 +33,9 @@
 		2B32D5202A97C89E00874689 /* SB 어그로OTF B.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D51D2A97C89E00874689 /* SB 어그로OTF B.otf */; };
 		2B32D5262A97D0EA00874689 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5252A97D0EA00874689 /* JoinViewController.swift */; };
 		2B32D5282A97D1AF00874689 /* topButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5272A97D1AF00874689 /* topButton.swift */; };
+		2B32D52A2A982AEF00874689 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5292A982AEF00874689 /* CustomTableViewCell.swift */; };
+		2B32D52C2A9840C000874689 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D52B2A9840C000874689 /* PosterImageView.swift */; };
+		2B32D52F2A984B6900874689 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D52E2A984B6900874689 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		2B32D51D2A97C89E00874689 /* SB 어그로OTF B.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SB 어그로OTF B.otf"; sourceTree = "<group>"; };
 		2B32D5252A97D0EA00874689 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		2B32D5272A97D1AF00874689 /* topButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topButton.swift; sourceTree = "<group>"; };
+		2B32D5292A982AEF00874689 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		2B32D52B2A9840C000874689 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
+		2B32D52E2A984B6900874689 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 		2B32D4C32A930A1600874689 /* SeSACWeek6 */ = {
 			isa = PBXGroup;
 			children = (
+				2B32D52D2A984B0F00874689 /* Onboarding */,
 				2B32D51A2A97C88400874689 /* Font */,
 				2B32D5152A97BF1D00874689 /* YELFLIX */,
 				2B32D50A2A971CB000874689 /* CustomView */,
@@ -158,6 +165,8 @@
 				2B32D50B2A971CE700874689 /* CustomViewController.swift */,
 				2B32D50D2A971EA700874689 /* BlackRadiusTextField.swift */,
 				2B32D50F2A972A1B00874689 /* CustomTableViewController.swift */,
+				2B32D5292A982AEF00874689 /* CustomTableViewCell.swift */,
+				2B32D52B2A9840C000874689 /* PosterImageView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -181,6 +190,14 @@
 				2B32D51C2A97C89E00874689 /* SB 어그로OTF M.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		2B32D52D2A984B0F00874689 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2B32D52E2A984B6900874689 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +282,8 @@
 				2B32D4F52A945CAB00874689 /* TextViewController.swift in Sources */,
 				2B32D5282A97D1AF00874689 /* topButton.swift in Sources */,
 				2B32D4F32A94467B00874689 /* SnapViewController.swift in Sources */,
+				2B32D52A2A982AEF00874689 /* CustomTableViewCell.swift in Sources */,
+				2B32D52F2A984B6900874689 /* OnboardingViewController.swift in Sources */,
 				2B32D4C92A930A1600874689 /* ViewController.swift in Sources */,
 				2B32D4F72A94793300874689 /* LocationViewController.swift in Sources */,
 				2B32D5102A972A1B00874689 /* CustomTableViewController.swift in Sources */,
@@ -280,6 +299,7 @@
 				2B32D5002A95D19500874689 /* TheaterViewController.swift in Sources */,
 				2B32D5192A97C00800874689 /* JoinTextField.swift in Sources */,
 				2B32D5262A97D0EA00874689 /* JoinViewController.swift in Sources */,
+				2B32D52C2A9840C000874689 /* PosterImageView.swift in Sources */,
 				2B32D4C52A930A1600874689 /* AppDelegate.swift in Sources */,
 				2B32D4C72A930A1600874689 /* SceneDelegate.swift in Sources */,
 			);
