@@ -40,10 +40,13 @@ protocol ExampleProtocol {
 
 class Mobile: ExampleProtocol {
     
+    let name: String
+    
     //required: 프로토콜애서 생성된 경우 사용하는 키워드
     //required Initializer
     required init(name: String) {
-        
+        self.name = name
+        print("Mobile Init")
     }
     
     

@@ -28,8 +28,8 @@ class CustomTableViewController: UIViewController {
     }()
     
     let imageView = {
-        let view = PosterImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        // .zero == CGRect(x: 0, y: 0, width: <#T##Int#>, height: <#T##Int#>)
+        let view = PosterImageView(frame: .zero)
+        // .zero == CGRect(x: 0, y: 0, width: 100, height: 100)
         // 이미지 뷰는 하위 뷰를 가지고 있어서 계층 구조상 필요한 코드지만 어차피 추후에 제약조건으로 이미지 크기 다시 잡음
         return view
     }()

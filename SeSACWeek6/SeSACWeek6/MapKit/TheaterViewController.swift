@@ -31,91 +31,87 @@ class TheaterViewController: UIViewController {
             make.horizontalEdges.equalTo(view).inset(10)
         }
         
-        let leftButton = UIBarButtonItem(title: "Main", style: .plain, target: self, action: #selector(backButton))
+        let leftButton = UIBarButtonItem(title: "Main", style: .plain, target: self, action: #selector(backButtonClicked))
         navigationItem.leftBarButtonItem = leftButton
         navigationItem.leftBarButtonItem?.tintColor = .darkGray
         navigationItem.leftBarButtonItem?.image = UIImage(systemName: "chevron.left")
 
-        let rightButton = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterButton))
+        let rightButton = UIBarButtonItem(title: "Filter", style: .plain, target: self, action: #selector(filterButtonClicked))
         navigationItem.rightBarButtonItem = rightButton
         navigationItem.rightBarButtonItem?.tintColor = .darkGray
         
         checkDeviceLocationAuthrization()
         
-        let center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270) // 새싹 영등포 캠퍼스
-        setRegionAndAnnotation(center: center)
-        setAnnotation(type: 0)
+        let sesacCenter = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270) // 새싹 영등포 캠퍼스
+        setRegionAndAnnotation(center: sesacCenter)
+//        let center = CLLocationCoordinate2D
+//        setRegionAndAnnotation(center: center)
     }
     
-    @objc func backButton() {
+    @objc func backButtonClicked() {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func filterButton() {
-        let actionSheet = UIAlertController(title: .none, message: .none, preferredStyle: .actionSheet)
+    @objc func filterButtonClicked() { // Filter 버튼 클릭 시 Alert Present
         
-        actionSheet.addAction(UIAlertAction(title: "롯데시네마", style: .default) { _ in
-            self.setAnnotation(type: 3)
-        })
-        actionSheet.addAction(UIAlertAction(title: "메가박스", style: .default) { _ in
-            self.setAnnotation(type: 2)
-        })
-        actionSheet.addAction(UIAlertAction(title: "CGV", style: .default) { _ in
-            self.setAnnotation(type: 1)
-        })
-        actionSheet.addAction(UIAlertAction(title: "전체보기", style: .default) { _ in
-            self.setAnnotation(type: 0)
-        })
-        actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel))
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        self.present(actionSheet, animated: true, completion: nil)
+        let actionLotteCinema = UIAlertAction(title: "롯데 시네마", style: .default) { _ in
+            self.filterAnnotation(keyword: "롯데시네마")
+        }
+        
+        let actionMegaBox = UIAlertAction(title: "메가박스", style: .default) { _ in
+            self.filterAnnotation(keyword: "메가박스")
+        }
+        
+        let actionCGV = UIAlertAction(title: "CGV", style: .default) { _ in
+            self.filterAnnotation(keyword: "CGV")
+        }
+        
+        let actionShowAll = UIAlertAction(title: "전체보기", style: .default) { _ in
+            self.filterAnnotation(keyword: "전체보기")
+        }
+        
+        let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        actionSheetController.addAction(actionLotteCinema)
+        actionSheetController.addAction(actionMegaBox)
+        actionSheetController.addAction(actionCGV)
+        actionSheetController.addAction(actionShowAll)
+        actionSheetController.addAction(actionCancel)
+        
+        self.present(actionSheetController, animated: true, completion: nil)
     }
     
-    func setAnnotation(type: Int) {
-        let theaterListIndex = theaterList.mapAnnotations
+    func filterAnnotation(keyword: String) { // MapView Annotation Filter 기능
         
-        let annotation1 = MKPointAnnotation()
-        annotation1.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[0].latitude, longitude: theaterListIndex[0].longitude)
-
-        let annotation2 = MKPointAnnotation()
-        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[1].latitude, longitude: theaterListIndex[1].longitude)
+        mapView.removeAnnotations(mapView.annotations)
         
-        let annotation3 = MKPointAnnotation()
-        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[2].latitude, longitude: theaterListIndex[2].longitude)
+        let value = keyword == "전체보기" ? theaterList.mapAnnotations : theaterList.mapAnnotations.filter { $0.type == keyword }
         
-        let annotation4 = MKPointAnnotation()
-        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[3].latitude, longitude: theaterListIndex[3].longitude)
-        
-        let annotation5 = MKPointAnnotation()
-        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[4].latitude, longitude: theaterListIndex[4].longitude)
-        
-        let annotation6 = MKPointAnnotation()
-        annotation2.coordinate = CLLocationCoordinate2D(latitude: theaterListIndex[5].latitude, longitude: theaterListIndex[5].longitude)
-        
-        let annotationList = [annotation1, annotation2, annotation3, annotation4, annotation5, annotation6]
-        
-        if type == 0 { // 전체보기
-            mapView.addAnnotations(annotationList)
-        } else if type == 1 { // CGV
-            mapView.removeAnnotations(mapView.annotations)
-            mapView.addAnnotations([annotation5, annotation6])
-        } else if type == 2 {  // 메가박스
-            mapView.removeAnnotations(mapView.annotations)
-            mapView.addAnnotations([annotation3, annotation4])
-        } else if type == 3 { // 롯데시네마
-            mapView.removeAnnotations(mapView.annotations)
-            mapView.addAnnotations([annotation1, annotation2])
+        value.forEach { item in
+            setAnnotation(latitude: item.latitude, longitude: item.longitude, title: item.type)
         }
+    }
+    
+    func setAnnotation(latitude: CLLocationDegrees, longitude: CLLocationDegrees, title: String) { // MapView Annotation Add 기능
+        let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
+        
+        let annotation = MKPointAnnotation()
+        annotation.title = title
+        annotation.coordinate = coordinate
+        mapView.addAnnotation(annotation)
         
         print("--- annotations ---", mapView.annotations)
     }
     
     func setRegionAndAnnotation(center: CLLocationCoordinate2D) {
         print("==== Region =====", #function)
-        
+
         let region = MKCoordinateRegion(center: center, latitudinalMeters: 500, longitudinalMeters: 500)
         mapView.setRegion(region, animated: true)
-        
+
         let annotation = MKPointAnnotation()
         annotation.title = "나의 현재 위치"
         annotation.coordinate = center
