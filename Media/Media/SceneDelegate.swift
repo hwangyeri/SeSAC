@@ -11,12 +11,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+//        guard let scene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: scene)
+//        
+//        //Debeg
+//        //UserDefaults.standard.set(false, forKey: "isLaunched")
+//        
+//        //1. 만약 유저가 처음 앱을 실행했다면
+//        let isLaunched = UserDefaults.standard.bool(forKey: "isLaunched")
+//        print(isLaunched)
+//        
+//        //2. OnboardingViewController를 첫 화면으로
+//        if isLaunched == false {
+//            let onboardingVC = OnboardingViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
+//            
+//            window?.rootViewController = onboardingVC
+//        } else {
+//            //3. SegmentViewController를 첫화면으로
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = sb.instantiateViewController(identifier: SegmentViewController.identifier) as! SegmentViewController
+//            let nav = UINavigationController(rootViewController: vc)
+//            
+//            window?.rootViewController = nav
+//        }
+//        
+//        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
