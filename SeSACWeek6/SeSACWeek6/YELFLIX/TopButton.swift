@@ -1,5 +1,5 @@
 //
-//  topButton.swift
+//  TopButton.swift
 //  SeSACWeek6
 //
 //  Created by 황예리 on 2023/08/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class topButton: UIButton {
+class TopButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,7 +20,7 @@ class topButton: UIButton {
     
     func setupView() {
         tintColor = .white
-        titleLabel?.font = .systemFont(ofSize: 15)
+        titleLabel?.font = .boldSystemFont(ofSize: 15)
     }
     
     

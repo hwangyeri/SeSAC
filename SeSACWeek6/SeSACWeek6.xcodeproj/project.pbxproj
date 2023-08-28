@@ -32,10 +32,12 @@
 		2B32D51F2A97C89E00874689 /* SB 어그로OTF M.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D51C2A97C89E00874689 /* SB 어그로OTF M.otf */; };
 		2B32D5202A97C89E00874689 /* SB 어그로OTF B.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D51D2A97C89E00874689 /* SB 어그로OTF B.otf */; };
 		2B32D5262A97D0EA00874689 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5252A97D0EA00874689 /* JoinViewController.swift */; };
-		2B32D5282A97D1AF00874689 /* topButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5272A97D1AF00874689 /* topButton.swift */; };
+		2B32D5282A97D1AF00874689 /* TopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5272A97D1AF00874689 /* TopButton.swift */; };
 		2B32D52A2A982AEF00874689 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5292A982AEF00874689 /* CustomTableViewCell.swift */; };
 		2B32D52C2A9840C000874689 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D52B2A9840C000874689 /* PosterImageView.swift */; };
 		2B32D52F2A984B6900874689 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D52E2A984B6900874689 /* OnboardingViewController.swift */; };
+		2B32D5682A9C87E500874689 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5672A9C87E500874689 /* CircleImageView.swift */; };
+		2B32D56A2A9C93D200874689 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5692A9C93D200874689 /* BottomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,10 +67,12 @@
 		2B32D51C2A97C89E00874689 /* SB 어그로OTF M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SB 어그로OTF M.otf"; sourceTree = "<group>"; };
 		2B32D51D2A97C89E00874689 /* SB 어그로OTF B.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SB 어그로OTF B.otf"; sourceTree = "<group>"; };
 		2B32D5252A97D0EA00874689 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
-		2B32D5272A97D1AF00874689 /* topButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topButton.swift; sourceTree = "<group>"; };
+		2B32D5272A97D1AF00874689 /* TopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopButton.swift; sourceTree = "<group>"; };
 		2B32D5292A982AEF00874689 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		2B32D52B2A9840C000874689 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
 		2B32D52E2A984B6900874689 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2B32D5672A9C87E500874689 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		2B32D5692A9C93D200874689 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +181,9 @@
 				2B32D5162A97BFBA00874689 /* YELFLIXViewController.swift */,
 				2B32D5252A97D0EA00874689 /* JoinViewController.swift */,
 				2B32D5182A97C00800874689 /* JoinTextField.swift */,
-				2B32D5272A97D1AF00874689 /* topButton.swift */,
+				2B32D5272A97D1AF00874689 /* TopButton.swift */,
+				2B32D5692A9C93D200874689 /* BottomButton.swift */,
+				2B32D5672A9C87E500874689 /* CircleImageView.swift */,
 			);
 			path = YELFLIX;
 			sourceTree = "<group>";
@@ -280,7 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B32D4F52A945CAB00874689 /* TextViewController.swift in Sources */,
-				2B32D5282A97D1AF00874689 /* topButton.swift in Sources */,
+				2B32D5282A97D1AF00874689 /* TopButton.swift in Sources */,
 				2B32D4F32A94467B00874689 /* SnapViewController.swift in Sources */,
 				2B32D52A2A982AEF00874689 /* CustomTableViewCell.swift in Sources */,
 				2B32D52F2A984B6900874689 /* OnboardingViewController.swift in Sources */,
@@ -290,11 +296,13 @@
 				2B32D4FC2A94F14500874689 /* Example2ViewController.swift in Sources */,
 				2B32D5072A96F13F00874689 /* GenericViewController.swift in Sources */,
 				2B32D5142A975B3F00874689 /* MainViewController.swift in Sources */,
+				2B32D56A2A9C93D200874689 /* BottomButton.swift in Sources */,
 				2B32D50C2A971CE700874689 /* CustomViewController.swift in Sources */,
 				2B32D50E2A971EA700874689 /* BlackRadiusTextField.swift in Sources */,
 				2B32D5022A95D1F000874689 /* TheaterData.swift in Sources */,
 				2B32D4FA2A94EB9B00874689 /* Examlple1ViewController.swift in Sources */,
 				2B32D5092A96F16600874689 /* Extension+UIViewController.swift in Sources */,
+				2B32D5682A9C87E500874689 /* CircleImageView.swift in Sources */,
 				2B32D5172A97BFBA00874689 /* YELFLIXViewController.swift in Sources */,
 				2B32D5002A95D19500874689 /* TheaterViewController.swift in Sources */,
 				2B32D5192A97C00800874689 /* JoinTextField.swift in Sources */,
