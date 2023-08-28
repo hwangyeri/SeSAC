@@ -76,14 +76,12 @@ class TheaterViewController: UIViewController {
         }
         let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
-        // 액션 시트에 옵션들을 추가
         actionSheetController.addAction(actionLotteCinema)
         actionSheetController.addAction(actionMegaBox)
         actionSheetController.addAction(actionCGV)
         actionSheetController.addAction(actionShowAll)
         actionSheetController.addAction(actionCancel)
         
-        // 액션 시트 표시
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
@@ -121,22 +119,22 @@ class TheaterViewController: UIViewController {
         mapView.removeAnnotations(mapView.annotations)
         
         // 선택한 필터링 옵션에 따라 영화관 정보 필터링 후 어노테이션 추가
-        let annotationsToShow = keyword == "전체보기"
+        let value = keyword == "전체보기"
         ? theaterList.mapAnnotations
         : theaterList.mapAnnotations.filter { $0.type == keyword }
         
-        annotationsToShow.forEach { item in
+        value.forEach { item in
             setAnnotation(latitude: item.latitude, longitude: item.longitude, title: item.type)
         }
         
         // 어노테이션의 위치에 맞게 지도 영역 조정
-        if let firstAnnotation = annotationsToShow.first {
+        if let firstAnnotation = value.first {
             var minLatitude = firstAnnotation.latitude
             var maxLatitude = firstAnnotation.latitude
             var minLongitude = firstAnnotation.longitude
             var maxLongitude = firstAnnotation.longitude
             
-            for annotation in annotationsToShow {
+            for annotation in value {
                 minLatitude = min(minLatitude, annotation.latitude)
                 maxLatitude = max(maxLatitude, annotation.latitude)
                 minLongitude = min(minLongitude, annotation.longitude)
@@ -160,6 +158,8 @@ class TheaterViewController: UIViewController {
     // MapView Annotation Add 맵뷰에 어노테이션을 추가
     func setAnnotation(latitude: CLLocationDegrees, longitude: CLLocationDegrees, title: String) {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 200, longitudinalMeters: 200)
+        
         let annotation = MKPointAnnotation()
         annotation.title = title
         annotation.coordinate = coordinate
