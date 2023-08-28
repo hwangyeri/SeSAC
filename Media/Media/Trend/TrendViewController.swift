@@ -10,23 +10,25 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-class TrendViewController: UIViewController {
+class TrendViewController: BaseViewController {
     
-    @IBOutlet var trendTableView: UITableView!
+//    @IBOutlet var trendTableView: UITableView!
+    
+    let trendView = TrendView()
     
     var trendList: BoxOffice = BoxOffice(page: 0, results: [], totalPages: 0, totalResults: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        trendTableView.delegate = self
-        trendTableView.dataSource = self
-        trendTableView.rowHeight = 500//UITableView.automaticDimension
+//        trendTableView.delegate = self
+//        trendTableView.dataSource = self
+//        trendTableView.rowHeight = 500//UITableView.automaticDimension
         
         TrendAPIManager.shared.callRequest { data in
             self.trendList = data
             //print("*****list.data success", self.trendList)
-            self.trendTableView.reloadData()
+            self.trendView.tableView.reloadData()
         } failure: {
             print(#function, "error")
         }
@@ -57,6 +59,14 @@ class TrendViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    override func configureView() {
+        trendView.tableView.delegate = self
+        trendView.tableView.dataSource = self
+    }
+    
+//    override func setConstraints() {
+//        <#code#>
+//    }
     
 }
 
@@ -71,41 +81,38 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: TrendTableViewCell.identifier
-            ) as? TrendTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "trendCell") as? TrendTableViewCell
         else {
             print("**CEll Error")
             return UITableViewCell()
         }
         
-        let item = trendList.results[indexPath.item]
-        let url = "https://www.themoviedb.org/t/p/original\(item.posterPath ?? "")"
+        let row = trendList.results[indexPath.item]
+        let url = "https://www.themoviedb.org/t/p/original\(row.posterPath ?? "")"
         
         cell.mainImageView.kf.setImage(with: URL(string: url))
-        cell.dateLabel.text = item.releaseDate
-        cell.originalTitleLabel.text = item.originalTitle
-        cell.titleLabel.text = item.title
-        cell.rateNumberLabel.text = "\(item.voteAverage)"
+        cell.dateLabel.text = row.releaseDate
+        cell.originalTitleLabel.text = row.originalTitle
+        cell.titleLabel.text = row.title
+        cell.rateNumberLabel.text = "\(row.voteAverage)"
         cell.castLabel.text = "castAPI 넣어야함"
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let trendCell = tableView.cellForRow(at: indexPath) as? TrendTableViewCell,
-              let creditViewController = storyboard?.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
-        let item = trendList.results[indexPath.item]
-        
-        creditViewController.selectedMovieID = item.id
-        creditViewController.selectedMovieTitle = item.originalTitle
-        creditViewController.selectedMovieBigImage = item.backdropPath
-        creditViewController.selectedMoviePosterImage = item.posterPath
-        creditViewController.selectedMovieOverviewContent = item.overview
-        
-        navigationController?.pushViewController(creditViewController, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let trendCell = tableView.cellForRow(at: indexPath) as? TrendTableViewCell,
+//              let creditViewController = storyboard?.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
+//        let row = trendList.results[indexPath.item]
+//        
+//        creditViewController.selectedMovieID = row.id
+//        creditViewController.selectedMovieTitle = row.originalTitle
+//        creditViewController.selectedMovieBigImage = row.backdropPath
+//        creditViewController.selectedMoviePosterImage = row.posterPath
+//        creditViewController.selectedMovieOverviewContent = row.overview
+//        
+//        navigationController?.pushViewController(creditViewController, animated: true)
+//    }
     
     
     
