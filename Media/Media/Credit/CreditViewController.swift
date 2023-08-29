@@ -10,7 +10,7 @@ import Kingfisher
 
 class CreditViewController: BaseViewController {
     
-    let creditView = CreditView()
+    let mainView = CreditView()
     
     var creditList: Movie = Movie(id: 0, cast: [], crew: [])
     
@@ -21,6 +21,10 @@ class CreditViewController: BaseViewController {
     var selectedMovieOverviewContent: String?
     var isChevronButtonClicked = false
     
+    override func loadView() {
+        self.view = mainView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,17 +33,17 @@ class CreditViewController: BaseViewController {
         CreditAPIManager.shared.callRequest(movieID: selectedMovieID ?? 0) { data in
             self.creditList = data
             print("*****list.data success", self.creditList)
-            self.creditView.tableView.reloadData()
+            self.mainView.tableView.reloadData()
         } failure: {
             print(#function, "error")
         }
         
         let bigImageURL = "https://www.themoviedb.org/t/p/original\(selectedMovieBigImage ?? "")"
         let PosterImageURL = "https://www.themoviedb.org/t/p/original\(selectedMoviePosterImage ?? "")"
-        creditView.bigImageView.kf.setImage(with: URL(string: bigImageURL))
-        creditView.posterImageView.kf.setImage(with: URL(string: PosterImageURL))
-        creditView.titleLabel.text = selectedMovieTitle
-        creditView.contentLabel.text = selectedMovieOverviewContent
+        mainView.bigImageView.kf.setImage(with: URL(string: bigImageURL))
+        mainView.posterImageView.kf.setImage(with: URL(string: PosterImageURL))
+        mainView.titleLabel.text = selectedMovieTitle
+        mainView.contentLabel.text = selectedMovieOverviewContent
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -48,13 +52,19 @@ class CreditViewController: BaseViewController {
     
     @IBAction func chevronButtonClicked(_ sender: UIButton) {
         isChevronButtonClicked.toggle()
-        creditView.contentLabel.numberOfLines = 0
+        mainView.contentLabel.numberOfLines = 0
     }
     
     override func configureView() {
-        creditView.tableView.dataSource = self
-        creditView.tableView.delegate = self
+        super.configureView()
+        mainView.tableView.dataSource = self
+        mainView.tableView.delegate = self
     }
+    
+    override func setConstraints() {
+        super.setConstraints()
+    }
+    
     
 }
 
