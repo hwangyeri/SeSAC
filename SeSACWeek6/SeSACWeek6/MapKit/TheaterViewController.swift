@@ -174,17 +174,8 @@ class TheaterViewController: UIViewController {
         mapView.setRegion(region, animated: true)
         
         let annotation = MKPointAnnotation()
-        
-        if locationManager.authorizationStatus == .authorizedWhenInUse {
-            annotation.title = "나의 현재 위치"
-            annotation.coordinate = center
-        } else if locationManager.authorizationStatus == .denied {
-            let sesacCenter = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270) // 새싹 영등포 캠퍼스
-            annotation.title = "영등포 캠퍼스"
-            annotation.coordinate = sesacCenter
-            mapView.addAnnotation(annotation)
-        }
-
+        annotation.title = "나의 현재 위치"
+        annotation.coordinate = center
         mapView.addAnnotation(annotation)
     }
     
@@ -229,6 +220,8 @@ class TheaterViewController: UIViewController {
         case .denied:
             print("denied")
             showLocationSettingAlert()
+            let sesacCenter = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270) // 새싹 영등포 캠퍼스
+            setRegionAndAnnotation(center: sesacCenter)
         case .authorizedAlways:
             print("authorizedAlways")
         case .authorizedWhenInUse:
