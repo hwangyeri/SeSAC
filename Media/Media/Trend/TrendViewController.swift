@@ -12,18 +12,12 @@ import Kingfisher
 
 class TrendViewController: BaseViewController {
     
-//    @IBOutlet var trendTableView: UITableView!
-    
     let trendView = TrendView()
     
     var trendList: BoxOffice = BoxOffice(page: 0, results: [], totalPages: 0, totalResults: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        trendTableView.delegate = self
-//        trendTableView.dataSource = self
-//        trendTableView.rowHeight = 500//UITableView.automaticDimension
         
         TrendAPIManager.shared.callRequest { data in
             self.trendList = data
@@ -64,10 +58,6 @@ class TrendViewController: BaseViewController {
         trendView.tableView.dataSource = self
     }
     
-//    override func setConstraints() {
-//        <#code#>
-//    }
-    
 }
 
 extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
@@ -100,21 +90,19 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let trendCell = tableView.cellForRow(at: indexPath) as? TrendTableViewCell,
-//              let creditViewController = storyboard?.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
-//        let row = trendList.results[indexPath.item]
-//        
-//        creditViewController.selectedMovieID = row.id
-//        creditViewController.selectedMovieTitle = row.originalTitle
-//        creditViewController.selectedMovieBigImage = row.backdropPath
-//        creditViewController.selectedMoviePosterImage = row.posterPath
-//        creditViewController.selectedMovieOverviewContent = row.overview
-//        
-//        navigationController?.pushViewController(creditViewController, animated: true)
-//    }
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let trendCell = tableView.cellForRow(at: indexPath) as? TrendTableViewCell,
+              let creditViewController = storyboard?.instantiateViewController(withIdentifier: CreditViewController.identifier) as? CreditViewController else { return }
+        let row = trendList.results[indexPath.item]
+        
+        creditViewController.selectedMovieID = row.id
+        creditViewController.selectedMovieTitle = row.originalTitle
+        creditViewController.selectedMovieBigImage = row.backdropPath
+        creditViewController.selectedMoviePosterImage = row.posterPath
+        creditViewController.selectedMovieOverviewContent = row.overview
+        
+        navigationController?.pushViewController(creditViewController, animated: true)
+    }
     
     
 }
