@@ -36,6 +36,14 @@
 		2BAC1A3F2A8A58E000A4C117 /* CreditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A3E2A8A58E000A4C117 /* CreditTableViewCell.swift */; };
 		2BAC1A412A8A58FE00A4C117 /* CreditAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A402A8A58FE00A4C117 /* CreditAPIManager.swift */; };
 		2BAC1A432A8A681100A4C117 /* CreditData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAC1A422A8A681100A4C117 /* CreditData.swift */; };
+		2BBB32CD2A9E252F00CF80F6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32CC2A9E252F00CF80F6 /* ProfileViewController.swift */; };
+		2BBB32CF2A9E259900CF80F6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32CE2A9E259900CF80F6 /* ProfileView.swift */; };
+		2BBB32D12A9E294500CF80F6 /* ProfileLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32D02A9E294500CF80F6 /* ProfileLabel.swift */; };
+		2BBB32D72A9E3CF300CF80F6 /* ProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32D62A9E3CF300CF80F6 /* ProfileButton.swift */; };
+		2BBB32D92A9E418800CF80F6 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32D82A9E418800CF80F6 /* NameViewController.swift */; };
+		2BBB32DB2A9E458300CF80F6 /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32DA2A9E458300CF80F6 /* UserNameViewController.swift */; };
+		2BBB32DD2A9E494C00CF80F6 /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32DC2A9E494C00CF80F6 /* GenderViewController.swift */; };
+		2BBB32DF2A9E4A5500CF80F6 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32DE2A9E4A5500CF80F6 /* Notification+Extension.swift */; };
 		2BEB593C2A87750B0089E607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB593B2A87750B0089E607 /* AppDelegate.swift */; };
 		2BEB593E2A87750B0089E607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB593D2A87750B0089E607 /* SceneDelegate.swift */; };
 		2BEB59402A87750B0089E607 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEB593F2A87750B0089E607 /* ViewController.swift */; };
@@ -77,6 +85,14 @@
 		2BAC1A3E2A8A58E000A4C117 /* CreditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTableViewCell.swift; sourceTree = "<group>"; };
 		2BAC1A402A8A58FE00A4C117 /* CreditAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditAPIManager.swift; sourceTree = "<group>"; };
 		2BAC1A422A8A681100A4C117 /* CreditData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditData.swift; sourceTree = "<group>"; };
+		2BBB32CC2A9E252F00CF80F6 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2BBB32CE2A9E259900CF80F6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		2BBB32D02A9E294500CF80F6 /* ProfileLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabel.swift; sourceTree = "<group>"; };
+		2BBB32D62A9E3CF300CF80F6 /* ProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButton.swift; sourceTree = "<group>"; };
+		2BBB32D82A9E418800CF80F6 /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		2BBB32DA2A9E458300CF80F6 /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
+		2BBB32DC2A9E494C00CF80F6 /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		2BBB32DE2A9E4A5500CF80F6 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		2BEB59382A87750B0089E607 /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BEB593B2A87750B0089E607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BEB593D2A87750B0089E607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				2BAC1A332A878B1000A4C117 /* ReusableViewProtocol.swift */,
+				2BBB32DE2A9E4A5500CF80F6 /* Notification+Extension.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -215,6 +232,20 @@
 			path = "Credit Network";
 			sourceTree = "<group>";
 		};
+		2BBB32CB2A9E251A00CF80F6 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				2BBB32CC2A9E252F00CF80F6 /* ProfileViewController.swift */,
+				2BBB32CE2A9E259900CF80F6 /* ProfileView.swift */,
+				2BBB32D02A9E294500CF80F6 /* ProfileLabel.swift */,
+				2BBB32D62A9E3CF300CF80F6 /* ProfileButton.swift */,
+				2BBB32D82A9E418800CF80F6 /* NameViewController.swift */,
+				2BBB32DA2A9E458300CF80F6 /* UserNameViewController.swift */,
+				2BBB32DC2A9E494C00CF80F6 /* GenderViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		2BEB592F2A87750B0089E607 = {
 			isa = PBXGroup;
 			children = (
@@ -234,7 +265,9 @@
 		2BEB593A2A87750B0089E607 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				2B32D49A2A8E0A4A00874689 /* Protocol */,
 				2B32D56B2A9CA93200874689 /* Base */,
+				2BBB32CB2A9E251A00CF80F6 /* Profile */,
 				2B32D5302A9BB30D00874689 /* Onboarding */,
 				2B32D4AB2A8F5BBA00874689 /* Segment */,
 				2BEB593B2A87750B0089E607 /* AppDelegate.swift */,
@@ -244,7 +277,6 @@
 				2B32D4972A8E09E200874689 /* Trend */,
 				2B32D4982A8E09F800874689 /* Credit */,
 				2B32D4992A8E0A1100874689 /* Network */,
-				2B32D49A2A8E0A4A00874689 /* Protocol */,
 				2BEB594F2A8775230089E607 /* .gitignore */,
 				2BEB59442A87750B0089E607 /* Assets.xcassets */,
 				2BEB59462A87750B0089E607 /* LaunchScreen.storyboard */,
@@ -344,6 +376,7 @@
 				2B32D4E52A9377BA00874689 /* SimilarData.swift in Sources */,
 				2B32D57C2A9CC04500874689 /* ContentLabel.swift in Sources */,
 				2B32D56D2A9CA95000874689 /* BaseViewController.swift in Sources */,
+				2BBB32CD2A9E252F00CF80F6 /* ProfileViewController.swift in Sources */,
 				2BEB59542A8776590089E607 /* TrendAPIManager.swift in Sources */,
 				2B32D4DA2A93745E00874689 /* SimilarCollectionViewCell.swift in Sources */,
 				2BAC1A3F2A8A58E000A4C117 /* CreditTableViewCell.swift in Sources */,
@@ -354,10 +387,13 @@
 				2BAC1A412A8A58FE00A4C117 /* CreditAPIManager.swift in Sources */,
 				2B32D57A2A9CBE4D00874689 /* RateLabel.swift in Sources */,
 				2B32D4AD2A8F5C2300874689 /* SegmentViewController.swift in Sources */,
+				2BBB32D72A9E3CF300CF80F6 /* ProfileButton.swift in Sources */,
 				2B32D4E72A9378A400874689 /* VideoData.swift in Sources */,
 				2BEB593C2A87750B0089E607 /* AppDelegate.swift in Sources */,
 				2B32D56F2A9CA95900874689 /* BaseView.swift in Sources */,
+				2BBB32D12A9E294500CF80F6 /* ProfileLabel.swift in Sources */,
 				2B32D4EB2A937AA600874689 /* VideoAPIManager.swift in Sources */,
+				2BBB32D92A9E418800CF80F6 /* NameViewController.swift in Sources */,
 				2B32D49C2A8E2C7B00874689 /* SearchViewController.swift in Sources */,
 				2BAC1A342A878B1000A4C117 /* ReusableViewProtocol.swift in Sources */,
 				2BAC1A3D2A8A58D600A4C117 /* CreditViewController.swift in Sources */,
@@ -365,10 +401,14 @@
 				2B32D5802A9CD41000874689 /* CreditView.swift in Sources */,
 				2B32D4E22A93748A00874689 /* VideoCollectionViewCell.swift in Sources */,
 				2BEB59522A8775E90089E607 /* APIKey.swift in Sources */,
+				2BBB32DB2A9E458300CF80F6 /* UserNameViewController.swift in Sources */,
 				2B32D5842A9CDCD200874689 /* DividerView.swift in Sources */,
 				2BEB593E2A87750B0089E607 /* SceneDelegate.swift in Sources */,
 				2B32D5782A9CBA7F00874689 /* BaseTableViewCell.swift in Sources */,
+				2BBB32DF2A9E4A5500CF80F6 /* Notification+Extension.swift in Sources */,
+				2BBB32CF2A9E259900CF80F6 /* ProfileView.swift in Sources */,
 				2BAC1A362A878B7000A4C117 /* TrendTableViewCell.swift in Sources */,
+				2BBB32DD2A9E494C00CF80F6 /* GenderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

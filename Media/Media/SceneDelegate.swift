@@ -26,14 +26,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //2. OnboardingViewController를 첫 화면으로
 //        if isLaunched == false {
 //            let onboardingVC = OnboardingViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
-//            window?.rootViewController = onboardingVC
+//            let nav = UINavigationController(rootViewController: onboardingVC)
+//            window?.rootViewController = nav
 //        } else {
-            guard let scene = (scene as? UIWindowScene) else { return }
-            window = UIWindow(windowScene: scene)
-            let vc = TrendViewController()
+            let vc = ProfileViewController()
             let nav = UINavigationController(rootViewController: vc)
             window?.rootViewController = nav
-
 //        }
         
         window?.makeKeyAndVisible()

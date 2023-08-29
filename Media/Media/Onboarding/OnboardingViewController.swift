@@ -27,11 +27,30 @@ class SecondViewController: UIViewController {
 
 class ThirdViewController: UIViewController {
     
+    let startButton = {
+        let view = UIButton()
+        view.setTitle("시작하기", for: .normal)
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .magenta
+        view.addSubview(startButton)
+        
+        startButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(150)
+        }
+        startButton.addTarget(self, action: #selector(startButtonClicked), for: .touchUpInside)
     }
+    
+    @objc func startButtonClicked() {
+        let vc = TrendViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 
@@ -55,6 +74,8 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
         delegate = self
         dataSource = self
         
+        guard let first = list.first else { return }
+        setViewControllers([first], direction: .forward, animated: true)
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? { // 이전 화면 준비
