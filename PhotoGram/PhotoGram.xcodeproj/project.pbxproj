@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		2B1F46412A9EC74900F722BA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46402A9EC74900F722BA /* APIService.swift */; };
 		2B1F46432A9EEBDF00F722BA /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46422A9EEBDF00F722BA /* URLSessionViewController.swift */; };
-		2B1F46822A9F41A200F722BA /* SeSACFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1F467F2A9F419200F722BA /* SeSACFramework.framework */; };
-		2B1F46832A9F41A200F722BA /* SeSACFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1F467F2A9F419200F722BA /* SeSACFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2B1F468F2A9F44F800F722BA /* SeSACFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1F468C2A9F44F300F722BA /* SeSACFramework.framework */; };
+		2B1F46902A9F44F800F722BA /* SeSACFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1F468C2A9F44F300F722BA /* SeSACFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2B32D5402A9C1D8B00874689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D53F2A9C1D8B00874689 /* AppDelegate.swift */; };
 		2B32D5422A9C1D8B00874689 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5412A9C1D8B00874689 /* SceneDelegate.swift */; };
 		2B32D5442A9C1D8B00874689 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5432A9C1D8B00874689 /* AddViewController.swift */; };
@@ -34,16 +34,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2B1F467E2A9F419200F722BA /* PBXContainerItemProxy */ = {
+		2B1F468B2A9F44F300F722BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */;
+			containerPortal = 2B1F46862A9F44F300F722BA /* SeSACFramework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2B1F465B2A9F40F900F722BA;
 			remoteInfo = SeSACFramework;
 		};
-		2B1F46802A9F419200F722BA /* PBXContainerItemProxy */ = {
+		2B1F468D2A9F44F300F722BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */;
+			containerPortal = 2B1F46862A9F44F300F722BA /* SeSACFramework.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 2B1F46652A9F40F900F722BA;
 			remoteInfo = SeSACFrameworkTests;
@@ -57,7 +57,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2B1F46832A9F41A200F722BA /* SeSACFramework.framework in Embed Frameworks */,
+				2B1F46902A9F44F800F722BA /* SeSACFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,7 +67,7 @@
 /* Begin PBXFileReference section */
 		2B1F46402A9EC74900F722BA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		2B1F46422A9EEBDF00F722BA /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
-		2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SeSACFramework.xcodeproj; path = ../../SeSACFramework/SeSACFramework.xcodeproj; sourceTree = "<group>"; };
+		2B1F46862A9F44F300F722BA /* SeSACFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SeSACFramework.xcodeproj; path = ../SeSACFramework/SeSACFramework.xcodeproj; sourceTree = "<group>"; };
 		2B32D53C2A9C1D8B00874689 /* PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B32D53F2A9C1D8B00874689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B32D5412A9C1D8B00874689 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B32D5552A9C1E3800874689 /* SnapKit in Frameworks */,
-				2B1F46822A9F41A200F722BA /* SeSACFramework.framework in Frameworks */,
+				2B1F468F2A9F44F800F722BA /* SeSACFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,11 +113,11 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		2B1F467A2A9F419200F722BA /* Products */ = {
+		2B1F46872A9F44F300F722BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B1F467F2A9F419200F722BA /* SeSACFramework.framework */,
-				2B1F46812A9F419200F722BA /* SeSACFrameworkTests.xctest */,
+				2B1F468C2A9F44F300F722BA /* SeSACFramework.framework */,
+				2B1F468E2A9F44F300F722BA /* SeSACFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 		2B32D5332A9C1D8B00874689 = {
 			isa = PBXGroup;
 			children = (
-				2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */,
+				2B1F46862A9F44F300F722BA /* SeSACFramework.xcodeproj */,
 				2B32D53E2A9C1D8B00874689 /* PhotoGram */,
 				2B32D53D2A9C1D8B00874689 /* Products */,
 				2BBB32C12A9DB38300CF80F6 /* Frameworks */,
@@ -262,8 +262,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 2B1F467A2A9F419200F722BA /* Products */;
-					ProjectRef = 2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */;
+					ProductGroup = 2B1F46872A9F44F300F722BA /* Products */;
+					ProjectRef = 2B1F46862A9F44F300F722BA /* SeSACFramework.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -274,18 +274,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2B1F467F2A9F419200F722BA /* SeSACFramework.framework */ = {
+		2B1F468C2A9F44F300F722BA /* SeSACFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SeSACFramework.framework;
-			remoteRef = 2B1F467E2A9F419200F722BA /* PBXContainerItemProxy */;
+			remoteRef = 2B1F468B2A9F44F300F722BA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2B1F46812A9F419200F722BA /* SeSACFrameworkTests.xctest */ = {
+		2B1F468E2A9F44F300F722BA /* SeSACFrameworkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SeSACFrameworkTests.xctest;
-			remoteRef = 2B1F46802A9F419200F722BA /* PBXContainerItemProxy */;
+			remoteRef = 2B1F468D2A9F44F300F722BA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
