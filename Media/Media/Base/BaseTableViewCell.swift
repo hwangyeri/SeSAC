@@ -20,24 +20,8 @@ class BaseTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureView() { //addSubview
-        
-    }
+    func configureView() { }
     
-    func setConstraints() { // 제약조건
-        
-    }
-
-    //Interface Builder
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    func setConstraints() { }
 
 }

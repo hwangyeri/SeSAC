@@ -104,77 +104,77 @@ class TrendTableViewCell: BaseTableViewCell {
         }
     }
     
-//    override func setConstraints() {
-//        
-//        dateLabel.snp.makeConstraints { make in
-//            make.leading.top.equalTo(contentView).inset(10)
-//        }
-//        
-//        genreLabel.snp.makeConstraints { make in
-//            make.leading.equalTo(dateLabel)
-//            make.top.equalTo(dateLabel.snp.bottom).offset(10)
-//        }
-//        
-//        squareView.snp.makeConstraints { make in
-//            make.top.equalTo(genreLabel.snp.bottom).offset(8)
-//            make.leading.trailing.bottomMargin.equalTo(10)
-//        }
-//        
-//        mainImageView.snp.makeConstraints { make in
-//            make.leading.trailing.top.equalTo(squareView)
-//            make.top.equalTo(squareView.snp.top)
-//            make.height.equalTo(squareView).multipliedBy(0.55)
-//        }
-//        
-//        shareButton.snp.makeConstraints { make in
-//            make.top.trailing.equalTo(squareView).inset(10)
-//            make.size.equalTo(35)
-//        }
-//        
-//        rateLabel.snp.makeConstraints { make in
-//            make.leading.bottom.equalTo(mainImageView).inset(10)
-//        }
-//        
-//        rateNumberLabel.snp.makeConstraints { make in
-//            make.leading.equalTo(rateLabel.snp.trailing)
-//            make.top.bottom.equalTo(rateLabel)
-//            make.size.equalTo(rateLabel)
-//        }
-//        
-//        originalTitleLabel.snp.makeConstraints { make in
-//            make.top.equalTo(mainImageView.snp.bottom).offset(10)
-//            make.leading.equalTo(rateLabel)
-//        }
-//        
-//        titleLabel.snp.makeConstraints { make in
-//            make.leading.equalTo(originalTitleLabel.snp.trailing).offset(8)
-//            make.top.equalTo(originalTitleLabel)
-//        }
-//        
-//        castLabel.snp.makeConstraints { make in
-//            make.leading.equalTo(originalTitleLabel)
-//            make.top.equalTo(originalTitleLabel.snp.bottom).offset(8)
-//        }
-//        
-//        dividerView.snp.makeConstraints { make in
-//            make.width.equalTo(squareView).multipliedBy(0.9)
-//            make.height.equalTo(1)
-//            make.leading.equalTo(castLabel)
-//            make.top.equalTo(castLabel.snp.bottom).offset(8)
-//        }
-//        
-//        detailLabel.snp.makeConstraints { make in
-//            make.top.equalTo(dividerView.snp.bottom).offset(8)
-//            make.leading.equalTo(castLabel)
-//        }
-//        
-//        chevronImageView.snp.makeConstraints { make in
-//            make.top.equalTo(detailLabel)
-//            make.trailing.equalTo(squareView).inset(10)
-//            make.size.equalTo(35)
-//        }
-//        
-//    }
+    override func setConstraints() {
+        
+        dateLabel.snp.makeConstraints { make in
+            make.leading.top.equalTo(contentView).inset(10)
+        }
+        
+        genreLabel.snp.makeConstraints { make in
+            make.leading.equalTo(dateLabel)
+            make.top.equalTo(dateLabel.snp.bottom).offset(10)
+        }
+        
+        squareView.snp.makeConstraints { make in
+            make.top.equalTo(genreLabel.snp.bottom).offset(8)
+            make.leading.trailing.bottomMargin.equalTo(10)
+        }
+        
+        mainImageView.snp.makeConstraints { make in
+            make.leading.trailing.top.equalTo(squareView)
+            make.top.equalTo(squareView.snp.top)
+            make.height.equalTo(squareView).multipliedBy(0.55)
+        }
+        
+        shareButton.snp.makeConstraints { make in
+            make.top.trailing.equalTo(squareView).inset(10)
+            make.size.equalTo(35)
+        }
+        
+        rateLabel.snp.makeConstraints { make in
+            make.leading.bottom.equalTo(mainImageView).inset(10)
+        }
+        
+        rateNumberLabel.snp.makeConstraints { make in
+            make.leading.equalTo(rateLabel.snp.trailing)
+            make.top.bottom.equalTo(rateLabel)
+            make.size.equalTo(rateLabel)
+        }
+        
+        originalTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(mainImageView.snp.bottom).offset(10)
+            make.leading.equalTo(rateLabel)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.leading.equalTo(originalTitleLabel.snp.trailing).offset(8)
+            make.top.equalTo(originalTitleLabel)
+        }
+        
+        castLabel.snp.makeConstraints { make in
+            make.leading.equalTo(originalTitleLabel)
+            make.top.equalTo(originalTitleLabel.snp.bottom).offset(8)
+        }
+        
+        dividerView.snp.makeConstraints { make in
+            make.width.equalTo(squareView).multipliedBy(0.9)
+            make.height.equalTo(1)
+            make.leading.equalTo(castLabel)
+            make.top.equalTo(castLabel.snp.bottom).offset(8)
+        }
+        
+        detailLabel.snp.makeConstraints { make in
+            make.top.equalTo(dividerView.snp.bottom).offset(8)
+            make.leading.equalTo(castLabel)
+        }
+        
+        chevronImageView.snp.makeConstraints { make in
+            make.top.equalTo(detailLabel)
+            make.trailing.equalTo(squareView).inset(10)
+            make.size.equalTo(35)
+        }
+        
+    }
     
     
 }

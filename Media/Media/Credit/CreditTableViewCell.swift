@@ -40,7 +40,7 @@ class CreditTableViewCell: BaseTableViewCell {
         
         posterImageView.snp.makeConstraints { make in
             make.leading.equalTo(contentView).inset(20)
-            make.verticalEdges.equalTo(contentView).inset(10)
+            make.top.bottom.equalTo(contentView).inset(10)
             make.width.equalTo(contentView).multipliedBy(0.35)
         }
         

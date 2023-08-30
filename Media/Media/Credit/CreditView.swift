@@ -11,7 +11,7 @@ class CreditView: BaseView {
     
     lazy var tableView = {
         let view = UITableView()
-        view.rowHeight = 120
+        view.rowHeight = 150
         view.register(CreditTableViewCell.self, forCellReuseIdentifier: "creditCell")
         return view
     }()

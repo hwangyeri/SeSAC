@@ -30,20 +30,7 @@ class CreditViewController: BaseViewController {
         
         title = "출연/제작"
         
-        CreditAPIManager.shared.callRequest(movieID: selectedMovieID ?? 0) { data in
-            self.creditList = data
-            print("*****list.data success", self.creditList)
-            self.mainView.tableView.reloadData()
-        } failure: {
-            print(#function, "error")
-        }
-        
-        let bigImageURL = "https://www.themoviedb.org/t/p/original\(selectedMovieBigImage ?? "")"
-        let PosterImageURL = "https://www.themoviedb.org/t/p/original\(selectedMoviePosterImage ?? "")"
-        mainView.bigImageView.kf.setImage(with: URL(string: bigImageURL))
-        mainView.posterImageView.kf.setImage(with: URL(string: PosterImageURL))
-        mainView.titleLabel.text = selectedMovieTitle
-        mainView.contentLabel.text = selectedMovieOverviewContent
+        getData()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -65,6 +52,24 @@ class CreditViewController: BaseViewController {
         super.setConstraints()
     }
     
+    func getData() {
+        
+        CreditAPIManager.shared.callRequest(movieID: selectedMovieID ?? 0) { data in
+            self.creditList = data
+            print("*****list.data success", self.creditList)
+            self.mainView.tableView.reloadData()
+        } failure: {
+            print(#function, "error")
+        }
+        
+        let bigImageURL = "https://www.themoviedb.org/t/p/original\(selectedMovieBigImage ?? "")"
+        let PosterImageURL = "https://www.themoviedb.org/t/p/original\(selectedMoviePosterImage ?? "")"
+        mainView.bigImageView.kf.setImage(with: URL(string: bigImageURL))
+        mainView.posterImageView.kf.setImage(with: URL(string: PosterImageURL))
+        mainView.titleLabel.text = selectedMovieTitle
+        mainView.contentLabel.text = selectedMovieOverviewContent
+    }
+    
     
 }
 
@@ -75,7 +80,7 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "creditCell") as? CreditTableViewCell else { return CreditTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "creditCell") as? CreditTableViewCell else { return UITableViewCell() }
         
         let creditItem = creditList.cast[indexPath.item]
 

@@ -16,6 +16,28 @@ class TrendViewController: BaseViewController {
     
     var trendList: BoxOffice = BoxOffice(page: 0, results: [], totalPages: 0, totalResults: 0)
     
+//    var genreDict: [Int : String] = [
+//            28 : "Action",
+//            12 : "Abenteuer",
+//            16 : "Animation",
+//            35 : "Komödie",
+//            80 : "Krimi",
+//            99 : "Dokumentarfilm",
+//            18 : "Drama",
+//            10751 : "Familie",
+//            14 : "Fantasy",
+//            36 : "Historie",
+//            27 : "Horror",
+//            10402 : "Musik",
+//            9648 : "Mystery",
+//            10749 : "Liebesfilm",
+//            878 : "Science Fiction",
+//            10770 : "TV-Film",
+//            53 : "Thriller",
+//            10752 : "Kriegsfilm",
+//            37 : "Western"
+//        ]
+    
     override func loadView() {
         self.view = mainView
     }
@@ -23,26 +45,19 @@ class TrendViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TrendAPIManager.shared.callRequest { data in
-            self.trendList = data
-            //print("*****list.data success", self.trendList)
-            self.mainView.tableView.reloadData()
-        } failure: {
-            print(#function, "error")
-        }
+        getData()
+        configureNaviBarButtonItem()
         
-        configureRightBarButtonItem()
-        configureleftBarButtonItem()
     }
     
-    func configureRightBarButtonItem() {
-        let searchButtonIcon = UIImage(systemName: "magnifyingglass")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: searchButtonIcon, style: .plain, target: self, action: #selector(searchButtonClicked))
+    override func configureView() {
+        super.configureView()
+        mainView.tableView.delegate = self
+        mainView.tableView.dataSource = self
     }
     
-    func configureleftBarButtonItem() {
-        let listButtonIcon = UIImage(systemName: "list.triangle")
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: listButtonIcon, style: .plain, target: self, action: #selector(listButtonClicked))
+    override func setConstraints() {
+        super.setConstraints()
     }
     
     @objc func searchButtonClicked() {
@@ -54,16 +69,27 @@ class TrendViewController: BaseViewController {
         let vc = SearchViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
-
-    override func configureView() {
-        super.configureView()
-        mainView.tableView.delegate = self
-        mainView.tableView.dataSource = self
+    
+    func getData() {
+        
+        TrendAPIManager.shared.callRequest { data in
+            self.trendList = data
+            //print("*****list.data success", self.trendList)
+            self.mainView.tableView.reloadData()
+        } failure: {
+            print(#function, "error")
+        }
     }
     
-    override func setConstraints() {
-        super.setConstraints()
+    func configureNaviBarButtonItem() {
+        let listButtonIcon = UIImage(systemName: "list.triangle")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: listButtonIcon, style: .plain, target: self, action: #selector(listButtonClicked))
+        
+        let searchButtonIcon = UIImage(systemName: "magnifyingglass")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: searchButtonIcon, style: .plain, target: self, action: #selector(searchButtonClicked))
     }
+    
+    
 }
 
 extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
@@ -92,9 +118,8 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath) as? TrendTableViewCell
         let vc = CreditViewController()
-//        let row = trendList.results[indexPath.item]
+        let row = trendList.results[indexPath.item]
 
 //        creditViewController.selectedMovieID = row.id
 //        creditViewController.selectedMovieTitle = row.originalTitle
