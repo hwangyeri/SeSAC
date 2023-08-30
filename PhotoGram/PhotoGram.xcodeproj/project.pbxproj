@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2B1F46412A9EC74900F722BA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46402A9EC74900F722BA /* APIService.swift */; };
 		2B1F46432A9EEBDF00F722BA /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46422A9EEBDF00F722BA /* URLSessionViewController.swift */; };
+		2B1F46822A9F41A200F722BA /* SeSACFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1F467F2A9F419200F722BA /* SeSACFramework.framework */; };
+		2B1F46832A9F41A200F722BA /* SeSACFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1F467F2A9F419200F722BA /* SeSACFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2B32D5402A9C1D8B00874689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D53F2A9C1D8B00874689 /* AppDelegate.swift */; };
 		2B32D5422A9C1D8B00874689 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5412A9C1D8B00874689 /* SceneDelegate.swift */; };
 		2B32D5442A9C1D8B00874689 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5432A9C1D8B00874689 /* AddViewController.swift */; };
@@ -26,38 +28,36 @@
 		2BBB32822A9D7C7800CF80F6 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32812A9D7C7800CF80F6 /* DateView.swift */; };
 		2BBB32842A9D7DBC00CF80F6 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32832A9D7DBC00CF80F6 /* DateViewController.swift */; };
 		2BBB32862A9D8E9D00CF80F6 /* DateFormat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32852A9D8E9D00CF80F6 /* DateFormat+Extension.swift */; };
-		2BBB32C22A9DB38300CF80F6 /* SeSACFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBB32BE2A9DB36100CF80F6 /* SeSACFramework.framework */; };
-		2BBB32C32A9DB38300CF80F6 /* SeSACFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2BBB32BE2A9DB36100CF80F6 /* SeSACFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2BBB32C62A9DB55500CF80F6 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32C52A9DB55500CF80F6 /* TitleViewController.swift */; };
 		2BBB32C82A9DBBAA00CF80F6 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32C72A9DBBAA00CF80F6 /* ContentViewController.swift */; };
 		2BBB32CA2A9DC76000CF80F6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBB32C92A9DC76000CF80F6 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2BBB32BD2A9DB36100CF80F6 /* PBXContainerItemProxy */ = {
+		2B1F467E2A9F419200F722BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2BBB32B82A9DB36100CF80F6 /* SeSACFramework.xcodeproj */;
+			containerPortal = 2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0FBEEAFB2A9D92A800DD0D42;
+			remoteGlobalIDString = 2B1F465B2A9F40F900F722BA;
 			remoteInfo = SeSACFramework;
 		};
-		2BBB32BF2A9DB36100CF80F6 /* PBXContainerItemProxy */ = {
+		2B1F46802A9F419200F722BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2BBB32B82A9DB36100CF80F6 /* SeSACFramework.xcodeproj */;
+			containerPortal = 2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0FBEEB052A9D92A800DD0D42;
+			remoteGlobalIDString = 2B1F46652A9F40F900F722BA;
 			remoteInfo = SeSACFrameworkTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2BBB32C42A9DB38300CF80F6 /* Embed Frameworks */ = {
+		2B1F46842A9F41A300F722BA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2BBB32C32A9DB38300CF80F6 /* SeSACFramework.framework in Embed Frameworks */,
+				2B1F46832A9F41A200F722BA /* SeSACFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +67,7 @@
 /* Begin PBXFileReference section */
 		2B1F46402A9EC74900F722BA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		2B1F46422A9EEBDF00F722BA /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
+		2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SeSACFramework.xcodeproj; path = ../../SeSACFramework/SeSACFramework.xcodeproj; sourceTree = "<group>"; };
 		2B32D53C2A9C1D8B00874689 /* PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B32D53F2A9C1D8B00874689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B32D5412A9C1D8B00874689 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		2BBB32812A9D7C7800CF80F6 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		2BBB32832A9D7DBC00CF80F6 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		2BBB32852A9D8E9D00CF80F6 /* DateFormat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormat+Extension.swift"; sourceTree = "<group>"; };
-		2BBB32B82A9DB36100CF80F6 /* SeSACFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SeSACFramework.xcodeproj; path = ../SeSACFramework/SeSACFramework.xcodeproj; sourceTree = "<group>"; };
 		2BBB32C52A9DB55500CF80F6 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		2BBB32C72A9DBBAA00CF80F6 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		2BBB32C92A9DC76000CF80F6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B32D5552A9C1E3800874689 /* SnapKit in Frameworks */,
-				2BBB32C22A9DB38300CF80F6 /* SeSACFramework.framework in Frameworks */,
+				2B1F46822A9F41A200F722BA /* SeSACFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,10 +113,19 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		2B1F467A2A9F419200F722BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2B1F467F2A9F419200F722BA /* SeSACFramework.framework */,
+				2B1F46812A9F419200F722BA /* SeSACFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2B32D5332A9C1D8B00874689 = {
 			isa = PBXGroup;
 			children = (
-				2BBB32B82A9DB36100CF80F6 /* SeSACFramework.xcodeproj */,
+				2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */,
 				2B32D53E2A9C1D8B00874689 /* PhotoGram */,
 				2B32D53D2A9C1D8B00874689 /* Products */,
 				2BBB32C12A9DB38300CF80F6 /* Frameworks */,
@@ -191,15 +200,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		2BBB32B92A9DB36100CF80F6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2BBB32BE2A9DB36100CF80F6 /* SeSACFramework.framework */,
-				2BBB32C02A9DB36100CF80F6 /* SeSACFrameworkTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2BBB32C12A9DB38300CF80F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,7 +217,7 @@
 				2B32D5382A9C1D8B00874689 /* Sources */,
 				2B32D5392A9C1D8B00874689 /* Frameworks */,
 				2B32D53A2A9C1D8B00874689 /* Resources */,
-				2BBB32C42A9DB38300CF80F6 /* Embed Frameworks */,
+				2B1F46842A9F41A300F722BA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,8 +262,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 2BBB32B92A9DB36100CF80F6 /* Products */;
-					ProjectRef = 2BBB32B82A9DB36100CF80F6 /* SeSACFramework.xcodeproj */;
+					ProductGroup = 2B1F467A2A9F419200F722BA /* Products */;
+					ProjectRef = 2B1F46792A9F419200F722BA /* SeSACFramework.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -274,18 +274,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2BBB32BE2A9DB36100CF80F6 /* SeSACFramework.framework */ = {
+		2B1F467F2A9F419200F722BA /* SeSACFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SeSACFramework.framework;
-			remoteRef = 2BBB32BD2A9DB36100CF80F6 /* PBXContainerItemProxy */;
+			remoteRef = 2B1F467E2A9F419200F722BA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2BBB32C02A9DB36100CF80F6 /* SeSACFrameworkTests.xctest */ = {
+		2B1F46812A9F419200F722BA /* SeSACFrameworkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = SeSACFrameworkTests.xctest;
-			remoteRef = 2BBB32BF2A9DB36100CF80F6 /* PBXContainerItemProxy */;
+			remoteRef = 2B1F46802A9F419200F722BA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
