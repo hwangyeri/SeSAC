@@ -10,7 +10,7 @@ import SnapKit
 
 class TextViewController: UIViewController {
     
-    //lazy var photoImageView = setImageView() // 2. lazy var 초기화 시점 미뤄주기
+//    lazy var photoImageView = setImageView() // 2. lazy var 초기화 시점 미뤄주기
     
     let picker = UIImagePickerController()
     
