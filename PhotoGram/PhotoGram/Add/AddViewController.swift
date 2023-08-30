@@ -21,6 +21,7 @@ protocol PassImageDelegate {
 class AddViewController: BaseViewController {
     
     let mainView = AddView()
+    let picker = UIImagePickerController()
     
     override func loadView() { //viewDidLoad보다 먼저 호출됨, super 메서드 호출 X // 애플이 만들어둔거 말고 내가 만든 걸로 쓸게
         self.view = mainView
@@ -34,7 +35,14 @@ class AddViewController: BaseViewController {
 //        ClassPublicExample.publicExample()
         
         APIService.shared.callRequest()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true // 편집 상태 허가, ex. 찍은 사진 확대 가능
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,12 +88,35 @@ class AddViewController: BaseViewController {
     }
     
     @objc func searchButtonClicked() {
+        print(#function)
+        
         let word = ["Apple", "Banana", "Cookie", "Cake", "Sky"]
         
         NotificationCenter.default.post(name: NSNotification.Name("RecommendKeyword"), object: nil, userInfo: ["word": word.randomElement()!])
         
-        present(SearchViewController(), animated: true)
-        //navigationController?.pushViewController(SearchViewController(), animated: true)
+        // ActionSheet
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let actionGallery = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { _ in
+            guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { // 쓸 수 있는지 확인
+                print("갤러리 사용 불가, 사용자에게 토스트/얼럿") // 읽기 권한은 필요없음, 단순히 사진을 가져오는 것은 가능
+                return
+            }
+            
+            self.present(self.picker, animated: true)
+        }
+        
+        let actionWeb = UIAlertAction(title: "웹에서 가져오기", style: .default) { _ in
+            self.present(SearchViewController(), animated: true)
+        }
+        
+        let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        actionSheetController.addAction(actionGallery)
+        actionSheetController.addAction(actionWeb)
+        actionSheetController.addAction(actionCancel)
+        
+        self.present(actionSheetController, animated: true, completion: nil)
     }
     
     @objc func dateButtonClicked() {
@@ -143,4 +174,25 @@ extension AddViewController: PassImageDelegate {
     func receiveImage(image: UIImage) {
         mainView.photoImageView.image = image
     }
+}
+
+extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    //취소 버튼 클릭 시
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+        print(#function)
+    }
+    
+    //사진을 선택하거나 카메라 촬영 직후 호출
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print(#function)
+        
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage { // 크롭한 이미지로 저장하려면 editedImage
+            mainView.photoImageView.image = image
+            dismiss(animated: true)
+        }
+    }
+    
+    
 }

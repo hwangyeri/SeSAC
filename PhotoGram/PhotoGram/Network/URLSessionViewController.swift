@@ -16,6 +16,7 @@ class URLSessionViewController: UIViewController {
         
         let url = URL(string:
                         "https://apod.nasa.gov/apod/image/2308/M66_JwstTomlinson_3521.jpg")
+        //https://api.unsplash.com/search/photos?query=\()?sky&client_id=\()
         
         session = URLSession(configuration: .default, delegate: self, delegateQueue: .main)
         session.dataTask(with: url!).resume() // response 에 대한 지점이 달라서 코드가 확 줄어보이지만 shared 코드랑 원리는 같음

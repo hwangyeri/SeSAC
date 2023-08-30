@@ -11,6 +11,9 @@
 		2B1F46432A9EEBDF00F722BA /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46422A9EEBDF00F722BA /* URLSessionViewController.swift */; };
 		2B1F468F2A9F44F800F722BA /* SeSACFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1F468C2A9F44F300F722BA /* SeSACFramework.framework */; };
 		2B1F46902A9F44F800F722BA /* SeSACFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1F468C2A9F44F300F722BA /* SeSACFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2B1F46942A9F4D1B00F722BA /* SearchPhotoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46932A9F4D1B00F722BA /* SearchPhotoData.swift */; };
+		2B1F46962A9F4F4700F722BA /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2B1F46952A9F4F4700F722BA /* .gitignore */; };
+		2B1F46982A9F4F6400F722BA /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46972A9F4F6400F722BA /* APIKey.swift */; };
 		2B32D5402A9C1D8B00874689 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D53F2A9C1D8B00874689 /* AppDelegate.swift */; };
 		2B32D5422A9C1D8B00874689 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5412A9C1D8B00874689 /* SceneDelegate.swift */; };
 		2B32D5442A9C1D8B00874689 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5432A9C1D8B00874689 /* AddViewController.swift */; };
@@ -68,6 +71,9 @@
 		2B1F46402A9EC74900F722BA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		2B1F46422A9EEBDF00F722BA /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 		2B1F46862A9F44F300F722BA /* SeSACFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SeSACFramework.xcodeproj; path = ../SeSACFramework/SeSACFramework.xcodeproj; sourceTree = "<group>"; };
+		2B1F46932A9F4D1B00F722BA /* SearchPhotoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoData.swift; sourceTree = "<group>"; };
+		2B1F46952A9F4F4700F722BA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2B1F46972A9F4F6400F722BA /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		2B32D53C2A9C1D8B00874689 /* PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B32D53F2A9C1D8B00874689 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B32D5412A9C1D8B00874689 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +113,7 @@
 		2B1F463F2A9EC72400F722BA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2B1F46972A9F4F6400F722BA /* APIKey.swift */,
 				2B1F46402A9EC74900F722BA /* APIService.swift */,
 				2B1F46422A9EEBDF00F722BA /* URLSessionViewController.swift */,
 			);
@@ -120,6 +127,14 @@
 				2B1F468E2A9F44F300F722BA /* SeSACFrameworkTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2B1F46992A9F597300F722BA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2B1F46932A9F4D1B00F722BA /* SearchPhotoData.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		2B32D5332A9C1D8B00874689 = {
@@ -143,6 +158,7 @@
 		2B32D53E2A9C1D8B00874689 /* PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				2B1F46992A9F597300F722BA /* Data */,
 				2B1F463F2A9EC72400F722BA /* Network */,
 				2BBB327E2A9D7BC700CF80F6 /* Extension */,
 				2B32D5562A9C23F000874689 /* Base */,
@@ -154,6 +170,7 @@
 				2B32D5482A9C1D8D00874689 /* Assets.xcassets */,
 				2B32D54A2A9C1D8D00874689 /* LaunchScreen.storyboard */,
 				2B32D54D2A9C1D8D00874689 /* Info.plist */,
+				2B1F46952A9F4F4700F722BA /* .gitignore */,
 			);
 			path = PhotoGram;
 			sourceTree = "<group>";
@@ -296,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B32D54C2A9C1D8D00874689 /* LaunchScreen.storyboard in Resources */,
+				2B1F46962A9F4F4700F722BA /* .gitignore in Resources */,
 				2B32D5492A9C1D8D00874689 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BBB32802A9D7BE900CF80F6 /* Notification+Extension.swift in Sources */,
+				2B1F46982A9F4F6400F722BA /* APIKey.swift in Sources */,
 				2B32D5602A9C2FF300874689 /* AddView.swift in Sources */,
 				2B32D55B2A9C273F00874689 /* SearchViewController.swift in Sources */,
 				2B32D5642A9C368500874689 /* BaseCollectionViewCell.swift in Sources */,
@@ -323,6 +342,7 @@
 				2BBB32CA2A9DC76000CF80F6 /* WebViewController.swift in Sources */,
 				2B32D55D2A9C2EC300874689 /* BaseView.swift in Sources */,
 				2B32D5402A9C1D8B00874689 /* AppDelegate.swift in Sources */,
+				2B1F46942A9F4D1B00F722BA /* SearchPhotoData.swift in Sources */,
 				2B32D5422A9C1D8B00874689 /* SceneDelegate.swift in Sources */,
 				2B1F46412A9EC74900F722BA /* APIService.swift in Sources */,
 				2BBB32C62A9DB55500CF80F6 /* TitleViewController.swift in Sources */,

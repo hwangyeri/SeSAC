@@ -20,14 +20,15 @@ class APIService {
         let request = URLRequest(url: url!)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
-            print(data)
+            print("data: ", data)
             
             let value = String(data: data!, encoding: .utf8) // 데이터 형식을 변환해주는 기능
             
-            print(value)
+            print("value: ", value)
             
-            print(response)
-            print(error)
+            print("response: ", response)
+            print("error: ", error)
+            
         }.resume()
         
     }
