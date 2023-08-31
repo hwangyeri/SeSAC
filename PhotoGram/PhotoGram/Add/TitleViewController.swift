@@ -26,6 +26,10 @@ class TitleViewController: BaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(doneButtonClicked))
     }
     
+    deinit {
+        print("deinit", self)
+    }
+    
     @objc func doneButtonClicked() {
         
         completionHandler?(textField.text!, 77, false)

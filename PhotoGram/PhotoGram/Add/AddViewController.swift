@@ -37,6 +37,12 @@ class AddViewController: BaseViewController {
         APIService.shared.callRequest()
     }
     
+    deinit {
+        // 메모리상 문제가 없는지, UI적으로만 사라진게 아니라 메모리에서도 없애고 공간을 차지하지 않도록 // 메모리 누수를 찾아볼 수 있는 방법
+        // AddViewController 시작화면이기 때문에 메모리에 남아있음
+        print("deinit", self)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -120,9 +126,12 @@ class AddViewController: BaseViewController {
     }
     
     @objc func dateButtonClicked() {
-        //Protocol 값 전달 5.
-        let vc = DateViewController()
-        vc.delegate = self // 너 부하직원 있지? 부하직원이 할 수 있는 일을 내가 대신 할게 ~
+//        //Protocol 값 전달 5.
+//        let vc = DateViewController()
+//        vc.delegate = self // 너 부하직원 있지? 부하직원이 할 수 있는 일을 내가 대신 할게 ~
+//        navigationController?.pushViewController(vc, animated: true)
+        
+        let vc = HomeViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
