@@ -11,14 +11,11 @@ import Kingfisher
 class CreditViewController: BaseViewController {
     
     let mainView = CreditView()
-    
+
     var creditList: Movie = Movie(id: 0, cast: [], crew: [])
     
-    var selectedMovieID: Int?
-    var selectedMovieBigImage: String?
-    var selectedMoviePosterImage: String?
-    var selectedMovieTitle: String?
-    var selectedMovieOverviewContent: String?
+    var selectedMovieData : Result?
+    
     var isChevronButtonClicked = false
     
     override func loadView() {
@@ -31,13 +28,11 @@ class CreditViewController: BaseViewController {
         title = "출연/제작"
         
         getData()
+        
+        mainView.chevronButton.addTarget(self, action: #selector(chevronButtonClicked), for: .touchUpInside)
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Cast"
-    }
-    
-    @IBAction func chevronButtonClicked(_ sender: UIButton) {
+    @objc func chevronButtonClicked() {
         isChevronButtonClicked.toggle()
         mainView.contentLabel.numberOfLines = 0
     }
@@ -53,8 +48,7 @@ class CreditViewController: BaseViewController {
     }
     
     func getData() {
-        
-        CreditAPIManager.shared.callRequest(movieID: selectedMovieID ?? 0) { data in
+        CreditAPIManager.shared.callRequest(movieID: selectedMovieData?.id ?? 0) { data in
             self.creditList = data
             print("*****list.data success", self.creditList)
             self.mainView.tableView.reloadData()
@@ -62,12 +56,13 @@ class CreditViewController: BaseViewController {
             print(#function, "error")
         }
         
-        let bigImageURL = "https://www.themoviedb.org/t/p/original\(selectedMovieBigImage ?? "")"
-        let PosterImageURL = "https://www.themoviedb.org/t/p/original\(selectedMoviePosterImage ?? "")"
+        let bigImageURL = "https://www.themoviedb.org/t/p/original\(selectedMovieData?.backdropPath ?? "")"
+        let PosterImageURL = "https://www.themoviedb.org/t/p/original\(selectedMovieData?.posterPath ?? "")"
+        
         mainView.bigImageView.kf.setImage(with: URL(string: bigImageURL))
         mainView.posterImageView.kf.setImage(with: URL(string: PosterImageURL))
-        mainView.titleLabel.text = selectedMovieTitle
-        mainView.contentLabel.text = selectedMovieOverviewContent
+        mainView.titleLabel.text = selectedMovieData?.originalTitle
+        mainView.contentLabel.text = selectedMovieData?.overview
     }
     
     
@@ -75,12 +70,16 @@ class CreditViewController: BaseViewController {
 
 extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Cast"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return creditList.cast.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "creditCell") as? CreditTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CreditTableViewCell") as? CreditTableViewCell else { return UITableViewCell() }
         
         let creditItem = creditList.cast[indexPath.item]
 

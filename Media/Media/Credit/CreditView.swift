@@ -11,8 +11,8 @@ class CreditView: BaseView {
     
     lazy var tableView = {
         let view = UITableView()
-        view.rowHeight = 150
-        view.register(CreditTableViewCell.self, forCellReuseIdentifier: "creditCell")
+        view.rowHeight = 120
+        view.register(CreditTableViewCell.self, forCellReuseIdentifier: "CreditTableViewCell")
         return view
     }()
     
@@ -33,7 +33,7 @@ class CreditView: BaseView {
     
     let titleLabel = {
         let view = UILabel()
-        view.font = .boldSystemFont(ofSize: 20)
+        view.font = .boldSystemFont(ofSize: 18)
         view.textColor = .white
         return view
     }()
@@ -42,7 +42,7 @@ class CreditView: BaseView {
         let view = UILabel()
         view.text = "OverView"
         view.font = .boldSystemFont(ofSize: 14)
-        view.textColor = .darkGray
+        view.textColor = .lightGray
         return view
     }()
     
@@ -56,6 +56,7 @@ class CreditView: BaseView {
         view.font = .systemFont(ofSize: 13)
         view.textColor = .black
         view.numberOfLines = 3
+        view.textAlignment = .center
         return view
     }()
     
@@ -79,54 +80,70 @@ class CreditView: BaseView {
     
     override func setConstraints() {
         
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        topView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+            make.height.equalTo(350)
+            make.bottom.equalTo(tableView.snp.top)
         }
         
-        topView.snp.makeConstraints { make in
-            make.edges.equalTo(UIScreen.main.bounds.size).multipliedBy(0.5)
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(topView.snp.bottom).offset(10)
+            make.horizontalEdges.bottom.equalToSuperview()
         }
         
         bigImageView.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalToSuperview()
-            make.height.equalTo(topView).multipliedBy(0.45)
+            //FIXME: view..가 안됨, horizontalEdges 사이즈 조정 필요
+            make.top.equalTo(topView)
+            make.horizontalEdges.equalToSuperview()
+            make.height.equalTo(topView).multipliedBy(0.5)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().inset(10)
+            make.leading.equalTo(topView).inset(30)
+            make.top.equalTo(topView).inset(10)
+            make.height.equalTo(30)
         }
         
         posterImageView.snp.makeConstraints { make in
             make.leading.equalTo(titleLabel)
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
-            make.width.equalToSuperview().multipliedBy(0.4)
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.width.equalTo(bigImageView).multipliedBy(0.3)
+            make.bottom.equalTo(bigImageView)
         }
         
         overviewLabel.snp.makeConstraints { make in
             make.leading.equalTo(titleLabel)
             make.top.equalTo(bigImageView.snp.bottom).offset(10)
+            make.trailing.equalTo(posterImageView.snp.trailing)
+            make.height.equalTo(30)
         }
         
         dividerView1.snp.makeConstraints { make in
             make.leading.equalTo(overviewLabel)
-            make.top.equalTo(overviewLabel.snp.bottom).offset(8)
-            make.height.equalTo(1)
+            make.top.equalTo(overviewLabel.snp.bottom)
+            make.bottom.equalTo(contentLabel.snp.top)
+            make.height.equalTo(0.5)
             make.trailing.equalTo(bigImageView)
         }
         
         contentLabel.snp.makeConstraints { make in
-            make.top.equalTo(dividerView1.snp.bottom).offset(10)
+            make.top.equalTo(dividerView1.snp.bottom)
             make.leading.equalTo(dividerView1).offset(10)
+            make.trailing.equalTo(self.safeAreaLayoutGuide).inset(30)
+            make.bottom.equalTo(chevronButton)
         }
         
         chevronButton.snp.makeConstraints { make in
+            make.top.equalTo(contentLabel.snp.bottom).offset(10)
             make.centerX.equalToSuperview()
             make.size.equalTo(50)
         }
         
         dividerView2.snp.makeConstraints { make in
             make.top.equalTo(chevronButton.snp.bottom).offset(8)
+            make.leading.equalTo(dividerView1)
             make.size.equalTo(dividerView1)
+            make.bottom.equalTo(topView)
         }
         
         

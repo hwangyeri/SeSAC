@@ -19,7 +19,7 @@ class RateLabel: UILabel {
     }
     
     func setupView() {
-        font = .boldSystemFont(ofSize: 13)
+        font = .systemFont(ofSize: 13)
         textAlignment = .center
     }
     

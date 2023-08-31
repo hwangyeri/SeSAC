@@ -25,7 +25,6 @@
 		2B32D5762A9CB9B400874689 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B32D5752A9CB9B400874689 /* SnapKit */; };
 		2B32D5782A9CBA7F00874689 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5772A9CBA7F00874689 /* BaseTableViewCell.swift */; };
 		2B32D57A2A9CBE4D00874689 /* RateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5792A9CBE4D00874689 /* RateLabel.swift */; };
-		2B32D57C2A9CC04500874689 /* ContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D57B2A9CC04500874689 /* ContentLabel.swift */; };
 		2B32D5802A9CD41000874689 /* CreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D57F2A9CD41000874689 /* CreditView.swift */; };
 		2B32D5822A9CDBBD00874689 /* CreditImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5812A9CDBBD00874689 /* CreditImageView.swift */; };
 		2B32D5842A9CDCD200874689 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5832A9CDCD200874689 /* DividerView.swift */; };
@@ -75,7 +74,6 @@
 		2B32D5722A9CB94500874689 /* TrendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendView.swift; sourceTree = "<group>"; };
 		2B32D5772A9CBA7F00874689 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		2B32D5792A9CBE4D00874689 /* RateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateLabel.swift; sourceTree = "<group>"; };
-		2B32D57B2A9CC04500874689 /* ContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLabel.swift; sourceTree = "<group>"; };
 		2B32D57F2A9CD41000874689 /* CreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditView.swift; sourceTree = "<group>"; };
 		2B32D5812A9CDBBD00874689 /* CreditImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditImageView.swift; sourceTree = "<group>"; };
 		2B32D5832A9CDCD200874689 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 				2B32D5722A9CB94500874689 /* TrendView.swift */,
 				2BAC1A352A878B7000A4C117 /* TrendTableViewCell.swift */,
 				2B32D5792A9CBE4D00874689 /* RateLabel.swift */,
-				2B32D57B2A9CC04500874689 /* ContentLabel.swift */,
 			);
 			path = Trend;
 			sourceTree = "<group>";
@@ -374,7 +371,6 @@
 				2B32D4E92A93795F00874689 /* SimilarAPIManager.swift in Sources */,
 				2BEB595C2A877AD00089E607 /* TrendViewController.swift in Sources */,
 				2B32D4E52A9377BA00874689 /* SimilarData.swift in Sources */,
-				2B32D57C2A9CC04500874689 /* ContentLabel.swift in Sources */,
 				2B32D56D2A9CA95000874689 /* BaseViewController.swift in Sources */,
 				2BBB32CD2A9E252F00CF80F6 /* ProfileViewController.swift in Sources */,
 				2BEB59542A8776590089E607 /* TrendAPIManager.swift in Sources */,

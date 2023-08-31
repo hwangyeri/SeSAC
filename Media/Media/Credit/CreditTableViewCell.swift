@@ -12,6 +12,7 @@ class CreditTableViewCell: BaseTableViewCell {
     let posterImageView = {
         let view = UIImageView()
         view.layer.cornerRadius = 8
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -45,7 +46,7 @@ class CreditTableViewCell: BaseTableViewCell {
         }
         
         castNameLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(contentView).inset(10)
+            make.centerY.equalTo(contentView).offset(-15)
             make.leading.equalTo(posterImageView.snp.trailing).offset(20)
         }
         

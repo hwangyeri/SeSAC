@@ -18,15 +18,15 @@ class TrendTableViewCell: BaseTableViewCell {
     
     let genreLabel = {
         let view = UILabel()
-        view.font = .boldSystemFont(ofSize: 15)
+        view.font = .boldSystemFont(ofSize: 16)
         view.textColor = .black
         return view
     }()
     
     let squareView = {
         let view = UIImageView()
-        view.backgroundColor = .clear
-        view.layer.cornerRadius = 12
+        view.layer.cornerRadius = 10
+        view.backgroundColor = .white
         view.layer.shadowOpacity = 0.5
         view.layer.shadowRadius = 12
         view.layer.shadowOffset = CGSize(width: 10, height: 10)
@@ -35,13 +35,17 @@ class TrendTableViewCell: BaseTableViewCell {
     
     let mainImageView = {
         let view = UIImageView()
+        view.layer.cornerRadius = 10
+        view.layer.masksToBounds = true
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
     let shareButton = {
         let view = UIButton()
         view.setImage(UIImage(systemName: "paperclip.circle.fill"), for: .normal)
-        view.tintColor = .black
+        view.tintColor = .white
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -61,20 +65,24 @@ class TrendTableViewCell: BaseTableViewCell {
     }()
     
     let originalTitleLabel = {
-        let view = ContentLabel()
-        view.font = .boldSystemFont(ofSize: 17)
+        let view = UILabel()
+        view.font = .boldSystemFont(ofSize: 16)
+        view.textColor = .black
+        view.backgroundColor = .red
         return view
     }()
     
     let titleLabel = {
-        let view = ContentLabel()
-        view.font = .boldSystemFont(ofSize: 15)
+        let view = UILabel()
+        view.font = .boldSystemFont(ofSize: 14)
         return view
     }()
     
     let castLabel = {
-        let view = ContentLabel()
+        let view = UILabel()
         view.font = .boldSystemFont(ofSize: 14)
+        view.textColor = .darkGray
+        view.backgroundColor = .blue
         return view
     }()
     
@@ -95,11 +103,13 @@ class TrendTableViewCell: BaseTableViewCell {
     let chevronImageView = {
         let view = UIImageView()
         view.image = UIImage(systemName: "chevron.right")
+        view.tintColor = .black
+        view.contentMode = .scaleAspectFit
         return view
     }()
         
     override func configureView() {
-        [dateLabel, genreLabel, squareView, mainImageView, shareButton, rateLabel, rateNumberLabel, originalTitleLabel, titleLabel, castLabel, dividerView, dateLabel, chevronImageView].forEach {
+        [dateLabel, genreLabel, squareView, mainImageView, shareButton, rateLabel, rateNumberLabel, originalTitleLabel, titleLabel, castLabel, dividerView, detailLabel, chevronImageView].forEach {
             contentView.addSubview($0)
         }
     }
@@ -107,71 +117,83 @@ class TrendTableViewCell: BaseTableViewCell {
     override func setConstraints() {
         
         dateLabel.snp.makeConstraints { make in
-            make.leading.top.equalTo(contentView).inset(10)
+            make.leading.top.equalTo(contentView).inset(20)
         }
         
         genreLabel.snp.makeConstraints { make in
             make.leading.equalTo(dateLabel)
-            make.top.equalTo(dateLabel.snp.bottom).offset(10)
+            make.top.equalTo(dateLabel.snp.bottom).offset(5)
         }
         
         squareView.snp.makeConstraints { make in
             make.top.equalTo(genreLabel.snp.bottom).offset(8)
-            make.leading.trailing.bottomMargin.equalTo(10)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(10)
         }
         
         mainImageView.snp.makeConstraints { make in
             make.leading.trailing.top.equalTo(squareView)
             make.top.equalTo(squareView.snp.top)
-            make.height.equalTo(squareView).multipliedBy(0.55)
+            make.height.equalTo(squareView).multipliedBy(0.7)
         }
         
         shareButton.snp.makeConstraints { make in
-            make.top.trailing.equalTo(squareView).inset(10)
-            make.size.equalTo(35)
+            make.top.equalTo(squareView).inset(30)
+            make.trailing.equalTo(squareView).inset(5)
+            make.size.equalTo(30)
         }
         
         rateLabel.snp.makeConstraints { make in
-            make.leading.bottom.equalTo(mainImageView).inset(10)
+            make.bottom.equalTo(mainImageView).inset(30)
+            make.leading.equalTo(mainImageView).inset(10)
+            make.width.equalTo(40)
         }
         
         rateNumberLabel.snp.makeConstraints { make in
             make.leading.equalTo(rateLabel.snp.trailing)
             make.top.bottom.equalTo(rateLabel)
-            make.size.equalTo(rateLabel)
+            make.height.equalTo(rateLabel)
+            make.width.equalTo(45)
         }
         
         originalTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(mainImageView.snp.bottom).offset(10)
+            make.top.equalTo(mainImageView.snp.bottom)
             make.leading.equalTo(rateLabel)
+            make.trailing.equalTo(mainImageView).inset(20)
+            make.bottom.equalTo(castLabel.snp.top)
         }
         
-        titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(originalTitleLabel.snp.trailing).offset(8)
-            make.top.equalTo(originalTitleLabel)
-        }
+//        titleLabel.snp.makeConstraints { make in
+//            make.leading.equalTo(originalTitleLabel.snp.trailing).offset(8)
+//            make.top.equalTo(originalTitleLabel)
+//        }
         
         castLabel.snp.makeConstraints { make in
             make.leading.equalTo(originalTitleLabel)
-            make.top.equalTo(originalTitleLabel.snp.bottom).offset(8)
+            make.top.equalTo(originalTitleLabel.snp.bottom)
+            make.bottom.equalTo(dividerView.snp.top).offset(-8)
+            make.trailing.equalTo(mainImageView.snp.trailing).inset(20)
+            make.height.equalTo(25)
         }
         
         dividerView.snp.makeConstraints { make in
-            make.width.equalTo(squareView).multipliedBy(0.9)
             make.height.equalTo(1)
             make.leading.equalTo(castLabel)
+            make.trailing.equalTo(mainImageView.snp.trailing)
             make.top.equalTo(castLabel.snp.bottom).offset(8)
         }
         
         detailLabel.snp.makeConstraints { make in
             make.top.equalTo(dividerView.snp.bottom).offset(8)
             make.leading.equalTo(castLabel)
+            make.bottom.equalTo(squareView.snp.bottom).inset(15)
+            make.trailing.equalTo(chevronImageView.snp.leading).offset(20)
         }
-        
+
         chevronImageView.snp.makeConstraints { make in
             make.top.equalTo(detailLabel)
-            make.trailing.equalTo(squareView).inset(10)
-            make.size.equalTo(35)
+            make.trailing.equalTo(squareView.snp.trailing).inset(10)
+            make.size.equalTo(20)
         }
         
     }

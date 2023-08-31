@@ -19,7 +19,7 @@ class DividerView: UIView {
     }
     
     func configureView() {
-        backgroundColor = .darkGray
+        backgroundColor = .lightGray
     }
     
     

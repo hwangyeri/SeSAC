@@ -10,9 +10,10 @@ import UIKit
 class TrendView: BaseView {
     
     lazy var tableView = {
+        print("sksks")
         let view = UITableView()
-        view.rowHeight = 500
-        view.register(TrendTableViewCell.self, forCellReuseIdentifier: "trendCell")
+        view.rowHeight = 400
+        view.register(TrendTableViewCell.self, forCellReuseIdentifier: "TrendTableViewCell")
         return view
     }()
     
