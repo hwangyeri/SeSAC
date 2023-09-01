@@ -17,8 +17,8 @@ class HomeView: BaseView {
     lazy var collectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
-        view.delegate = self
-        view.dataSource = self
+//        view.delegate = self
+//        view.dataSource = self
         return view
     }()
     
@@ -40,27 +40,6 @@ class HomeView: BaseView {
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    }
-    
-}
-
-extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
-        cell.imageView.backgroundColor = .blue
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(#function)
-        // 화면전환, 얼럿 못띄움 // navigation-push/pop, present-dismiss -> ViewController 에서만 할 수 있음
-        // ViewController가 해당 기능을 할 수 있도록 처리, 신호를 받아 실행할 수 있게끔 Delegate Patten을 이용해서 명령함
-        delegate?.didSelectItemAt(indexPath: indexPath)
     }
     
 }

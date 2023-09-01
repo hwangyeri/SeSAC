@@ -34,7 +34,7 @@ class AddViewController: BaseViewController {
 //        ClassOpenExample.publicExample()
 //        ClassPublicExample.publicExample()
         
-        APIService.shared.callRequest()
+//        APIService.shared.callRequest(query: "sky")
     }
     
     deinit {
@@ -78,14 +78,12 @@ class AddViewController: BaseViewController {
     override func configureView() {
         super.configureView()
         print("Add configureView")
+        
         mainView.searchButton.addTarget(self, action: #selector(searchButtonClicked), for: .touchUpInside) // View Setting 환경설정과 관련됨
         mainView.dateButton.addTarget(self, action: #selector(dateButtonClicked), for: .touchUpInside)
         mainView.searchProtocolButton.addTarget(self, action: #selector(searchProtocolButtonClicked), for: .touchUpInside)
         mainView.titleButton.addTarget(self, action: #selector(titleButtonClicked), for: .touchUpInside)
         mainView.contentButton.addTarget(self, action: #selector(contentButtonClicked), for: .touchUpInside)
-        
-        APIService.shared.callRequest()
-        
     }
     
     override func setConstraints() {
