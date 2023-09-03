@@ -68,7 +68,6 @@ class TrendTableViewCell: BaseTableViewCell {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 16)
         view.textColor = .black
-        view.backgroundColor = .red
         return view
     }()
     
@@ -82,7 +81,6 @@ class TrendTableViewCell: BaseTableViewCell {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 14)
         view.textColor = .darkGray
-        view.backgroundColor = .blue
         return view
     }()
     

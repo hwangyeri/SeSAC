@@ -19,7 +19,7 @@ class CreditImageView: UIImageView {
     }
     
     func configureView() {
-        contentMode = .scaleAspectFit
+        contentMode = .scaleAspectFill
     }
     
     

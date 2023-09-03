@@ -35,6 +35,7 @@ class CreditView: BaseView {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 18)
         view.textColor = .white
+//        view.backgroundColor = .red
         return view
     }()
     
@@ -81,7 +82,8 @@ class CreditView: BaseView {
     override func setConstraints() {
         
         topView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+            make.leading.trailing.equalTo(self.safeAreaLayoutGuide)
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
             make.height.equalTo(350)
             make.bottom.equalTo(tableView.snp.top)
         }
@@ -92,28 +94,27 @@ class CreditView: BaseView {
         }
         
         bigImageView.snp.makeConstraints { make in
-            //FIXME: view..가 안됨, horizontalEdges 사이즈 조정 필요
             make.top.equalTo(topView)
             make.horizontalEdges.equalToSuperview()
             make.height.equalTo(topView).multipliedBy(0.5)
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalTo(topView).inset(30)
-            make.top.equalTo(topView).inset(10)
+            make.leading.equalTo(topView).inset(20)
+            make.top.equalTo(topView).offset(-15)
             make.height.equalTo(30)
         }
         
         posterImageView.snp.makeConstraints { make in
             make.leading.equalTo(titleLabel)
-            make.top.equalTo(titleLabel.snp.bottom)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.width.equalTo(bigImageView).multipliedBy(0.3)
             make.bottom.equalTo(bigImageView)
         }
         
         overviewLabel.snp.makeConstraints { make in
             make.leading.equalTo(titleLabel)
-            make.top.equalTo(bigImageView.snp.bottom).offset(10)
+            make.top.equalTo(bigImageView.snp.bottom).offset(30)
             make.trailing.equalTo(posterImageView.snp.trailing)
             make.height.equalTo(30)
         }
