@@ -18,6 +18,10 @@ protocol PassImageDelegate {
     func receiveImage(image: UIImage)
 }
 
+protocol PassWebImageDelegate: AnyObject {
+    func receiveWebImage(image: UIImage)
+}
+
 class AddViewController: BaseViewController {
     
     let mainView = AddView()
@@ -33,8 +37,6 @@ class AddViewController: BaseViewController {
         
 //        ClassOpenExample.publicExample()
 //        ClassPublicExample.publicExample()
-        
-//        APIService.shared.callRequest(query: "sky")
     }
     
     deinit {
@@ -111,7 +113,10 @@ class AddViewController: BaseViewController {
         }
         
         let actionWeb = UIAlertAction(title: "웹에서 가져오기", style: .default) { _ in
-            self.present(SearchViewController(), animated: true)
+            let vc = HomeViewController()
+            vc.delegate = self
+            
+            self.present(vc, animated: true)
         }
         
         let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
@@ -124,12 +129,10 @@ class AddViewController: BaseViewController {
     }
     
     @objc func dateButtonClicked() {
-//        //Protocol 값 전달 5.
-//        let vc = DateViewController()
-//        vc.delegate = self // 너 부하직원 있지? 부하직원이 할 수 있는 일을 내가 대신 할게 ~
-//        navigationController?.pushViewController(vc, animated: true)
+        //Protocol 값 전달 5.
+        let vc = DateViewController()
+        vc.delegate = self // 너 부하직원 있지? 부하직원이 할 수 있는 일을 내가 대신 할게 ~
         
-        let vc = HomeViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -139,7 +142,6 @@ class AddViewController: BaseViewController {
         vc.delegate = self
         
         present(vc, animated: true)
-        //navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func titleButtonClicked() {
@@ -180,6 +182,14 @@ extension AddViewController: PassImageDelegate {
     // 4.
     func receiveImage(image: UIImage) {
         mainView.photoImageView.image = image
+    }
+}
+
+extension AddViewController: PassWebImageDelegate {
+    
+    func receiveWebImage(image: UIImage) {
+        mainView.photoImageView.image = image
+        dismiss(animated: true)
     }
 }
 

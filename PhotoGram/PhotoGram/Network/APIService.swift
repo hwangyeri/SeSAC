@@ -57,21 +57,3 @@ class APIService {
     }
     
 }
-
-// 퀵타임 쓰지않고 모델 직접 정의
-
-struct Photo: Codable {
-    let total: Int
-    let total_pages: Int
-    let results: [PhotoResult]
-}
-
-struct PhotoResult: Codable {
-    let id: String
-    let urls: PhotoURL
-}
-
-struct PhotoURL: Codable {
-    let full: String
-    let thumb: String
-}

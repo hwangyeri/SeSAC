@@ -10,6 +10,12 @@ import SnapKit
 
 class HomeView: BaseView {
     
+    var searchBar = {
+        let view = UISearchBar()
+        view.placeholder = "원하는 이미지를 검색해보세요!"
+        return view
+    }()
+    
     // protocol 2.
     // 강한 순환 참조가 되어있어서 weak가 없으면 deinit이 안됨
     weak var delegate: HomeViewProtocol?
@@ -34,11 +40,18 @@ class HomeView: BaseView {
     
     override func configureView() {
         addSubview(collectionView)
+        addSubview(searchBar)
     }
     
     override func setConstraints() {
+        
+        searchBar.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalToSuperview()
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.horizontalEdges.bottom.equalToSuperview()
+            make.top.equalTo(searchBar.snp.bottom)
         }
     }
     

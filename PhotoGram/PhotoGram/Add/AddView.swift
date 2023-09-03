@@ -12,7 +12,7 @@ class AddView: BaseView {
     let photoImageView = {
         let view = UIImageView()
         view.backgroundColor = .lightGray
-        view.contentMode = .scaleAspectFill
+        view.contentMode = .scaleAspectFit
         return view
     }()
    
@@ -64,7 +64,7 @@ class AddView: BaseView {
         
         photoImageView.snp.makeConstraints { make in
             make.topMargin.leadingMargin.trailingMargin.equalTo(self.safeAreaLayoutGuide).inset(10)
-            make.height.equalTo(self).multipliedBy(0.3)
+            make.height.equalTo(self).multipliedBy(0.4)
         }
         
         searchButton.snp.makeConstraints { make in
