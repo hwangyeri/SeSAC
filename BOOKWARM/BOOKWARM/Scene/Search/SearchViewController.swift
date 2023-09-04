@@ -10,14 +10,6 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-struct Book {
-    let title: String
-    let author: String
-    let content: String
-    let price: Int
-    let thumbnail: String
-}
-
 class SearchViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar!
@@ -99,7 +91,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITa
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as? SearchTableViewCell else { return SearchTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdentifier) as? SearchTableViewCell else { return UITableViewCell() }
         let row = bookList[indexPath.row]
         
         cell.titleLabel.text = row.title
