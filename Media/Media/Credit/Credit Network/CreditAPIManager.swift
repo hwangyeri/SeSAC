@@ -14,7 +14,7 @@ class CreditAPIManager {
     
     private init() { }
     
-    func callRequest(movieID: Int, success: @escaping (Movie) -> Void, failure: @escaping () -> Void) {
+    func callRequest(movieID: Int, success: @escaping (Credit) -> Void, failure: @escaping () -> Void) {
         let url = "https://api.themoviedb.org/3/movie/\(movieID)/credits?api_key=\(APIKey.tmdbKey)"
         let header: HTTPHeaders = [
             "accept": "application/json",
@@ -22,7 +22,7 @@ class CreditAPIManager {
         ]
         
         AF.request(url, method: .get, headers: header).validate(statusCode: 200...500)
-            .responseDecodable(of: Movie.self) { response in
+            .responseDecodable(of: Credit.self) { response in
                 
                 switch response.result {
                 case .success(let value): success(value)

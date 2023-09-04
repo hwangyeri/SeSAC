@@ -14,29 +14,7 @@ class TrendViewController: BaseViewController {
     
     let mainView = TrendView()
     
-    var trendList: BoxOffice = BoxOffice(page: 0, results: [], totalPages: 0, totalResults: 0)
-    
-    var genreDict: [Int: String] = [
-            28: "Action",
-            12: "Abenteuer",
-            16: "Animation",
-            35: "Komödie",
-            80: "Krimi",
-            99: "Dokumentarfilm",
-            18: "Drama",
-            10751: "Familie",
-            14: "Fantasy",
-            36: "Historie",
-            27: "Horror",
-            10402: "Musik",
-            9648: "Mystery",
-            10749: "Liebesfilm",
-            878: "Science Fiction",
-            10770: "TV-Film",
-            53: "Thriller",
-            10752: "Kriegsfilm",
-            37: "Western"
-        ]
+    var trendList: Trend = Trend(page: 0, results: [], totalPages: 0, totalResults: 0)
     
     
     override func loadView() {
@@ -46,7 +24,7 @@ class TrendViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getData()
+        getData(selectedListItem: .all)
         configureNaviBarButtonItem()
         
     }
@@ -68,16 +46,38 @@ class TrendViewController: BaseViewController {
     }
     
     @objc func listButtonClicked() {
-        let vc = SearchViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let actionTV = UIAlertAction(title: "TV", style: .default) { _ in
+            self.getData(selectedListItem: .tv)
+        }
+        let actionMovie = UIAlertAction(title: "Movie", style: .default) { _ in
+            self.getData(selectedListItem: .movie)
+        }
+        let actionPerson = UIAlertAction(title: "Person", style: .default) { _ in
+            //FIXME: DecodingError
+            self.getData(selectedListItem: .person)
+        }
+        let actionShowAll = UIAlertAction(title: "All", style: .default) { _ in
+            self.getData(selectedListItem: .all)
+        }
+        let actionCancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        actionSheetController.addAction(actionTV)
+        actionSheetController.addAction(actionMovie)
+        actionSheetController.addAction(actionPerson)
+        actionSheetController.addAction(actionShowAll)
+        actionSheetController.addAction(actionCancel)
+        
+        self.present(actionSheetController, animated: true, completion: nil)
     }
     
-    func getData() {
-        print(#function, "+++++++")
+    func getData(selectedListItem: Endpoint) {
+        print(#function, "---- 데이터 받아오기 ----")
         
-        TrendAPIManager.shared.callRequest { data in
+        TrendAPIManager.shared.callRequest(type: selectedListItem) { data in
             self.trendList = data
-            //print("*****list.data success", self.trendList)
+            print("*****list.data success", self.trendList)
             self.mainView.tableView.reloadData()
         } failure: {
             print(#function, "error")
@@ -111,16 +111,16 @@ extension TrendViewController: UITableViewDelegate, UITableViewDataSource {
         cell.mainImageView.kf.setImage(with: URL(string: url))
         cell.dateLabel.text = row.releaseDate
         cell.originalTitleLabel.text = row.originalTitle
-        cell.titleLabel.text = row.title
+        cell.titleLabel.text = row.title ?? row.name
         cell.rateNumberLabel.text = "\(row.voteAverage)"
         cell.castLabel.text = "castAPI 넣어야함"
         
-        for (key, value) in genreDict {
-            if key == genre {
-                cell.genreLabel.text = "#\(value)"
-            }
+        if let genreID = row.genreIDS.first, let genre = Genre(rawValue: genreID) {
+            cell.genreLabel.text = "#\(genre.description)"
+        } else {
+            cell.genreLabel.text = ""
         }
-    
+        
         return cell
     }
     

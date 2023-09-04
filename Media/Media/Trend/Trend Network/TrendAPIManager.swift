@@ -16,15 +16,18 @@ class TrendAPIManager {
 
     private init() { }
 
-    func callRequest(success: @escaping (BoxOffice) -> Void, failure: @escaping () -> Void) {
-        let url = "https://api.themoviedb.org/3/trending/movie/week?api_key=\(APIKey.tmdbKey)"
+    func callRequest(type: Endpoint, success: @escaping (Trend) -> Void, failure: @escaping () -> Void) {
+        //let url = "https://api.themoviedb.org/3/trending/movie/week?api_key=\(APIKey.tmdbKey)"
+        let url = type.requestURL
         let header: HTTPHeaders = [
             "accept": "application/json",
             "Authorization": "Bearer \(APIKey.tmdbKey)"
         ]
+        
+        print(url, "===== url =====")
 
         AF.request(url, method: .get, headers: header).validate(statusCode: 200...500)
-            .responseDecodable(of: BoxOffice.self) { response in
+            .responseDecodable(of: Trend.self) { response in
                 
                 switch response.result {
                 case .success(let value): success(value)

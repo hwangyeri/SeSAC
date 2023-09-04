@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - Movie
-struct Movie: Codable {
+// MARK: - Credit
+struct Credit: Codable {
     let id: Int
     let cast, crew: [Cast]
 }

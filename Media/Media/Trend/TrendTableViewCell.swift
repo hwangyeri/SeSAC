@@ -66,14 +66,13 @@ class TrendTableViewCell: BaseTableViewCell {
     
     let originalTitleLabel = {
         let view = UILabel()
-        view.font = .boldSystemFont(ofSize: 16)
-        view.textColor = .black
         return view
     }()
     
     let titleLabel = {
         let view = UILabel()
-        view.font = .boldSystemFont(ofSize: 14)
+        view.font = .boldSystemFont(ofSize: 16)
+        view.textColor = .black
         return view
     }()
     
@@ -154,21 +153,21 @@ class TrendTableViewCell: BaseTableViewCell {
             make.width.equalTo(45)
         }
         
-        originalTitleLabel.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.top.equalTo(mainImageView.snp.bottom)
             make.leading.equalTo(rateLabel)
             make.trailing.equalTo(mainImageView).inset(20)
             make.bottom.equalTo(castLabel.snp.top)
         }
         
-//        titleLabel.snp.makeConstraints { make in
-//            make.leading.equalTo(originalTitleLabel.snp.trailing).offset(8)
-//            make.top.equalTo(originalTitleLabel)
+//        originalTitleLabel.snp.makeConstraints { make in
+//            make.leading.equalTo(titleLabel.snp.trailing).offset(8)
+//            make.top.equalTo(titleLabel)
 //        }
         
         castLabel.snp.makeConstraints { make in
-            make.leading.equalTo(originalTitleLabel)
-            make.top.equalTo(originalTitleLabel.snp.bottom)
+            make.leading.equalTo(titleLabel)
+            make.top.equalTo(titleLabel.snp.bottom)
             make.bottom.equalTo(dividerView.snp.top).offset(-8)
             make.trailing.equalTo(mainImageView.snp.trailing).inset(20)
             make.height.equalTo(25)

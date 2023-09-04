@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1F46B32AA4603B00F722BA /* GenreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46B22AA4603B00F722BA /* GenreData.swift */; };
+		2B1F46B52AA464E700F722BA /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46B42AA464E700F722BA /* URL+Extension.swift */; };
+		2B1F46B72AA4653200F722BA /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46B62AA4653200F722BA /* Endpoint.swift */; };
 		2B32D4802A8CDB8200874689 /* TrendData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D47F2A8CDB8200874689 /* TrendData.swift */; };
 		2B32D49C2A8E2C7B00874689 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D49B2A8E2C7B00874689 /* SearchViewController.swift */; };
 		2B32D4AD2A8F5C2300874689 /* SegmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D4AC2A8F5C2300874689 /* SegmentViewController.swift */; };
@@ -57,6 +60,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1F46B22AA4603B00F722BA /* GenreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreData.swift; sourceTree = "<group>"; };
+		2B1F46B42AA464E700F722BA /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		2B1F46B62AA4653200F722BA /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		2B32D47F2A8CDB8200874689 /* TrendData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendData.swift; sourceTree = "<group>"; };
 		2B32D49B2A8E2C7B00874689 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2B32D4AC2A8F5C2300874689 /* SegmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				2BEB59512A8775E90089E607 /* APIKey.swift */,
+				2B1F46B42AA464E700F722BA /* URL+Extension.swift */,
+				2B1F46B62AA4653200F722BA /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 			children = (
 				2BEB59532A8776590089E607 /* TrendAPIManager.swift */,
 				2B32D47F2A8CDB8200874689 /* TrendData.swift */,
+				2B1F46B22AA4603B00F722BA /* GenreData.swift */,
 			);
 			path = "Trend Network";
 			sourceTree = "<group>";
@@ -369,6 +378,7 @@
 			files = (
 				2B32D5732A9CB94500874689 /* TrendView.swift in Sources */,
 				2B32D4E92A93795F00874689 /* SimilarAPIManager.swift in Sources */,
+				2B1F46B32AA4603B00F722BA /* GenreData.swift in Sources */,
 				2BEB595C2A877AD00089E607 /* TrendViewController.swift in Sources */,
 				2B32D4E52A9377BA00874689 /* SimilarData.swift in Sources */,
 				2B32D56D2A9CA95000874689 /* BaseViewController.swift in Sources */,
@@ -392,6 +402,7 @@
 				2BBB32D92A9E418800CF80F6 /* NameViewController.swift in Sources */,
 				2B32D49C2A8E2C7B00874689 /* SearchViewController.swift in Sources */,
 				2BAC1A342A878B1000A4C117 /* ReusableViewProtocol.swift in Sources */,
+				2B1F46B72AA4653200F722BA /* Endpoint.swift in Sources */,
 				2BAC1A3D2A8A58D600A4C117 /* CreditViewController.swift in Sources */,
 				2B32D5822A9CDBBD00874689 /* CreditImageView.swift in Sources */,
 				2B32D5802A9CD41000874689 /* CreditView.swift in Sources */,
@@ -399,6 +410,7 @@
 				2BEB59522A8775E90089E607 /* APIKey.swift in Sources */,
 				2BBB32DB2A9E458300CF80F6 /* UserNameViewController.swift in Sources */,
 				2B32D5842A9CDCD200874689 /* DividerView.swift in Sources */,
+				2B1F46B52AA464E700F722BA /* URL+Extension.swift in Sources */,
 				2BEB593E2A87750B0089E607 /* SceneDelegate.swift in Sources */,
 				2B32D5782A9CBA7F00874689 /* BaseTableViewCell.swift in Sources */,
 				2BBB32DF2A9E4A5500CF80F6 /* Notification+Extension.swift in Sources */,

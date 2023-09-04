@@ -12,7 +12,7 @@ class CreditViewController: BaseViewController {
     
     let mainView = CreditView()
 
-    var creditList: Movie = Movie(id: 0, cast: [], crew: [])
+    var creditList: Credit = Credit(id: 0, cast: [], crew: [])
     
     var selectedMovieData : Result?
     
@@ -82,7 +82,6 @@ extension CreditViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CreditTableViewCell") as? CreditTableViewCell else { return UITableViewCell() }
         
         let creditItem = creditList.cast[indexPath.item]
-
         let url = "https://www.themoviedb.org/t/p/original\(creditItem.profilePath ?? "")"
         
         cell.posterImageView.kf.setImage(with: URL(string: url))
