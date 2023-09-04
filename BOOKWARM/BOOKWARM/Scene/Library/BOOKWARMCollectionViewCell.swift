@@ -8,8 +8,6 @@
 import UIKit
 
 class BOOKWARMCollectionViewCell: UICollectionViewCell {
-    
-    static let identifier = "BOOKWARMCollectionViewCell"
 
     @IBOutlet var backView: UIView!
     @IBOutlet var mainTitleLable: UILabel!
@@ -18,6 +16,7 @@ class BOOKWARMCollectionViewCell: UICollectionViewCell {
     @IBOutlet var likeButton: UIButton!
     
     func configureLikeButton(row: Movie) {
+        
         if row.like {
             likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {

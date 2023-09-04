@@ -9,8 +9,6 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
     
-    static let identifier = "SearchTableViewCe"
-    
     @IBOutlet var bookImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!

@@ -9,8 +9,6 @@ import UIKit
 
 class RecentCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "RecentCollectionViewCell"
-    
     var selectedMovie: Movie?
     var naviTitle: String?
     

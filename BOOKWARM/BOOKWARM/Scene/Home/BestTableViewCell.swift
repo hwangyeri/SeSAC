@@ -9,8 +9,6 @@ import UIKit
 
 class BestTableViewCell: UITableViewCell {
     
-    static let identifier = "BestTableViewCell"
-    
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var mainLable: UILabel!
     @IBOutlet var subLable: UILabel!
