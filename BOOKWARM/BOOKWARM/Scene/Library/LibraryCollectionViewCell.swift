@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BOOKWARMCollectionViewCell: UICollectionViewCell {
+class LibraryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var backView: UIView!
     @IBOutlet var mainTitleLable: UILabel!

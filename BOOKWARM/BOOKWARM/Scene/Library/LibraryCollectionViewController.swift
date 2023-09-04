@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BOOKWARMCollectionViewController: UICollectionViewController {
+class LibraryCollectionViewController: UICollectionViewController {
     
     var movieInfo = MovieInfo() {
         didSet {
@@ -22,8 +22,8 @@ class BOOKWARMCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         //XIB
-        let nib = UINib(nibName: BOOKWARMCollectionViewCell.reuseIdentifier, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: BOOKWARMCollectionViewCell.reuseIdentifier)
+        let nib = UINib(nibName: LibraryCollectionViewCell.reuseIdentifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: LibraryCollectionViewCell.reuseIdentifier)
         
         setCollectionViewLayout()
         
@@ -48,7 +48,7 @@ class BOOKWARMCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BOOKWARMCollectionViewCell.reuseIdentifier, for: indexPath) as! BOOKWARMCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LibraryCollectionViewCell.reuseIdentifier, for: indexPath) as! LibraryCollectionViewCell
         let alphaColor = colorList[indexPath.row % colorList.count].withAlphaComponent(0.7)
         let row = movieInfo.movie[indexPath.row]
         
