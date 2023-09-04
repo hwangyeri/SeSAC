@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MySearchViewController.swift
 //  BOOKWARM
 //
 //  Created by 황예리 on 2023/07/31.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class MySearchViewController: UIViewController, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    static let identifier = "SearchViewController"
+    static let identifier = "MySearchViewController"
     let movieInfo = MovieInfo()
     lazy var movieTitles = movieInfo.getMovieTitles()
     
@@ -30,7 +30,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
         searchBar.showsCancelButton = true
         navigationItem.titleView = searchBar
         
-        let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
+        let nib = UINib(nibName: "MySearchViewController", bundle: nil)
         //collectionView.register(nib, forCellWithReuseIdentifier: "SearchCollectionViewCell")
         
         let xmark = UIImage(systemName: "xmark")
@@ -84,7 +84,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as! SearchCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MySearchViewController", for: indexPath) as! MySearchCollectionViewCell
         cell.mainTitleLable.text = movieInfo.movie[indexPath.row].title
         
         return cell

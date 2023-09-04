@@ -1,5 +1,5 @@
 //
-//  BookViewController.swift
+//  SearchViewControll.swift
 //  BOOKWARM
 //
 //  Created by 황예리 on 2023/08/09.
@@ -18,7 +18,7 @@ struct Book {
     let thumbnail: String
 }
 
-class BookViewController: UIViewController {
+class SearchViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
@@ -91,7 +91,7 @@ class BookViewController: UIViewController {
     
 }
 
-extension BookViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookList.count
@@ -99,7 +99,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: BookTableViewCell.identifier) as? BookTableViewCell else { return BookTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as? SearchTableViewCell else { return SearchTableViewCell() }
         let row = bookList[indexPath.row]
         
         cell.titleLabel.text = row.title
@@ -129,7 +129,7 @@ extension BookViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     
 }
 
-extension BookViewController: UISearchBarDelegate {
+extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         

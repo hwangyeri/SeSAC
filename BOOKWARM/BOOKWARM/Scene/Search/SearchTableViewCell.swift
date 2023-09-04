@@ -7,9 +7,9 @@
 
 import UIKit
 
-class BookTableViewCell: UITableViewCell {
+class SearchTableViewCell: UITableViewCell {
     
-    static let identifier = "BookTableViewCell"
+    static let identifier = "SearchTableViewCe"
     
     @IBOutlet var bookImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!

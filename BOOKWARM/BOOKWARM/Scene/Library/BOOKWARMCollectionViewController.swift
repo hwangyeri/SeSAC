@@ -93,7 +93,7 @@ class BOOKWARMCollectionViewController: UICollectionViewController {
     
     
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: SearchViewController.identifier) as! SearchViewController
+        let vc = storyboard?.instantiateViewController(identifier: MySearchViewController.identifier) as! MySearchViewController
         let nav = UINavigationController(rootViewController: vc)
 
         nav.modalPresentationStyle = .fullScreen

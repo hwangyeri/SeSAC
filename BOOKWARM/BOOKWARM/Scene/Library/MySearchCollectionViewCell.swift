@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchCollectionViewCell: UICollectionViewCell {
+class MySearchCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var backView: UIView!
     @IBOutlet var mainTitleLable: UILabel!
