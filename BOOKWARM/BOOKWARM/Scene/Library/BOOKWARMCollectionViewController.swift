@@ -22,8 +22,8 @@ class BOOKWARMCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         //XIB
-        let nib = UINib(nibName: BOOKWARMCollectionViewCell.identifier, bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: BOOKWARMCollectionViewCell.identifier)
+        let nib = UINib(nibName: BOOKWARMCollectionViewCell.reuseIdentifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: BOOKWARMCollectionViewCell.reuseIdentifier)
         
         setCollectionViewLayout()
         
@@ -48,7 +48,7 @@ class BOOKWARMCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BOOKWARMCollectionViewCell.identifier, for: indexPath) as! BOOKWARMCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BOOKWARMCollectionViewCell.reuseIdentifier, for: indexPath) as! BOOKWARMCollectionViewCell
         let alphaColor = colorList[indexPath.row % colorList.count].withAlphaComponent(0.7)
         let row = movieInfo.movie[indexPath.row]
         
@@ -81,7 +81,7 @@ class BOOKWARMCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
+        let vc = sb.instantiateViewController(identifier: DetailViewController.reuseIdentifier) as! DetailViewController
         let selectedMovie = movieInfo.movie[indexPath.row]
         
         vc.selectedMovie = selectedMovie
@@ -93,7 +93,7 @@ class BOOKWARMCollectionViewController: UICollectionViewController {
     
     
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(identifier: MySearchViewController.identifier) as! MySearchViewController
+        let vc = storyboard?.instantiateViewController(identifier: MySearchViewController.reuseIdentifier) as! MySearchViewController
         let nav = UINavigationController(rootViewController: vc)
 
         nav.modalPresentationStyle = .fullScreen

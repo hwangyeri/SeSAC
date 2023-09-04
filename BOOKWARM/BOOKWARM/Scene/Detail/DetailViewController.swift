@@ -9,7 +9,6 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextViewDelegate {
     
-    static let identifier = "DetailViewController"
     var naviTitle: String?
     var selectedMovie: Movie?
     let placeholderText = " 메모장 입니다. 😎"
@@ -30,7 +29,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         memoTextView.delegate = self
         
-        let nib = UINib(nibName: "SearchCollectionViewCell", bundle: nil)
+        let nib = UINib(nibName: MySearchCollectionViewCell.reuseIdentifier, bundle: nil)
         let chevron = UIImage(systemName: "chevron.backward")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: chevron, style: .plain, target: self, action: #selector(backButtonClicked))
         navigationItem.leftBarButtonItem?.tintColor = .black

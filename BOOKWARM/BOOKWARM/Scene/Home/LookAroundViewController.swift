@@ -27,10 +27,10 @@ class LookAroundViewController: UIViewController {
         bestTableView.rowHeight = 120
         
         //XIB
-        let nib1 = UINib(nibName: RecentCollectionViewCell.identifier, bundle: nil)
-        let nib2 = UINib(nibName: BestTableViewCell.identifier, bundle: nil)
-        recentCollectionView.register(nib1, forCellWithReuseIdentifier: RecentCollectionViewCell.identifier)
-        bestTableView.register(nib2, forCellReuseIdentifier: BestTableViewCell.identifier)
+        let nib1 = UINib(nibName: RecentCollectionViewCell.reuseIdentifier, bundle: nil)
+        let nib2 = UINib(nibName: BestTableViewCell.reuseIdentifier, bundle: nil)
+        recentCollectionView.register(nib1, forCellWithReuseIdentifier: RecentCollectionViewCell.reuseIdentifier)
+        bestTableView.register(nib2, forCellReuseIdentifier: BestTableViewCell.reuseIdentifier)
         
         configureRecentCollectionViewLayout()
         
@@ -53,7 +53,7 @@ extension LookAroundViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentCollectionViewCell.identifier, for: indexPath) as! RecentCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentCollectionViewCell.reuseIdentifier, for: indexPath) as! RecentCollectionViewCell
         let row = movieInfo.movie[indexPath.row]
         cell.configureCell(row: row)
         
@@ -75,7 +75,7 @@ extension LookAroundViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
+        let vc = storyboard?.instantiateViewController(identifier: DetailViewController.reuseIdentifier) as! DetailViewController
         let selectedMovie = movieInfo.movie[indexPath.row]
         
         vc.selectedMovie = selectedMovie
@@ -94,7 +94,7 @@ extension LookAroundViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: BestTableViewCell.identifier) as! BestTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: BestTableViewCell.reuseIdentifier) as! BestTableViewCell
         let row = movieInfo.movie[indexPath.row]
         cell.configureCell(row: row)
         
@@ -102,7 +102,7 @@ extension LookAroundViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(identifier: DetailViewController.identifier) as! DetailViewController
+        let vc = storyboard?.instantiateViewController(identifier: DetailViewController.reuseIdentifier) as! DetailViewController
         let selectedMovie = movieInfo.movie[indexPath.row]
         
         vc.selectedMovie = selectedMovie
