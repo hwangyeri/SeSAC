@@ -20,6 +20,7 @@
 		2B1F46E62AA639EF00F722BA /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46E52AA639EF00F722BA /* RealmModel.swift */; };
 		2B1F46E92AA63A4300F722BA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2B1F46E82AA63A4300F722BA /* Realm */; };
 		2B1F46EB2AA63A4300F722BA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B1F46EA2AA63A4300F722BA /* RealmSwift */; };
+		2B279BD32AA7230000645766 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279BD22AA7230000645766 /* FileManager+Extension.swift */; };
 		2B8F36442A779F7900695827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36432A779F7900695827 /* AppDelegate.swift */; };
 		2B8F36462A779F7900695827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36452A779F7900695827 /* SceneDelegate.swift */; };
 		2B8F36482A779F7900695827 /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36472A779F7900695827 /* MySearchViewController.swift */; };
@@ -53,6 +54,7 @@
 		2B1F46DC2AA6125A00F722BA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		2B1F46DF2AA612C500F722BA /* ResuableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuableProtocol.swift; sourceTree = "<group>"; };
 		2B1F46E52AA639EF00F722BA /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		2B279BD22AA7230000645766 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		2B8F36402A779F7900695827 /* BOOKWARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOOKWARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8F36432A779F7900695827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8F36452A779F7900695827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,14 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		2B279BD12AA722F600645766 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2B279BD22AA7230000645766 /* FileManager+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		2B8F36372A779F7800695827 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 		2B8F36422A779F7900695827 /* BOOKWARM */ = {
 			isa = PBXGroup;
 			children = (
+				2B279BD12AA722F600645766 /* Extension */,
 				2B1F46E42AA639E000F722BA /* Realm */,
 				2B1F46D32AA60C2300F722BA /* Network */,
 				2B1F46D22AA60C0800F722BA /* Data */,
@@ -302,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B1F46E02AA612C500F722BA /* ResuableProtocol.swift in Sources */,
+				2B279BD32AA7230000645766 /* FileManager+Extension.swift in Sources */,
 				2B1F46DD2AA6125A00F722BA /* APIService.swift in Sources */,
 				2B1F46E62AA639EF00F722BA /* RealmModel.swift in Sources */,
 				2B1F46DB2AA6113F00F722BA /* Book.swift in Sources */,

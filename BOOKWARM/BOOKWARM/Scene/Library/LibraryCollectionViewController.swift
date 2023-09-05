@@ -6,20 +6,32 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LibraryCollectionViewController: UICollectionViewController {
     
-    var movieInfo = MovieInfo() {
-        didSet {
-            collectionView.reloadData()
-            print("didSet")
-        }
-    }
+//    var movieInfo = MovieInfo() {
+//        didSet {
+//            collectionView.reloadData()
+//            print("didSet")
+//        }
+//    }
+    
+    var tasks: Results<BookTable>!
+    let realm = try! Realm()
+    
+    var bookList: Book = Book(documents: [], meta: Meta(isEnd: false))
     
     let colorList: [UIColor] = [UIColor.systemIndigo, UIColor.systemPink, UIColor.systemOrange, UIColor.systemMint, UIColor.systemRed, UIColor.systemPurple, UIColor.systemTeal, UIColor.systemBlue]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Realm Read // 데이터 가져오기
+        print(realm.configuration.fileURL ?? "fileURL print Error")
+        
+        // 내용 추가시, 제목순으로 정렬, 내림차순 true
+        tasks = realm.objects(BookTable.self).sorted(byKeyPath: "bookTitle", ascending: false)
 
         //XIB
         let nib = UINib(nibName: LibraryCollectionViewCell.reuseIdentifier, bundle: nil)
@@ -28,6 +40,12 @@ class LibraryCollectionViewController: UICollectionViewController {
         setCollectionViewLayout()
         
         navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView.reloadData()
     }
     
     func setCollectionViewLayout() {
@@ -44,30 +62,18 @@ class LibraryCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieInfo.movie.count
+        return tasks.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LibraryCollectionViewCell.reuseIdentifier, for: indexPath) as! LibraryCollectionViewCell
         let alphaColor = colorList[indexPath.row % colorList.count].withAlphaComponent(0.7)
-        let row = movieInfo.movie[indexPath.row]
+        let data = tasks[indexPath.row]
         
         cell.backView.backgroundColor = alphaColor
-        cell.backView.layer.cornerRadius = 20
-        
-        cell.mainTitleLable.textColor = .white
-        cell.mainTitleLable.text = row.title
-        cell.mainTitleLable.font = .boldSystemFont(ofSize: 17)
-        
-        cell.subTitleLable.textColor = .white
-        cell.subTitleLable.text = "\(row.rate)"
-        cell.subTitleLable.font = .systemFont(ofSize: 10)
-        
-        cell.posterImageView.image = UIImage(named: "\(row.imageName)")
-        
-        cell.configureLikeButton(row: row)
-        cell.likeButton.setTitle("", for: .normal)
-        cell.likeButton.tintColor = .red
+        cell.mainTitleLable.text = data.bookTitle
+        cell.subTitleLable.text = "\(data.bookAuthors)"
+        cell.posterImageView.image = loadImageFromDocument(fileName: "yeri_\(data._id).jpg")
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
         
@@ -76,17 +82,17 @@ class LibraryCollectionViewController: UICollectionViewController {
     
     @objc
     func likeButtonClicked(sender: UIButton) {
-        movieInfo.movie[sender.tag].like.toggle()
+        tasks[sender.tag].bookLiked.toggle()
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: DetailViewController.reuseIdentifier) as! DetailViewController
-        let selectedMovie = movieInfo.movie[indexPath.row]
+//        let selectedBook = tasks[indexPath.row]
+        let data = tasks[indexPath.row]
         
-        vc.selectedMovie = selectedMovie
-        vc.naviTitle = movieInfo.movie[indexPath.row].title
-        
+        vc.selectedBook = data
+        vc.naviTitle = data.bookTitle
         
         navigationController?.pushViewController(vc, animated: true)
     }

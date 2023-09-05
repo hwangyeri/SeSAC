@@ -24,6 +24,7 @@ struct Document: Codable {
     let title: String
     let url: String
     var liked: Bool = false
+    let status: String
     
     var authorsDescriptions: String {
         get {
@@ -43,7 +44,7 @@ struct Document: Codable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case authors, contents, datetime, price, publisher
+        case authors, contents, datetime, price, publisher, status
         case salePrice = "sale_price"
         case thumbnail, title, url
     }

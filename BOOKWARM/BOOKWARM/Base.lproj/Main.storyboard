@@ -351,7 +351,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVp-j5-E9z">
-                                                    <rect key="frame" x="133.66666666666666" y="8" width="41.333333333333343" height="21"/>
+                                                    <rect key="frame" x="133.66666666666663" y="8" width="199.33333333333337" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -368,17 +368,33 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nx-fK-sI2">
+                                                    <rect key="frame" x="343" y="10" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="RpF-1y-6XC"/>
+                                                        <constraint firstAttribute="width" constant="40" id="kJo-1k-ztS"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="heart.circle.fill" catalog="system">
+                                                        <color key="baseForegroundColor" systemColor="systemPinkColor"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="likeButtonTapped:" destination="KtX-xZ-T7L" eventType="touchUpInside" id="mt9-JL-JwM"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Vu9-Nc-okB" firstAttribute="leading" secondItem="HVp-j5-E9z" secondAttribute="leading" id="2eG-Mb-ZUe"/>
                                                 <constraint firstItem="v0E-RR-2GK" firstAttribute="top" secondItem="I9E-EL-OwY" secondAttribute="top" constant="8" id="7vj-1m-xcT"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HVp-j5-E9z" secondAttribute="trailing" constant="16" id="DUK-hg-QaE"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Vu9-Nc-okB" secondAttribute="trailing" constant="16" id="HhK-6w-q30"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xdw-4O-LRP" secondAttribute="trailing" constant="16" id="IMh-lL-goF"/>
+                                                <constraint firstItem="6nx-fK-sI2" firstAttribute="leading" secondItem="HVp-j5-E9z" secondAttribute="trailing" constant="10" id="IQa-xX-3gC"/>
                                                 <constraint firstItem="Vu9-Nc-okB" firstAttribute="top" secondItem="HVp-j5-E9z" secondAttribute="bottom" constant="8" id="XgG-2j-mkr"/>
                                                 <constraint firstAttribute="bottom" secondItem="v0E-RR-2GK" secondAttribute="bottom" constant="8" id="Yol-Lq-K60"/>
                                                 <constraint firstItem="HVp-j5-E9z" firstAttribute="leading" secondItem="v0E-RR-2GK" secondAttribute="trailing" constant="20" id="Zey-qC-cBF"/>
                                                 <constraint firstItem="v0E-RR-2GK" firstAttribute="leading" secondItem="I9E-EL-OwY" secondAttribute="leading" constant="16" id="aVm-X0-ZZu"/>
+                                                <constraint firstAttribute="trailing" secondItem="6nx-fK-sI2" secondAttribute="trailing" constant="10" id="edU-jg-VEf"/>
+                                                <constraint firstItem="6nx-fK-sI2" firstAttribute="top" secondItem="I9E-EL-OwY" secondAttribute="top" constant="10" id="mJi-wv-WKn"/>
                                                 <constraint firstItem="xdw-4O-LRP" firstAttribute="leading" secondItem="HVp-j5-E9z" secondAttribute="leading" id="o0L-Af-VoS"/>
                                                 <constraint firstItem="HVp-j5-E9z" firstAttribute="top" secondItem="I9E-EL-OwY" secondAttribute="top" constant="8" id="oKw-0m-WZO"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xdw-4O-LRP" secondAttribute="bottom" constant="8" id="osG-Ac-d2b"/>
@@ -389,6 +405,7 @@
                                             <outlet property="authorLabel" destination="Vu9-Nc-okB" id="TOd-hy-beY"/>
                                             <outlet property="bookImageView" destination="v0E-RR-2GK" id="RAS-Q9-9Kf"/>
                                             <outlet property="contentLabel" destination="xdw-4O-LRP" id="6sd-oi-Lou"/>
+                                            <outlet property="likeButton" destination="6nx-fK-sI2" id="sQS-KC-ifl"/>
                                             <outlet property="titleLabel" destination="HVp-j5-E9z" id="py3-iM-Uvr"/>
                                         </connections>
                                     </tableViewCell>
@@ -422,23 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzP-TA-pRn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3563" y="1509"/>
-        </scene>
-        <!--내 서재-->
-        <scene sceneID="1lk-rr-TH8">
-            <objects>
-                <viewController id="gCm-1m-1Xk" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="R1K-I6-m5d">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="fmZ-Wi-5Kz"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="내 서재" image="books.vertical" catalog="system" id="DGa-cA-eFG"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="enN-eW-BQ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4358" y="1508"/>
+            <point key="canvasLocation" x="4488" y="1379"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hzP-2Y-X5l">
@@ -455,18 +456,17 @@
                         <segue destination="6Qi-RI-g5t" kind="relationship" relationship="viewControllers" id="sK1-GD-6CC"/>
                         <segue destination="zjW-Qw-jaS" kind="relationship" relationship="viewControllers" id="sqX-4X-CbL"/>
                         <segue destination="Wgg-DV-R6s" kind="relationship" relationship="viewControllers" id="FWh-0R-Ru3"/>
-                        <segue destination="gCm-1m-1Xk" kind="relationship" relationship="viewControllers" id="fTr-Bv-4iE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucn-f2-fXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3564" y="660"/>
         </scene>
-        <!--My Movie-->
+        <!--내 서재-->
         <scene sceneID="rUN-Jx-jId">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Qi-RI-g5t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Movie" image="suit.heart" catalog="system" id="D9L-Oq-gXy"/>
+                    <tabBarItem key="tabBarItem" title="내 서재" image="books.vertical" catalog="system" id="D9L-Oq-gXy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rmN-jH-8yk">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -503,14 +503,17 @@
     </scenes>
     <resources>
         <image name="books.vertical" catalog="system" width="128" height="107"/>
+        <image name="heart.circle.fill" catalog="system" width="128" height="123"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
-        <image name="suit.heart" catalog="system" width="128" height="107"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
