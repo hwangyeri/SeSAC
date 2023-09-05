@@ -9,7 +9,7 @@ import UIKit
 
 class RecentCollectionViewCell: UICollectionViewCell {
     
-    var selectedMovie: Movie?
+    //var selectedMovie: Movie?
     var naviTitle: String?
     
     @IBOutlet var posterImageView: UIImageView!
@@ -20,8 +20,8 @@ class RecentCollectionViewCell: UICollectionViewCell {
         posterImageView.layer.cornerRadius = 5
     }
     
-    func configureCell(row: Movie) {
-        posterImageView.image = UIImage(named: row.imageName)
-    }
+//    func configureCell(row: Movie) {
+//        posterImageView.image = UIImage(named: row.imageName)
+//    }
     
 }

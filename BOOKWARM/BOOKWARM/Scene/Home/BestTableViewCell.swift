@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class BestTableViewCell: UITableViewCell {
     
@@ -14,6 +15,9 @@ class BestTableViewCell: UITableViewCell {
     @IBOutlet var subLable: UILabel!
     @IBOutlet var watchaImageView: UIImageView!
     @IBOutlet var netflixImageView: UIImageView!
+    
+//    var tasks: Results<BookTable>!
+//    let realm = try! Realm()
     
     override func awakeFromNib() {
         // 정적인 디자인
@@ -27,23 +31,23 @@ class BestTableViewCell: UITableViewCell {
         symbolStyle(symbol: netflixImageView, ott: "Watcha")
     }
     
-    func configureCell(row: Movie) {
+    func configureCell(row: BookTable) {
         
-        var subLableText: String {
-            get {
-                let yearIndex = row.releaseDate.index(row.releaseDate.startIndex, offsetBy: 4)
-                let year = row.releaseDate.prefix(upTo: yearIndex)
-                return "\(year) ∙ 영화"
-            }
-        }
+//        var subLableText: String {
+//            get {
+//                let yearIndex = row.releaseDate.index(row.releaseDate.startIndex, offsetBy: 4)
+//                let year = row.releaseDate.prefix(upTo: yearIndex)
+//                return "\(year) ∙ 영화"
+//            }
+//        }
         
-        posterImageView.image = UIImage(named: row.imageName)
+//        posterImageView.image = UIImage(named: row.imageName)
         //FIXME: - cornerRadius
         posterImageView.layer.cornerRadius = 5
         posterImageView.contentMode = .scaleAspectFill
         
-        mainLable.text = row.title
-        subLable.text = subLableText
+//        mainLable.text = row.title
+//        subLable.text = subLableText
         
     }
     

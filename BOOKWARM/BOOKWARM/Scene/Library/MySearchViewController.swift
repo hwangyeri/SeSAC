@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MySearchViewController: UIViewController, UISearchBarDelegate {
     
-    let movieInfo = MovieInfo()
+//    let movieInfo = MovieInfo()
     
-    lazy var movieTitles = movieInfo.getMovieTitles()
+    var tasks: Results<BookTable>!
+    let realm = try! Realm()
+    
+//    lazy var movieTitles = movieInfo.getMovieTitles()
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -51,14 +55,14 @@ class MySearchViewController: UIViewController, UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        for item in movieTitles {
-            if item.contains(searchBar.text!) {
-                searchResultList.append(item)
-                print(searchResultList)
-            }
-        }
-        
-        collectionView.reloadData()
+//        for item in movieTitles {
+//            if item.contains(searchBar.text!) {
+//                searchResultList.append(item)
+//                print(searchResultList)
+//            }
+//        }
+//        
+//        collectionView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -69,14 +73,14 @@ class MySearchViewController: UIViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        for item in movieTitles {
-            if item.contains(searchBar.text!) {
-                searchResultList.append(item)
-                print(searchResultList)
-            }
-        }
-        
-        collectionView.reloadData()
+//        for item in movieTitles {
+//            if item.contains(searchBar.text!) {
+//                searchResultList.append(item)
+//                print(searchResultList)
+//            }
+//        }
+//
+//        collectionView.reloadData()
     }
     
     
@@ -90,17 +94,17 @@ extension MySearchViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MySearchCollectionViewCell.reuseIdentifier, for: indexPath) as? MySearchCollectionViewCell else { return UICollectionViewCell() }
-        cell.mainTitleLable.text = movieInfo.movie[indexPath.row].title
+        cell.mainTitleLable.text = tasks[indexPath.row].bookTitle
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(identifier: DetailViewController.reuseIdentifier) as! DetailViewController
-        let selectedMovie = movieInfo.movie[indexPath.row]
-        
-        vc.selectedMovie = selectedMovie
-        vc.naviTitle = movieInfo.movie[indexPath.row].title
+//        let selectedMovie = movieInfo.movie[indexPath.row]
+//
+//        vc.selectedMovie = selectedMovie
+//        vc.naviTitle = movieInfo.movie[indexPath.row].title
         
         navigationController?.pushViewController(vc, animated: true)
     }

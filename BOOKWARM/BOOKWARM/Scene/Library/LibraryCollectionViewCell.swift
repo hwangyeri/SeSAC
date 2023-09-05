@@ -15,13 +15,28 @@ class LibraryCollectionViewCell: UICollectionViewCell {
     @IBOutlet var subTitleLable: UILabel!
     @IBOutlet var likeButton: UIButton!
     
-    func configureLikeButton(row: Movie) {
+    override func awakeFromNib() {
         
-        if row.like {
-            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        } else {
-            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-        }
+        backView.layer.cornerRadius = 20
+        mainTitleLable.textColor = .white
+        mainTitleLable.font = .boldSystemFont(ofSize: 15)
+        mainTitleLable.numberOfLines = 0
+        posterImageView.layer.cornerRadius = 8
+        subTitleLable.textColor = .white
+        subTitleLable.font = .systemFont(ofSize: 13)
+        subTitleLable.numberOfLines = 0
+        likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        likeButton.setTitle("", for: .normal)
+        likeButton.tintColor = .systemPink
     }
+    
+//    func configureCell(row: BookTable) {
+//        
+//        if row.bookLiked {
+//            likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+//        } else {
+//            likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+//        }
+//    }
     
 }

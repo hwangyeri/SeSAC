@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Movie {
-    var imageName: String
-    var title: String
-    var releaseDate: String
-    var runtime: Int
-    var overview: String
-    var rate: Double
-    var like: Bool
-}
+//struct Movie {
+//    var imageName: String
+//    var title: String
+//    var releaseDate: String
+//    var runtime: Int
+//    var overview: String
+//    var rate: Double
+//    var like: Bool
+//}
