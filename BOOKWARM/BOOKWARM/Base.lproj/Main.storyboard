@@ -422,7 +422,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzP-TA-pRn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4487.7862595419847" y="1376.7605633802818"/>
+            <point key="canvasLocation" x="3563" y="1509"/>
+        </scene>
+        <!--내 서재-->
+        <scene sceneID="1lk-rr-TH8">
+            <objects>
+                <viewController id="gCm-1m-1Xk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R1K-I6-m5d">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fmZ-Wi-5Kz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="내 서재" image="books.vertical" catalog="system" id="DGa-cA-eFG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="enN-eW-BQ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4358" y="1508"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hzP-2Y-X5l">
@@ -439,17 +455,18 @@
                         <segue destination="6Qi-RI-g5t" kind="relationship" relationship="viewControllers" id="sK1-GD-6CC"/>
                         <segue destination="zjW-Qw-jaS" kind="relationship" relationship="viewControllers" id="sqX-4X-CbL"/>
                         <segue destination="Wgg-DV-R6s" kind="relationship" relationship="viewControllers" id="FWh-0R-Ru3"/>
+                        <segue destination="gCm-1m-1Xk" kind="relationship" relationship="viewControllers" id="fTr-Bv-4iE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ucn-f2-fXe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3564" y="660"/>
         </scene>
-        <!--내 서재-->
+        <!--My Movie-->
         <scene sceneID="rUN-Jx-jId">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Qi-RI-g5t" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="내 서재" image="books.vertical" catalog="system" id="D9L-Oq-gXy"/>
+                    <tabBarItem key="tabBarItem" title="My Movie" image="suit.heart" catalog="system" id="D9L-Oq-gXy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rmN-jH-8yk">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -488,6 +505,7 @@
         <image name="books.vertical" catalog="system" width="128" height="107"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="suit.heart" catalog="system" width="128" height="107"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

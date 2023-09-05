@@ -15,10 +15,16 @@ class APIService {
     
     func searchBook(text: String, page: Int, completion: @escaping (Book?) -> Void ) {
         
-        guard let url = URL(string: "https://dapi.kakao.com/v3/search/book?query=\(text)&size=10&page=\(page)&client_id=\(APIKey.kakaoKey)") else { return }
-        print(url)
+        guard let text = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        print("-----", text)
+        guard let url = URL(string: "https://dapi.kakao.com/v3/search/book?query=\(text)&size=10&page=\(page)") else { return }
+        print("-----", url)
     
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        
+        // Header
+        request.httpMethod = "GET"
+        request.setValue("KakaoAK \(APIKey.kakaoKey)", forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error {
@@ -30,9 +36,12 @@ class APIService {
                 return
             }
             
+            print(String(data: data!, encoding: .utf8))
+            
             do {
                 let result = try JSONDecoder().decode(Book.self, from: data!)
                 completion(result)
+                print(result, "---- result End -----")
                 
             } catch {
                 print(error)
