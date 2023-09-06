@@ -21,6 +21,8 @@
 		2B1F46E92AA63A4300F722BA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2B1F46E82AA63A4300F722BA /* Realm */; };
 		2B1F46EB2AA63A4300F722BA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B1F46EA2AA63A4300F722BA /* RealmSwift */; };
 		2B279BD32AA7230000645766 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279BD22AA7230000645766 /* FileManager+Extension.swift */; };
+		2B279BD72AA8A9C000645766 /* BookTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279BD62AA8A9C000645766 /* BookTableRepository.swift */; };
+		2B279BD92AA8AC8B00645766 /* showAlertMessage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279BD82AA8AC8B00645766 /* showAlertMessage+Extension.swift */; };
 		2B8F36442A779F7900695827 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36432A779F7900695827 /* AppDelegate.swift */; };
 		2B8F36462A779F7900695827 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36452A779F7900695827 /* SceneDelegate.swift */; };
 		2B8F36482A779F7900695827 /* MySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F36472A779F7900695827 /* MySearchViewController.swift */; };
@@ -55,6 +57,8 @@
 		2B1F46DF2AA612C500F722BA /* ResuableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResuableProtocol.swift; sourceTree = "<group>"; };
 		2B1F46E52AA639EF00F722BA /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		2B279BD22AA7230000645766 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		2B279BD62AA8A9C000645766 /* BookTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableRepository.swift; sourceTree = "<group>"; };
+		2B279BD82AA8AC8B00645766 /* showAlertMessage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "showAlertMessage+Extension.swift"; sourceTree = "<group>"; };
 		2B8F36402A779F7900695827 /* BOOKWARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BOOKWARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8F36432A779F7900695827 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B8F36452A779F7900695827 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				2B1F46E52AA639EF00F722BA /* RealmModel.swift */,
+				2B279BD62AA8A9C000645766 /* BookTableRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				2B279BD22AA7230000645766 /* FileManager+Extension.swift */,
+				2B279BD82AA8AC8B00645766 /* showAlertMessage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				2B1F46DB2AA6113F00F722BA /* Book.swift in Sources */,
 				2B8F36602A77A3B300695827 /* MovieInfo.swift in Sources */,
 				2B8F36482A779F7900695827 /* MySearchViewController.swift in Sources */,
+				2B279BD72AA8A9C000645766 /* BookTableRepository.swift in Sources */,
 				2B1C58532A7C1070005A3AAF /* MySearchCollectionViewCell.swift in Sources */,
 				2B8F365B2A77A07E00695827 /* LibraryCollectionViewCell.swift in Sources */,
 				2BFB4EB82A83895900F9F6A3 /* APIKey.swift in Sources */,
@@ -331,6 +338,7 @@
 				2BFB4EAB2A837F1D00F9F6A3 /* SearchTableViewCell.swift in Sources */,
 				2B1C58462A7A39C6005A3AAF /* RecentCollectionViewCell.swift in Sources */,
 				2B1C58432A7A3031005A3AAF /* LookAroundViewController.swift in Sources */,
+				2B279BD92AA8AC8B00645766 /* showAlertMessage+Extension.swift in Sources */,
 				2B8F36462A779F7900695827 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

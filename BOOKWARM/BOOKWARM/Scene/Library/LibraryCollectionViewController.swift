@@ -82,7 +82,7 @@ class LibraryCollectionViewController: UICollectionViewController {
     
     @objc
     func likeButtonClicked(sender: UIButton) {
-        tasks[sender.tag].bookLiked.toggle()
+//        tasks[sender.tag].bookLiked.toggle()
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -93,8 +93,9 @@ class LibraryCollectionViewController: UICollectionViewController {
         
         vc.selectedBook = data
         vc.naviTitle = data.bookTitle
+        vc.hidesBottomBarWhenPushed = true // Tab Bar Hide
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     

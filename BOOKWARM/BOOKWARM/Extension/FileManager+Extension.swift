@@ -9,6 +9,7 @@ import UIKit
 
 extension UIViewController {
     
+    //도큐먼트 폴더에 이미지를 삭제하는 메서드
     func removeImageFromDocument(fileName: String) {
         //1. 도큐먼트 경로 찾기
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
@@ -23,16 +24,17 @@ extension UIViewController {
         
     }
     
+    //도큐먼트 폴더에 이미지를 저장하는 메서드
     func loadImageFromDocument(fileName: String) -> UIImage {
         //1. 도큐먼트 경로 찾기
-        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return UIImage(systemName: "star.fill")! }
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return UIImage(systemName: "shippingbox")! }
         //2. 저장할 경로 설정(세부 경로, 이미지를 저장되어 있는 위치)
         let fileURL = documentDirectory.appendingPathComponent(fileName)
         
         if FileManager.default.fileExists(atPath: fileURL.path) {
             return UIImage(contentsOfFile: fileURL.path)!
         } else {
-            return UIImage(systemName: "star.fill")!
+            return UIImage(systemName: "shippingbox")!
         }
         
     }

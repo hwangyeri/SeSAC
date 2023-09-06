@@ -41,14 +41,14 @@ class SearchViewController: UIViewController {
         searchBar.placeholder = placeholderText
     }
     
-    func showAlertMessage(title: String, button: String = "확인", handler: (() -> ())? = nil ) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction(title: button, style: .default) { _ in
-            handler?()
-        }
-        alert.addAction(ok)
-        present(alert, animated: true)
-    }
+//    func showAlertMessage(title: String, button: String = "확인", handler: (() -> ())? = nil ) {
+//        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+//        let ok = UIAlertAction(title: button, style: .default) { _ in
+//            handler?()
+//        }
+//        alert.addAction(ok)
+//        present(alert, animated: true)
+//    }
     
 }
 
@@ -74,7 +74,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.likeButtonTappedHandler = { [weak self] in
             guard let self = self else { return }
             let data = self.bookList.documents[indexPath.row]
-            let task = BookTable(bookTitle: data.title, bookAuthors: data.authorsDescriptions, bookContents: data.contents, bookPrice: data.price, bookSalePrice: data.salePrice, bookThumbnail: data.thumbnail!, bookURL: data.url, bookPublisher: data.publisher, bookDateTime: Date(), bookStatus: data.status, bookLiked: true)
+            let task = BookTable(bookTitle: data.title, bookAuthors: data.authorsDescriptions, bookContents: data.contents, bookPrice: data.price, bookSalePrice: data.salePrice, bookThumbnail: data.thumbnail!, bookURL: data.url, bookPublisher: data.publisher, bookDateTime: Date(), bookStatus: data.status, bookLiked: true, bookMemo: nil)
             
             try! self.realm.write {
                 self.realm.add(task)
@@ -92,7 +92,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             }
             
-            showAlertMessage(title: "내 서재에 저장 되었습니다!")
+            self.showAlertMessage(title: "내 서재에 저장 되었습니다!")
         }
         
         return cell
