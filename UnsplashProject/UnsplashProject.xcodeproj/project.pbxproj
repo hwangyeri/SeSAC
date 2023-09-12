@@ -23,10 +23,10 @@
 		2B589E252AB00E4500941615 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E242AB00E4500941615 /* LoginViewModel.swift */; };
 		2B589E282AB02A4E00941615 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E272AB02A4E00941615 /* Photo.swift */; };
 		2B589E2A2AB02A5B00941615 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E292AB02A5B00941615 /* APIService.swift */; };
-		2B589E2C2AB02A9200941615 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2B589E2B2AB02A9200941615 /* .gitignore */; };
-		2B589E2E2AB02AAE00941615 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E2D2AB02AAE00941615 /* APIKey.swift */; };
 		2B589E302AB02B5C00941615 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E2F2AB02B5C00941615 /* PhotoViewController.swift */; };
 		2B589E322AB02DAB00941615 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E312AB02DAB00941615 /* PhotoViewModel.swift */; };
+		2B589E3F2AB0A9C000941615 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2B589E3E2AB0A9C000941615 /* .gitignore */; };
+		2B589E412AB0A9ED00941615 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E402AB0A9ED00941615 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,10 +57,10 @@
 		2B589E242AB00E4500941615 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2B589E272AB02A4E00941615 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		2B589E292AB02A5B00941615 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		2B589E2B2AB02A9200941615 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		2B589E2D2AB02AAE00941615 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		2B589E2F2AB02B5C00941615 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		2B589E312AB02DAB00941615 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		2B589E3E2AB0A9C000941615 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2B589E402AB0A9ED00941615 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 				2B279C972AAE998200645766 /* Assets.xcassets */,
 				2B279C992AAE998200645766 /* LaunchScreen.storyboard */,
 				2B279C9C2AAE998200645766 /* Info.plist */,
-				2B589E2B2AB02A9200941615 /* .gitignore */,
+				2B589E3E2AB0A9C000941615 /* .gitignore */,
 				2B279CAC2AAEAE2400645766 /* Localizable.strings */,
 				2B279CAF2AAEBBBC00645766 /* String+Extension.swift */,
 				2B279CB52AAEBDD000645766 /* InfoPlist.strings */,
@@ -127,7 +127,7 @@
 			children = (
 				2B589E272AB02A4E00941615 /* Photo.swift */,
 				2B589E292AB02A5B00941615 /* APIService.swift */,
-				2B589E2D2AB02AAE00941615 /* APIKey.swift */,
+				2B589E402AB0A9ED00941615 /* APIKey.swift */,
 				2B589E2F2AB02B5C00941615 /* PhotoViewController.swift */,
 				2B589E312AB02DAB00941615 /* PhotoViewModel.swift */,
 			);
@@ -198,7 +198,7 @@
 				2B279CAA2AAEAE2400645766 /* Localizable.strings in Resources */,
 				2B279C982AAE998200645766 /* Assets.xcassets in Resources */,
 				2B279C962AAE998200645766 /* Main.storyboard in Resources */,
-				2B589E2C2AB02A9200941615 /* .gitignore in Resources */,
+				2B589E3F2AB0A9C000941615 /* .gitignore in Resources */,
 				2B279CB32AAEBDD000645766 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,10 +218,10 @@
 				2B589E282AB02A4E00941615 /* Photo.swift in Sources */,
 				2B589E1F2AAFF30B00941615 /* Observable.swift in Sources */,
 				2B279C912AAE998200645766 /* SceneDelegate.swift in Sources */,
+				2B589E412AB0A9ED00941615 /* APIKey.swift in Sources */,
 				2B589E232AB0017300941615 /* SampleViewModel.swift in Sources */,
 				2B589E322AB02DAB00941615 /* PhotoViewModel.swift in Sources */,
 				2B589E212AAFFDF900941615 /* SampleViewController.swift in Sources */,
-				2B589E2E2AB02AAE00941615 /* APIKey.swift in Sources */,
 				2B589E252AB00E4500941615 /* LoginViewModel.swift in Sources */,
 				2B589E302AB02B5C00941615 /* PhotoViewController.swift in Sources */,
 			);
