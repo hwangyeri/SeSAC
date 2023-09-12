@@ -23,7 +23,6 @@
 		2B589E252AB00E4500941615 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E242AB00E4500941615 /* LoginViewModel.swift */; };
 		2B589E282AB02A4E00941615 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E272AB02A4E00941615 /* Photo.swift */; };
 		2B589E2A2AB02A5B00941615 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E292AB02A5B00941615 /* APIService.swift */; };
-		2B589E2E2AB02AAE00941615 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E2D2AB02AAE00941615 /* APIKey.swift */; };
 		2B589E302AB02B5C00941615 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E2F2AB02B5C00941615 /* PhotoViewController.swift */; };
 		2B589E322AB02DAB00941615 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E312AB02DAB00941615 /* PhotoViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +55,6 @@
 		2B589E242AB00E4500941615 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2B589E272AB02A4E00941615 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		2B589E292AB02A5B00941615 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		2B589E2D2AB02AAE00941615 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		2B589E2F2AB02B5C00941615 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		2B589E312AB02DAB00941615 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +122,6 @@
 			children = (
 				2B589E272AB02A4E00941615 /* Photo.swift */,
 				2B589E292AB02A5B00941615 /* APIService.swift */,
-				2B589E2D2AB02AAE00941615 /* APIKey.swift */,
 				2B589E2F2AB02B5C00941615 /* PhotoViewController.swift */,
 				2B589E312AB02DAB00941615 /* PhotoViewModel.swift */,
 			);
@@ -217,7 +214,6 @@
 				2B589E232AB0017300941615 /* SampleViewModel.swift in Sources */,
 				2B589E322AB02DAB00941615 /* PhotoViewModel.swift in Sources */,
 				2B589E212AAFFDF900941615 /* SampleViewController.swift in Sources */,
-				2B589E2E2AB02AAE00941615 /* APIKey.swift in Sources */,
 				2B589E252AB00E4500941615 /* LoginViewModel.swift in Sources */,
 				2B589E302AB02B5C00941615 /* PhotoViewController.swift in Sources */,
 			);
