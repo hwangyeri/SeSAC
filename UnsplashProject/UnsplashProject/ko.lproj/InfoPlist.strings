@@ -1,0 +1,13 @@
+/* 
+  InfoPlist.strings
+  UnsplashProject
+
+  Created by 황예리 on 2023/09/11.
+ 
+ // 앱 이름, 권한에 대한 내용 변환 가능
+  
+*/
+
+"NSLocationWhenInUseUsageDescription" = "이러쿵 저러쿵 해서 위치가 필요합니다";
+"CFBundleDisplayName" = "새싹";
+
