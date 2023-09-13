@@ -30,6 +30,10 @@
 		2B589E482AB139CC00941615 /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E472AB139CC00941615 /* CalculateViewModel.swift */; };
 		2B589E4A2AB139DB00941615 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E492AB139DB00941615 /* CalculateViewController.swift */; };
 		2B589E4C2AB13DC000941615 /* YeriObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E4B2AB13DC000941615 /* YeriObservable.swift */; };
+		2B589E522AB1D76E00941615 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E512AB1D76E00941615 /* LottoViewController.swift */; };
+		2B589E542AB1D78200941615 /* LottoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E532AB1D78200941615 /* LottoViewModel.swift */; };
+		2B589E562AB1D85000941615 /* LottoAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E552AB1D85000941615 /* LottoAPIService.swift */; };
+		2B589E5B2AB1D97800941615 /* LottoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E5A2AB1D97800941615 /* LottoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +71,10 @@
 		2B589E472AB139CC00941615 /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
 		2B589E492AB139DB00941615 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		2B589E4B2AB13DC000941615 /* YeriObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeriObservable.swift; sourceTree = "<group>"; };
+		2B589E512AB1D76E00941615 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		2B589E532AB1D78200941615 /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
+		2B589E552AB1D85000941615 /* LottoAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIService.swift; sourceTree = "<group>"; };
+		2B589E5A2AB1D97800941615 /* LottoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		2B279C8D2AAE998200645766 /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				2B589E502AB1D73B00941615 /* Lotto */,
 				2B589E462AB139B400941615 /* Calculate */,
 				2B589E262AB02A4200941615 /* Photo */,
 				2B589E1B2AAFED4100941615 /* Login */,
@@ -149,6 +158,17 @@
 				2B589E4B2AB13DC000941615 /* YeriObservable.swift */,
 			);
 			path = Calculate;
+			sourceTree = "<group>";
+		};
+		2B589E502AB1D73B00941615 /* Lotto */ = {
+			isa = PBXGroup;
+			children = (
+				2B589E512AB1D76E00941615 /* LottoViewController.swift */,
+				2B589E532AB1D78200941615 /* LottoViewModel.swift */,
+				2B589E552AB1D85000941615 /* LottoAPIService.swift */,
+				2B589E5A2AB1D97800941615 /* LottoModel.swift */,
+			);
+			path = Lotto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,14 +256,18 @@
 				2B589E282AB02A4E00941615 /* Photo.swift in Sources */,
 				2B589E4C2AB13DC000941615 /* YeriObservable.swift in Sources */,
 				2B589E1F2AAFF30B00941615 /* Observable.swift in Sources */,
+				2B589E522AB1D76E00941615 /* LottoViewController.swift in Sources */,
 				2B589E482AB139CC00941615 /* CalculateViewModel.swift in Sources */,
+				2B589E562AB1D85000941615 /* LottoAPIService.swift in Sources */,
 				2B279C912AAE998200645766 /* SceneDelegate.swift in Sources */,
 				2B589E452AB0B32600941615 /* APIKey.swift in Sources */,
 				2B589E232AB0017300941615 /* SampleViewModel.swift in Sources */,
 				2B589E322AB02DAB00941615 /* PhotoViewModel.swift in Sources */,
 				2B589E212AAFFDF900941615 /* SampleViewController.swift in Sources */,
 				2B589E252AB00E4500941615 /* LoginViewModel.swift in Sources */,
+				2B589E5B2AB1D97800941615 /* LottoModel.swift in Sources */,
 				2B589E302AB02B5C00941615 /* PhotoViewController.swift in Sources */,
+				2B589E542AB1D78200941615 /* LottoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
