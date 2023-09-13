@@ -26,7 +26,21 @@ class PhotoViewModel {
             }
             self.list.value = photo
         }
+    }
+    
+    func downloadImage(at indexPath: IndexPath, completion: @escaping (Data?) -> Void) {
+        let thumb = cellForRowAt(at: indexPath).urls.thumb
+        let url = URL(string: thumb)
         
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if let imageData = data {
+                DispatchQueue.main.async {
+                    completion(imageData)
+                }
+            } else {
+                completion(nil)
+            }
+        }.resume()
     }
     
     var rowCount: Int {

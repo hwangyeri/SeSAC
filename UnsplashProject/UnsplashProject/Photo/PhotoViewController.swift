@@ -11,11 +11,6 @@ import UIKit
 
 class PhotoViewController: UIViewController {
     
-    let imageView = {
-        let view = UIImageView()
-        return view
-    }()
-    
     @IBOutlet var tableView: UITableView!
     
     var viewModel = PhotoViewModel()
@@ -36,7 +31,6 @@ class PhotoViewController: UIViewController {
         tableView.dataSource = self
     }
     
-
 }
 
 extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,8 +42,17 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell")!
         let data = viewModel.cellForRowAt(at: indexPath)
-        
+       
         cell.backgroundColor = .lightGray
+        
+        viewModel.downloadImage(at: indexPath) { data in
+            if let imageData = data {
+                let image = UIImage(data: imageData)
+                cell.imageView?.image = image
+            } else {
+                cell.imageView?.image = UIImage(systemName: "photo")
+            }
+        }
         
         return cell
     }
