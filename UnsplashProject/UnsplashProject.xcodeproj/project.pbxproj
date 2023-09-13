@@ -27,6 +27,9 @@
 		2B589E322AB02DAB00941615 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E312AB02DAB00941615 /* PhotoViewModel.swift */; };
 		2B589E432AB0B30300941615 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2B589E422AB0B30300941615 /* .gitignore */; };
 		2B589E452AB0B32600941615 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E442AB0B32600941615 /* APIKey.swift */; };
+		2B589E482AB139CC00941615 /* CalculateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E472AB139CC00941615 /* CalculateViewModel.swift */; };
+		2B589E4A2AB139DB00941615 /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E492AB139DB00941615 /* CalculateViewController.swift */; };
+		2B589E4C2AB13DC000941615 /* YeriObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E4B2AB13DC000941615 /* YeriObservable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		2B589E312AB02DAB00941615 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		2B589E422AB0B30300941615 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2B589E442AB0B32600941615 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		2B589E472AB139CC00941615 /* CalculateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewModel.swift; sourceTree = "<group>"; };
+		2B589E492AB139DB00941615 /* CalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
+		2B589E4B2AB13DC000941615 /* YeriObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YeriObservable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 		2B279C8D2AAE998200645766 /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
+				2B589E462AB139B400941615 /* Calculate */,
 				2B589E262AB02A4200941615 /* Photo */,
 				2B589E1B2AAFED4100941615 /* Login */,
 				2B279C8E2AAE998200645766 /* AppDelegate.swift */,
@@ -132,6 +139,16 @@
 				2B589E312AB02DAB00941615 /* PhotoViewModel.swift */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		2B589E462AB139B400941615 /* Calculate */ = {
+			isa = PBXGroup;
+			children = (
+				2B589E472AB139CC00941615 /* CalculateViewModel.swift */,
+				2B589E492AB139DB00941615 /* CalculateViewController.swift */,
+				2B589E4B2AB13DC000941615 /* YeriObservable.swift */,
+			);
+			path = Calculate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +232,11 @@
 				2B279C8F2AAE998200645766 /* AppDelegate.swift in Sources */,
 				2B589E1D2AAFED5800941615 /* LoginViewController.swift in Sources */,
 				2B589E2A2AB02A5B00941615 /* APIService.swift in Sources */,
+				2B589E4A2AB139DB00941615 /* CalculateViewController.swift in Sources */,
 				2B589E282AB02A4E00941615 /* Photo.swift in Sources */,
+				2B589E4C2AB13DC000941615 /* YeriObservable.swift in Sources */,
 				2B589E1F2AAFF30B00941615 /* Observable.swift in Sources */,
+				2B589E482AB139CC00941615 /* CalculateViewModel.swift in Sources */,
 				2B279C912AAE998200645766 /* SceneDelegate.swift in Sources */,
 				2B589E452AB0B32600941615 /* APIKey.swift in Sources */,
 				2B589E232AB0017300941615 /* SampleViewModel.swift in Sources */,
