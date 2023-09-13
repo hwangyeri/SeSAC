@@ -50,9 +50,7 @@ class JoinViewController: UIViewController {
     
     let joinButton = {
         let view = UIButton()
-        view.setTitle("회원가입", for: .normal)
-        view.tintColor = .black
-        view.backgroundColor = .white
+        view.setTitleColor(UIColor.black, for: .normal)
         view.titleLabel?.font = .boldSystemFont(ofSize: 15)
         view.layer.cornerRadius = 6
         return view
@@ -73,6 +71,8 @@ class JoinViewController: UIViewController {
         view.thumbTintColor = .white
         return view
     }()
+    
+    var viewModel = JoinViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,8 +95,81 @@ class JoinViewController: UIViewController {
         }
     
         setupConstraints()
+        
+        viewModel.email.bind { text in
+            self.emailTextField.text = text
+        }
+        
+        viewModel.password.bind { text in
+            self.passwordTextField.text = text
+        }
+        
+        viewModel.nickname.bind { text in
+            self.nicknameTextField.text = text
+        }
+        
+        viewModel.location.bind { text in
+            self.locationTextField.text = text
+        }
+        
+        viewModel.recommendCode.bind { text in
+            self.recommendCodeTextField.text = text
+        }
+        
+        viewModel.join.bind { text in
+            self.joinButton.setTitle(text, for: .normal)
+        }
+        
+        viewModel.isValid.bind { bool in
+            self.joinButton.isEnabled = bool
+            self.joinButton.backgroundColor = bool ? .white : .lightGray
+        }
+        
+        emailTextField.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
+        
+        passwordTextField.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
+        
+        nicknameTextField.addTarget(self, action: #selector(nicknameTextFieldChanged), for: .editingChanged)
+        
+        locationTextField.addTarget(self, action: #selector(locationTextFieldChanged), for: .editingChanged)
+        
+        recommendCodeTextField.addTarget(self, action: #selector(recommendCodeTextFieldChanged), for: .editingChanged)
+        
+        joinButton.addTarget(self, action: #selector(joinButtonTapped), for: .touchUpInside)
     }
     
+    @objc func emailTextFieldChanged() {
+        viewModel.email.value = emailTextField.text!
+        viewModel.checkValidation()
+    }
+    
+    @objc func passwordTextFieldChanged() {
+        viewModel.password.value = passwordTextField.text!
+        viewModel.checkValidation()
+    }
+    
+    @objc func nicknameTextFieldChanged() {
+        viewModel.nickname.value = nicknameTextField.text!
+        viewModel.checkValidation()
+    }
+    
+    @objc func locationTextFieldChanged() {
+        viewModel.location.value = locationTextField.text!
+        viewModel.checkValidation()
+    }
+    
+    @objc func recommendCodeTextFieldChanged() {
+        viewModel.recommendCode.value = recommendCodeTextField.text!
+        viewModel.checkValidation()
+    }
+    
+    @objc func joinButtonTapped() {
+        print(#function)
+        viewModel.savedUserDefaults {
+            let vc = YELFLIXViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
     func setupConstraints() {
         

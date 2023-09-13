@@ -14,6 +14,7 @@ class Observable<T> {
     var value: T {
         didSet {
             listener?(value)
+            print("---- 변경된 value : \(value)")
         }
     }
     
