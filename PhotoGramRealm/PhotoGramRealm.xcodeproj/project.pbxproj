@@ -39,6 +39,8 @@
 		2B279C3C2AAAA09700645766 /* ToDoTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279C3B2AAAA09700645766 /* ToDoTable.swift */; };
 		2B279C3E2AAAA38100645766 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279C3D2AAAA38100645766 /* ToDoViewController.swift */; };
 		2B589E7C2AB2CC9D00941615 /* RealmCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E7B2AB2CC9D00941615 /* RealmCollectionViewController.swift */; };
+		2BC539862AB344C600345645 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2BC539852AB344C600345645 /* .gitignore */; };
+		2BC539882AB344E500345645 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC539872AB344E500345645 /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		2B279C3B2AAAA09700645766 /* ToDoTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTable.swift; sourceTree = "<group>"; };
 		2B279C3D2AAAA38100645766 /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		2B589E7B2AB2CC9D00941615 /* RealmCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCollectionViewController.swift; sourceTree = "<group>"; };
+		2BC539852AB344C600345645 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2BC539872AB344E500345645 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 				04BAEB012AA4BF40005A3A69 /* Assets.xcassets */,
 				04BAEB032AA4BF40005A3A69 /* LaunchScreen.storyboard */,
 				04BAEB062AA4BF40005A3A69 /* Info.plist */,
+				2BC539852AB344C600345645 /* .gitignore */,
 			);
 			path = PhotoGramRealm;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 		04BAEB322AA550CC005A3A69 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				2BC539872AB344E500345645 /* APIKey.swift */,
 				04BAEB332AA550D2005A3A69 /* APIService.swift */,
 				04BAEB352AA550E9005A3A69 /* Photo.swift */,
 			);
@@ -315,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04BAEB052AA4BF40005A3A69 /* LaunchScreen.storyboard in Resources */,
+				2BC539862AB344C600345645 /* .gitignore in Resources */,
 				04BAEB022AA4BF40005A3A69 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +340,7 @@
 				04BAEAFD2AA4BF3F005A3A69 /* ViewController.swift in Sources */,
 				2B279BCE2AA6CB1C00645766 /* FileManager+Extension.swift in Sources */,
 				04BAEB202AA4C0A3005A3A69 /* BaseCollectionViewCell.swift in Sources */,
+				2BC539882AB344E500345645 /* APIKey.swift in Sources */,
 				04BAEB162AA4BFD0005A3A69 /* PhotoListTableViewCell.swift in Sources */,
 				04BAEB342AA550D2005A3A69 /* APIService.swift in Sources */,
 				04BAEB272AA4C106005A3A69 /* Color.swift in Sources */,
