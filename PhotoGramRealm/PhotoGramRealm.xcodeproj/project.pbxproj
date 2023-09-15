@@ -30,7 +30,7 @@
 		04BAEB382AA55290005A3A69 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BAEB372AA55290005A3A69 /* SearchCollectionViewCell.swift */; };
 		2B1F46C52AA5F60800F722BA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2B1F46C42AA5F60800F722BA /* Realm */; };
 		2B1F46C72AA5F60800F722BA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B1F46C62AA5F60800F722BA /* RealmSwift */; };
-		2B1F46D02AA5FAD100F722BA /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46CF2AA5FAD100F722BA /* RealmModel.swift */; };
+		2B1F46D02AA5FAD100F722BA /* DiaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F46CF2AA5FAD100F722BA /* DiaryTable.swift */; };
 		2B279BCE2AA6CB1C00645766 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279BCD2AA6CB1C00645766 /* FileManager+Extension.swift */; };
 		2B279BD02AA6F25A00645766 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279BCF2AA6F25A00645766 /* DetailViewController.swift */; };
 		2B279BD52AA8003300645766 /* DiaryTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279BD42AA8003300645766 /* DiaryTableRepository.swift */; };
@@ -66,7 +66,7 @@
 		04BAEB332AA550D2005A3A69 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		04BAEB352AA550E9005A3A69 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		04BAEB372AA55290005A3A69 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
-		2B1F46CF2AA5FAD100F722BA /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		2B1F46CF2AA5FAD100F722BA /* DiaryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTable.swift; sourceTree = "<group>"; };
 		2B279BCD2AA6CB1C00645766 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 		2B279BCF2AA6F25A00645766 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2B279BD42AA8003300645766 /* DiaryTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableRepository.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		04BAEB0C2AA4BF4C005A3A69 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				2B1F46CF2AA5FAD100F722BA /* RealmModel.swift */,
+				2B1F46CF2AA5FAD100F722BA /* DiaryTable.swift */,
 				2B279BD42AA8003300645766 /* DiaryTableRepository.swift */,
 			);
 			path = Realm;
@@ -350,7 +350,7 @@
 				04BAEAF92AA4BF3F005A3A69 /* AppDelegate.swift in Sources */,
 				04BAEB222AA4C0BB005A3A69 /* BaseViewController.swift in Sources */,
 				04BAEB362AA550E9005A3A69 /* Photo.swift in Sources */,
-				2B1F46D02AA5FAD100F722BA /* RealmModel.swift in Sources */,
+				2B1F46D02AA5FAD100F722BA /* DiaryTable.swift in Sources */,
 				2B279BD52AA8003300645766 /* DiaryTableRepository.swift in Sources */,
 				04BAEB192AA4BFFB005A3A69 /* PhotoImageView.swift in Sources */,
 				04BAEAFB2AA4BF3F005A3A69 /* SceneDelegate.swift in Sources */,
