@@ -15,14 +15,48 @@ import UIKit
  
  */
 
-struct User {
+// 구조체는 여러 인스턴스가 만들어지더라도
+//struct User: Hashable { // Hashable : 고유성에 대한 기능을 담당
+//    let name: String
+//    let age: Int
+//
+//    let id = UUID().uuidString //Unique. name age가 같더라도 문제가 생기지 않게 자동으로 알아서 유니크한 value 값을 생성해줌
+//
+//    var introduce: String { // 연산프로퍼티로 코드 개선, 연산프로퍼티는 공간을 차지하고 있지않음
+//        return "\(name), \(age)살" // "\(data.name), \(data.age)살"
+//    }
+//}
+
+// 클래스이기 때문에 추가로 구현해야하는 것이 많다 => 결론적으로 안쓰는게 낫다
+class User: Hashable {
+    
+    // 클래스는 메모리 특성상 같은 주소값을 가질 수 있기 때문에 추가적인 코드가 필요
+    static func == (lhs: User, rhs: User) -> Bool { // lhs 왼손 rhs 오른손
+        lhs.id == rhs.id // id 는 똑같으면 안되서 비교하는 코드 추가
+    }
+    
+    // 클래스에 대한 고유값을 어떻게 입력해 줄 거야?
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id) // id 기준으로 해쉬 함수가 맞는지 아닌지 구별을 해줄게 ~
+    }
+    
     let name: String
     let age: Int
     
-    var introduce: String { // 연산프로퍼티로 코드 개선, 연산프로퍼티는 공간을 차지하고 있지않음
-        return "\(name), \(age)살" // "\(data.name), \(data.age)살"
+    let id = UUID().uuidString
+    
+    var introduce: String {
+        return "\(name), \(age)살"
     }
+    
+    // 클래스는 초기화 필요
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+    
 }
+
 
 class SampleViewController: UIViewController {
 
@@ -33,7 +67,7 @@ class SampleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let sample = Observable(1)
+        //let sample = Observable(1)
         
         // value Int 로 변경
         var number1 = 10
