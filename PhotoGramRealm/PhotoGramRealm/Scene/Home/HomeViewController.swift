@@ -58,6 +58,7 @@ class HomeViewController: BaseViewController {
     }
     
     override func setConstraints() {
+        
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
@@ -70,7 +71,6 @@ class HomeViewController: BaseViewController {
     @objc func backupButtonClicked() {
         navigationController?.pushViewController(BackupViewController(), animated: true)
     }
-    
     
     @objc func sortButtonClicked() {
         
