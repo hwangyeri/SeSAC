@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5xH-x5-Aki">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Qh-T1-xDi">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -123,7 +123,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <connections>
-                                            <segue destination="yxI-rT-xnU" kind="show" id="EWY-ln-pew"/>
+                                            <segue destination="8ld-wx-UAw" kind="show" id="EMR-Ir-3Vf"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -166,14 +166,33 @@
             <point key="canvasLocation" x="1721.3740458015266" y="-27.464788732394368"/>
         </scene>
         <!--설정-->
-        <scene sceneID="Aa7-Mj-vGj">
+        <scene sceneID="irO-gV-oRo">
             <objects>
-                <tableViewController id="yxI-rT-xnU" customClass="SettingTableViewController" customModule="Setting" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="설정" id="4Ue-HI-sIs"/>
+                <tableViewController storyboardIdentifier="SettingTableViewController" id="8ld-wx-UAw" customClass="SettingTableViewController" customModule="Setting" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aWH-1k-HCR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="setting" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="setting" id="joz-sv-sl7" customClass="setting">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="joz-sv-sl7" id="mkb-MC-MRB">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8ld-wx-UAw" id="akk-wY-Nkj"/>
+                            <outlet property="delegate" destination="8ld-wx-UAw" id="ItD-qA-Rc5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="설정" id="Bqg-Fi-aGr"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zgS-ed-qLc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mVH-Ni-8Le" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2441.9847328244273" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="2460" y="-27"/>
         </scene>
         <!--쇼핑-->
         <scene sceneID="zTL-sE-sKO">
