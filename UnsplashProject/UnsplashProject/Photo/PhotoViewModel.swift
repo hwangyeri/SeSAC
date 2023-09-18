@@ -14,17 +14,20 @@ class PhotoViewModel {
     
     var list = Observable(Photo(total: 0, total_pages: 0, results: [])) // 제네릭 타입이라 Photo 구조체 그 자체도 들어갈 수 있음
     
-    func fetchPhoto() {
+    func fetchPhoto(text: String) {
         // ex. <b>, 5,000 처리 => ViewModel 이나 Extension
         // 모든 화면에서 numberFormatter 가 필요하다면 Extension
         // 한 두개 쓰인다면 ViewModel 에서 구현
         
         // 네트워크 통신도 비즈니스 로직으로 볼 수 있음, 연산하는 하나의 과정
-        APIService.shared.searchPhoto(query: "sky") { photo in
-            guard let photo = photo else {
-                return
+        APIService.shared.searchPhoto(query: text) { photo in
+            
+            DispatchQueue.main.async {
+                guard let photo = photo else {
+                    return
+                }
+                self.list.value = photo
             }
-            self.list.value = photo
         }
     }
     
@@ -44,11 +47,11 @@ class PhotoViewModel {
     }
     
     var rowCount: Int {
-        return list.value.results?.count ?? 0
+        return list.value.results.count
     }
     
     func cellForRowAt(at indexPath: IndexPath) -> PhotoResult {
-        return list.value.results![indexPath.row]
+        return list.value.results[indexPath.row]
     }
     
     
