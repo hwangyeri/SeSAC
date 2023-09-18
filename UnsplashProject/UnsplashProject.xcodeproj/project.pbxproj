@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2B12435B2AB84C0000E5EC4A /* NumberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12435A2AB84C0000E5EC4A /* NumberViewModel.swift */; };
 		2B12435D2AB84D6F00E5EC4A /* NewSimpleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12435C2AB84D6F00E5EC4A /* NewSimpleViewModel.swift */; };
+		2B12435F2AB884CC00E5EC4A /* RandomPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12435E2AB884CC00E5EC4A /* RandomPhotoViewController.swift */; };
+		2B1243622AB8958F00E5EC4A /* RandomPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1243612AB8958F00E5EC4A /* RandomPhotoViewModel.swift */; };
 		2B1865332AB7D34C00A6352B /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1865322AB7D34C00A6352B /* NumberViewController.swift */; };
 		2B1865352AB7F62D00A6352B /* NewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1865342AB7F62D00A6352B /* NewPhotoViewController.swift */; };
 		2B279C8F2AAE998200645766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B279C8E2AAE998200645766 /* AppDelegate.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		2B12435A2AB84C0000E5EC4A /* NumberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewModel.swift; sourceTree = "<group>"; };
 		2B12435C2AB84D6F00E5EC4A /* NewSimpleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSimpleViewModel.swift; sourceTree = "<group>"; };
+		2B12435E2AB884CC00E5EC4A /* RandomPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoViewController.swift; sourceTree = "<group>"; };
+		2B1243612AB8958F00E5EC4A /* RandomPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoViewModel.swift; sourceTree = "<group>"; };
 		2B1865322AB7D34C00A6352B /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 		2B1865342AB7F62D00A6352B /* NewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPhotoViewController.swift; sourceTree = "<group>"; };
 		2B279C8B2AAE998200645766 /* UnsplashProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +115,15 @@
 			path = Number;
 			sourceTree = "<group>";
 		};
+		2B1243602AB8956C00E5EC4A /* RandomPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				2B12435E2AB884CC00E5EC4A /* RandomPhotoViewController.swift */,
+				2B1243612AB8958F00E5EC4A /* RandomPhotoViewModel.swift */,
+			);
+			path = RandomPhoto;
+			sourceTree = "<group>";
+		};
 		2B279C822AAE998200645766 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +179,7 @@
 		2B589E262AB02A4200941615 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				2B1243602AB8956C00E5EC4A /* RandomPhoto */,
 				2B589E272AB02A4E00941615 /* Photo.swift */,
 				2B589E442AB0B32600941615 /* APIKey.swift */,
 				2B589E292AB02A5B00941615 /* APIService.swift */,
@@ -290,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B279CB02AAEBBBC00645766 /* String+Extension.swift in Sources */,
+				2B1243622AB8958F00E5EC4A /* RandomPhotoViewModel.swift in Sources */,
 				2B279C932AAE998200645766 /* ViewController.swift in Sources */,
 				2B279C8F2AAE998200645766 /* AppDelegate.swift in Sources */,
 				2B12435B2AB84C0000E5EC4A /* NumberViewModel.swift in Sources */,
@@ -309,6 +324,7 @@
 				2B589E452AB0B32600941615 /* APIKey.swift in Sources */,
 				2B589E232AB0017300941615 /* SampleViewModel.swift in Sources */,
 				2B589E322AB02DAB00941615 /* PhotoViewModel.swift in Sources */,
+				2B12435F2AB884CC00E5EC4A /* RandomPhotoViewController.swift in Sources */,
 				2B589E212AAFFDF900941615 /* SampleViewController.swift in Sources */,
 				2B589E252AB00E4500941615 /* LoginViewModel.swift in Sources */,
 				2B589E5B2AB1D97800941615 /* LottoModel.swift in Sources */,
