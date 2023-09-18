@@ -22,10 +22,10 @@ class JoinTextField: UITextField {
     func setupView() {
         borderStyle = .none
         layer.cornerRadius = 6
-        textColor = .white
+        textColor = .label
         textAlignment = .center
         font = .boldSystemFont(ofSize: 13)
-        backgroundColor = .darkGray
+        backgroundColor = .systemGray
     }
     
 }

@@ -26,7 +26,7 @@
 		2B32D50E2A971EA700874689 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D50D2A971EA700874689 /* BlackRadiusTextField.swift */; };
 		2B32D5102A972A1B00874689 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D50F2A972A1B00874689 /* CustomTableViewController.swift */; };
 		2B32D5142A975B3F00874689 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5132A975B3F00874689 /* MainViewController.swift */; };
-		2B32D5172A97BFBA00874689 /* YELFLIXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5162A97BFBA00874689 /* YELFLIXViewController.swift */; };
+		2B32D5172A97BFBA00874689 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5162A97BFBA00874689 /* HomeViewController.swift */; };
 		2B32D5192A97C00800874689 /* JoinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5182A97C00800874689 /* JoinTextField.swift */; };
 		2B32D51E2A97C89E00874689 /* SB 어그로OTF L.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D51B2A97C89E00874689 /* SB 어그로OTF L.otf */; };
 		2B32D51F2A97C89E00874689 /* SB 어그로OTF M.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2B32D51C2A97C89E00874689 /* SB 어그로OTF M.otf */; };
@@ -38,7 +38,6 @@
 		2B32D52F2A984B6900874689 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D52E2A984B6900874689 /* OnboardingViewController.swift */; };
 		2B32D5682A9C87E500874689 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5672A9C87E500874689 /* CircleImageView.swift */; };
 		2B32D56A2A9C93D200874689 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B32D5692A9C93D200874689 /* BottomButton.swift */; };
-		2B589E342AB09FC300941615 /* YELFLIXViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E332AB09FC300941615 /* YELFLIXViewModel.swift */; };
 		2B589E362AB09FCD00941615 /* JoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E352AB09FCD00941615 /* JoinViewModel.swift */; };
 		2B589E382AB0A18E00941615 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B589E372AB0A18E00941615 /* Observable.swift */; };
 /* End PBXBuildFile section */
@@ -64,7 +63,7 @@
 		2B32D50D2A971EA700874689 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		2B32D50F2A972A1B00874689 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		2B32D5132A975B3F00874689 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		2B32D5162A97BFBA00874689 /* YELFLIXViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YELFLIXViewController.swift; sourceTree = "<group>"; };
+		2B32D5162A97BFBA00874689 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2B32D5182A97C00800874689 /* JoinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTextField.swift; sourceTree = "<group>"; };
 		2B32D51B2A97C89E00874689 /* SB 어그로OTF L.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SB 어그로OTF L.otf"; sourceTree = "<group>"; };
 		2B32D51C2A97C89E00874689 /* SB 어그로OTF M.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SB 어그로OTF M.otf"; sourceTree = "<group>"; };
@@ -76,7 +75,6 @@
 		2B32D52E2A984B6900874689 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		2B32D5672A9C87E500874689 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		2B32D5692A9C93D200874689 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
-		2B589E332AB09FC300941615 /* YELFLIXViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YELFLIXViewModel.swift; sourceTree = "<group>"; };
 		2B589E352AB09FCD00941615 /* JoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewModel.swift; sourceTree = "<group>"; };
 		2B589E372AB0A18E00941615 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,18 +222,17 @@
 			isa = PBXGroup;
 			children = (
 				2B589E3C2AB0A56000941615 /* Join */,
-				2B589E3B2AB0A54200941615 /* YELFLIX */,
+				2B589E3B2AB0A54200941615 /* Home */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
 		};
-		2B589E3B2AB0A54200941615 /* YELFLIX */ = {
+		2B589E3B2AB0A54200941615 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2B32D5162A97BFBA00874689 /* YELFLIXViewController.swift */,
-				2B589E332AB09FC300941615 /* YELFLIXViewModel.swift */,
+				2B32D5162A97BFBA00874689 /* HomeViewController.swift */,
 			);
-			path = YELFLIX;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		2B589E3C2AB0A56000941615 /* Join */ = {
@@ -346,7 +343,6 @@
 				2B32D5072A96F13F00874689 /* GenericViewController.swift in Sources */,
 				2B32D5142A975B3F00874689 /* MainViewController.swift in Sources */,
 				2B32D56A2A9C93D200874689 /* BottomButton.swift in Sources */,
-				2B589E342AB09FC300941615 /* YELFLIXViewModel.swift in Sources */,
 				2B32D50C2A971CE700874689 /* CustomViewController.swift in Sources */,
 				2B32D50E2A971EA700874689 /* BlackRadiusTextField.swift in Sources */,
 				2B32D5022A95D1F000874689 /* TheaterData.swift in Sources */,
@@ -354,7 +350,7 @@
 				2B589E362AB09FCD00941615 /* JoinViewModel.swift in Sources */,
 				2B32D5092A96F16600874689 /* Extension+UIViewController.swift in Sources */,
 				2B32D5682A9C87E500874689 /* CircleImageView.swift in Sources */,
-				2B32D5172A97BFBA00874689 /* YELFLIXViewController.swift in Sources */,
+				2B32D5172A97BFBA00874689 /* HomeViewController.swift in Sources */,
 				2B32D5002A95D19500874689 /* TheaterViewController.swift in Sources */,
 				2B32D5192A97C00800874689 /* JoinTextField.swift in Sources */,
 				2B32D5262A97D0EA00874689 /* JoinViewController.swift in Sources */,

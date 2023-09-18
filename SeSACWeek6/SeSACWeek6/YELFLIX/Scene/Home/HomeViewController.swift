@@ -1,5 +1,5 @@
 //
-//  YELFLIXViewController.swift
+//  HomeViewController.swift
 //  SeSACWeek6
 //
 //  Created by 황예리 on 2023/08/25.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class YELFLIXViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     let backImageView = {
         let view = UIImageView()

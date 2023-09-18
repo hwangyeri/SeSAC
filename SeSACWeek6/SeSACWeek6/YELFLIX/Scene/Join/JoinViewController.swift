@@ -18,6 +18,13 @@ class JoinViewController: UIViewController {
         return view
     }()
     
+    let resultLabel = {
+        let view = UILabel()
+        view.textColor = .label
+        view.font = .boldSystemFont(ofSize: 15)
+        return view
+    }()
+    
     let emailTextField = {
         let view = JoinTextField()
         view.placeholder = "이메일 주소 또는 전화번호"
@@ -50,8 +57,10 @@ class JoinViewController: UIViewController {
     
     let joinButton = {
         let view = UIButton()
-        view.setTitleColor(UIColor.black, for: .normal)
+        view.setTitle("회원가입", for: .normal)
         view.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = UIColor.systemGray.cgColor
         view.layer.cornerRadius = 6
         return view
     }()
@@ -60,7 +69,7 @@ class JoinViewController: UIViewController {
         let view = UILabel()
         view.text = "추가 정보 입력"
         view.font = .systemFont(ofSize: 16)
-        view.textColor = .white
+        view.textColor = .label
         return view
     }()
     
@@ -84,10 +93,10 @@ class JoinViewController: UIViewController {
 //            }
 //        }
         
-        view.backgroundColor = .black
+        view.backgroundColor = .systemBackground
        
         let subviews: [UIView] = [
-            yelflixLabel, emailTextField, passwordTextField, nicknameTextField, locationTextField, recommendCodeTextField, joinButton, additionalInfoLabel, toggleSwitch
+            yelflixLabel, resultLabel, emailTextField, passwordTextField, nicknameTextField, locationTextField, recommendCodeTextField, joinButton, additionalInfoLabel, toggleSwitch
         ]
         
         subviews.forEach { subview in
@@ -95,6 +104,10 @@ class JoinViewController: UIViewController {
         }
     
         setupConstraints()
+        
+        viewModel.result.bind { text in
+            self.resultLabel.text = text
+        }
         
         viewModel.email.bind { text in
             self.emailTextField.text = text
@@ -116,13 +129,12 @@ class JoinViewController: UIViewController {
             self.recommendCodeTextField.text = text
         }
         
-        viewModel.join.bind { text in
-            self.joinButton.setTitle(text, for: .normal)
-        }
-        
         viewModel.isValid.bind { bool in
-            self.joinButton.isEnabled = bool
-            self.joinButton.backgroundColor = bool ? .white : .lightGray
+            DispatchQueue.main.async {
+                self.joinButton.isEnabled = bool
+                self.joinButton.backgroundColor = bool ? .label : .systemBackground
+                self.joinButton.setTitleColor(bool ? UIColor.systemBackground : UIColor.systemGray, for: .normal)
+            }
         }
         
         emailTextField.addTarget(self, action: #selector(emailTextFieldChanged), for: .editingChanged)
@@ -166,7 +178,7 @@ class JoinViewController: UIViewController {
     @objc func joinButtonTapped() {
         print(#function)
         viewModel.savedUserDefaults {
-            let vc = YELFLIXViewController()
+            let vc = HomeViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -176,6 +188,11 @@ class JoinViewController: UIViewController {
         yelflixLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(80)
+        }
+        
+        resultLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(180)
         }
         
         emailTextField.snp.makeConstraints { make in
