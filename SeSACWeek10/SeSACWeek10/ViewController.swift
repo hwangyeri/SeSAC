@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
         view.delegate = self // 확대, 취소 기능 추가
+        // lazy 를 통해서 self 키워드를 쓸 수 있는 상황을 만든 후 초기화
         return view
     }()
     
