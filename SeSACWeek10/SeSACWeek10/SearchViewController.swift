@@ -10,8 +10,12 @@ import SnapKit
 
 // 시스템 셀이 아닌 커스텀 셀 사용
 // (lazy var collectionView) or (static func configureCollectionLayout)
-// UICollectionViewDataSource -> UICollectionViewDiffableDataSource 로 대체
-// UICollectionViewFlowLayout ->
+
+// 230921 UICollectionViewDataSource -> UICollectionViewDiffableDataSource
+// 230922 UICollectionViewFlowLayout -> UICollectionViewCompositionalLayout
+
+// 간단한 레이아웃 => UICollectionViewFlowLayout
+// 복합적인 UI (ex. 앱스토어, 핀터레스트) => UICollectionViewCompositionalLayout
 
 class SearchViewController: UIViewController {
 
@@ -32,6 +36,50 @@ class SearchViewController: UIViewController {
         configureDataSource()
         //collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "cell") // 셀 등록
     }
+    
+    // CompositionalLayout
+    static func configureCollectionLayout() -> UICollectionViewLayout {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1/4), heightDimension: .fractionalHeight(1.0))
+        // 그룹의 사이즈를 기준으로 아이템 사이즈를 계산함
+        // 상대적으로 계산이 되는 값은 그룹 절대적인 높이가 80이라서 아이템 사이즈가 0.5 면 40
+        // IF, 4 * n 이면 widthDimension: .fractionalWidth(1/4)
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        // 아이템 사이즈는 이 규칙에 따라서 셀을 만들거야~, 패키징 된 상태
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(80))
+        // 너비는 상대적인 비율, 높이는 절대적인 값으로 설정된 상태
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 4)
+        // 그룹.horizontal 로 넣어줘서 수평으로 아이템이 들어간 상태
+        // 그룹 컨테이너는 layoutSize 로 만들건데, 그 안에 repeatingSubitem이 들어갈거고, count개가 들어갈거야 ~
+        // IF, 3 * n => 0,1,2번 Group 0번 Item
+        
+        //let group = NSCollectionLayoutGroup.horizontal(layoutSize: <#T##NSCollectionLayoutSize#>, subitem: <#T##NSCollectionLayoutItem#>, count: <#T##Int#>)
+        // 16 까지만 사용 가능, 현재는 연산하는 과정이 바뀜
+        
+        group.interItemSpacing = .fixed(10) // 그룹 내의 간격
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10) // 컬렉션 뷰의 여백
+        section.interGroupSpacing = 10 // 그룹과 그룹 사이 간격
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
+        return layout
+    }
+    
+    // FlowLayout
+    //    static func configureCollectionLayout() -> UICollectionViewLayout { // static 을 쓰면 데이터에 따로 저장됨
+    //        // static 는 인스턴스가 생성되기 전에 메모리 상에서 이미 존재
+    //        // static 은 한번 호출되면 영영 메모리에서 사라지지않음, 소거할 수 없음
+    //        // 첫화면이면 static 쓸만함, 위치나 상황에 따라서 잘 판단해서 사용하기!
+    //        let layout = UICollectionViewFlowLayout()
+    //        layout.itemSize = CGSize(width: 50, height: 50)
+    //        layout.scrollDirection = .vertical
+    //        return layout
+    //    }
 
     func configureHierarchy() {
         view.addSubview(collectionView)
@@ -41,17 +89,6 @@ class SearchViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
-    }
-
-    // FlowLayout
-    static func configureCollectionLayout() -> UICollectionViewLayout { // static 을 쓰면 데이터에 따로 저장됨
-        // static 는 인스턴스가 생성되기 전에 메모리 상에서 이미 존재
-        // static 은 한번 호출되면 영영 메모리에서 사라지지않음, 소거할 수 없음
-        // 첫화면이면 static 쓸만함, 위치나 상황에 따라서 잘 판단해서 사용하기!
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 50, height: 50)
-        layout.scrollDirection = .vertical
-        return layout
     }
     
     func configureDataSource() {
