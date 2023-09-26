@@ -30,6 +30,8 @@
 		2B1243A82ABB1AC400E5EC4A /* BeerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1243A72ABB1AC400E5EC4A /* BeerLabel.swift */; };
 		2B1243F32ABBCB4900E5EC4A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1243F22ABBCB4900E5EC4A /* SearchViewController.swift */; };
 		2B1243F52ABBE12000E5EC4A /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1243F42ABBE12000E5EC4A /* SearchCollectionViewCell.swift */; };
+		2B9276B32AC2706600C70773 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9276B22AC2706600C70773 /* Sample.swift */; };
+		2B9276B52AC32FC300C70773 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9276B42AC32FC300C70773 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		2B1243A72ABB1AC400E5EC4A /* BeerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerLabel.swift; sourceTree = "<group>"; };
 		2B1243F22ABBCB4900E5EC4A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2B1243F42ABBE12000E5EC4A /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		2B9276B22AC2706600C70773 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		2B9276B42AC32FC300C70773 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				2B1243982ABA9A9000E5EC4A /* ViewModel.swift */,
 				2B1243F22ABBCB4900E5EC4A /* SearchViewController.swift */,
 				2B1243F42ABBE12000E5EC4A /* SearchCollectionViewCell.swift */,
+				2B9276B22AC2706600C70773 /* Sample.swift */,
+				2B9276B42AC32FC300C70773 /* Photo.swift */,
 				2B1243782AB9294D00E5EC4A /* Main.storyboard */,
 				2B12437B2AB9294F00E5EC4A /* Assets.xcassets */,
 				2B12437D2AB9294F00E5EC4A /* LaunchScreen.storyboard */,
@@ -245,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B1243A62ABB133000E5EC4A /* BeerRouter.swift in Sources */,
+				2B9276B32AC2706600C70773 /* Sample.swift in Sources */,
 				2B1243772AB9294D00E5EC4A /* ViewController.swift in Sources */,
 				2B12439C2ABAFF5C00E5EC4A /* Beer.swift in Sources */,
 				2B1243912AB93CD400E5EC4A /* NetworkBasic.swift in Sources */,
@@ -255,6 +262,7 @@
 				2B12439E2ABB004500E5EC4A /* BeerAPI.swift in Sources */,
 				2B1243732AB9294D00E5EC4A /* AppDelegate.swift in Sources */,
 				2B1243F32ABBCB4900E5EC4A /* SearchViewController.swift in Sources */,
+				2B9276B52AC32FC300C70773 /* Photo.swift in Sources */,
 				2B1243F52ABBE12000E5EC4A /* SearchCollectionViewCell.swift in Sources */,
 				2B1243A22ABB054000E5EC4A /* BeerViewController.swift in Sources */,
 				2B1243A02ABB01FC00E5EC4A /* NetworkBeer.swift in Sources */,

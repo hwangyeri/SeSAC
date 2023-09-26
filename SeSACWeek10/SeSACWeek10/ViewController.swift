@@ -86,25 +86,6 @@ extension ViewController: UIScrollViewDelegate {
     
 }
 
-//Codable: Decodable + Encodable
-struct Photo: Decodable {
-    let total: Int
-    let total_pages: Int
-    let results: [PhotoResult]
-}
-
-// Codable 이 아닌 Decodable 인 이유 => 가지고 와서 구조체에 넣어주고 있어서 Decodable 만 해도 충분!
-struct PhotoResult: Decodable { 
-    let id: String
-    let created_at: String
-    let urls: PhotoURL
-}
-
-struct PhotoURL: Decodable {
-    let full: String
-    let thumb: String
-}
-
 /*
  
  override func viewDidLoad() {
