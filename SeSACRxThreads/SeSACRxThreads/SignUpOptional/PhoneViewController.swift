@@ -15,9 +15,10 @@ class PhoneViewController: UIViewController {
     let phoneTextField = SignTextField(placeholderText: "연락처를 입력해주세요")
     let nextButton = PointButton(title: "다음")
     
-    let phone = BehaviorSubject(value: "010")
     let buttonColor = BehaviorSubject(value: UIColor.red)
-    let buttonEnabled = BehaviorSubject(value: false)
+    
+    let viewModel = PhoneViewModel()
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class PhoneViewController: UIViewController {
     
     func bind() {
         
-        buttonEnabled
+        viewModel.buttonEnabled
             .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
@@ -48,25 +49,21 @@ class PhoneViewController: UIViewController {
             .bind(to: phoneTextField.layer.rx.borderColor)
             .disposed(by: disposeBag)
         
-        phone.bind(to: phoneTextField.rx.text)
+        viewModel.buttonEnabled
+            .observe(on: MainScheduler.instance)
+            .subscribe(with: self) { owner, isEnable in
+                let color = isEnable ? UIColor.blue : UIColor.red
+                owner.buttonColor.onNext(color)
+                owner.viewModel.buttonEnabled.onNext(isEnable)
+            }
             .disposed(by: disposeBag)
         
-        phone
-            .map { $0.count > 10 }
-            .subscribe(with: self, onNext: { owner, value in
-                print("== \(value) ==")
-                let color = value ? UIColor.blue : UIColor.red
-                owner.buttonColor.onNext(color)
-                owner.buttonEnabled.onNext(value)
-            })
+        viewModel.phone
+            .bind(to: phoneTextField.rx.text)
             .disposed(by: disposeBag)
         
         phoneTextField.rx.text.orEmpty
-            .subscribe { value in
-                let result = value.formated(by: "###-####-####")
-                print(value, result)
-                self.phone.onNext(result)
-            }
+            .bind(to: viewModel.phone)
             .disposed(by: disposeBag)
     }
     
