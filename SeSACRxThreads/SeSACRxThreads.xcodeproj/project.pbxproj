@@ -28,7 +28,13 @@
 		041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280702AEFAD3D00972552 /* PhoneViewController.swift */; };
 		041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280722AEFAD4B00972552 /* NicknameViewController.swift */; };
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
+		2B34FAE12AF4FF8A006D6835 /* SimplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FAE02AF4FF8A006D6835 /* SimplePickerViewController.swift */; };
+		2B34FAE32AF5102D006D6835 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FAE22AF5102D006D6835 /* SimpleTableViewController.swift */; };
+		2B34FAE52AF51507006D6835 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FAE42AF51507006D6835 /* Wireframe.swift */; };
 		2BA2AF342AF2A2DB0076324A /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF332AF2A2DB0076324A /* Extension+String.swift */; };
+		2BA2AF382AF3CCEC0076324A /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF372AF3CCEC0076324A /* BirthdayViewModel.swift */; };
+		2BA2AF3A2AF3CEE20076324A /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF392AF3CEE20076324A /* PhoneViewModel.swift */; };
+		2BA2AF3C2AF3E95F0076324A /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF3B2AF3E95F0076324A /* NicknameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +77,13 @@
 		041280702AEFAD3D00972552 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		041280722AEFAD4B00972552 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		2B34FAE02AF4FF8A006D6835 /* SimplePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerViewController.swift; sourceTree = "<group>"; };
+		2B34FAE22AF5102D006D6835 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
+		2B34FAE42AF51507006D6835 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		2BA2AF332AF2A2DB0076324A /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		2BA2AF372AF3CCEC0076324A /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		2BA2AF392AF3CEE20076324A /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
+		2BA2AF3B2AF3E95F0076324A /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,18 +137,15 @@
 		041280222AEF9BAB00972552 /* SeSACRxThreads */ = {
 			isa = PBXGroup;
 			children = (
-				2BA2AF332AF2A2DB0076324A /* Extension+String.swift */,
+				2B34FAEA2AF699B4006D6835 /* Application */,
+				2B34FADF2AF4FF69006D6835 /* Sample */,
 				041280532AEF9C1F00972552 /* SignUp */,
 				041280542AEF9C2600972552 /* SignIn */,
 				0412806D2AEFAD0F00972552 /* SignUpOptional */,
-				041280612AEFA0BE00972552 /* CustomView */,
-				041280232AEF9BAB00972552 /* AppDelegate.swift */,
-				041280252AEF9BAB00972552 /* SceneDelegate.swift */,
-				041280272AEF9BAB00972552 /* ViewController.swift */,
+				2B34FAEB2AF699F4006D6835 /* Utility */,
+				2B34FAE92AF69988006D6835 /* Resource */,
 				0412802C2AEF9BAC00972552 /* Assets.xcassets */,
-				0412802E2AEF9BAC00972552 /* LaunchScreen.storyboard */,
 				041280312AEF9BAC00972552 /* Info.plist */,
-				041280772AF1D14000972552 /* Resource.swift */,
 			);
 			path = SeSACRxThreads;
 			sourceTree = "<group>";
@@ -188,11 +197,84 @@
 		0412806D2AEFAD0F00972552 /* SignUpOptional */ = {
 			isa = PBXGroup;
 			children = (
-				0412806E2AEFAD2D00972552 /* BirthdayViewController.swift */,
-				041280702AEFAD3D00972552 /* PhoneViewController.swift */,
-				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
+				2B34FAEC2AF6A0B7006D6835 /* Phone */,
+				2B34FAE72AF6986E006D6835 /* Nickname */,
+				2B34FAE62AF6985C006D6835 /* Birthday */,
 			);
 			path = SignUpOptional;
+			sourceTree = "<group>";
+		};
+		2B34FADF2AF4FF69006D6835 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				2B34FAE02AF4FF8A006D6835 /* SimplePickerViewController.swift */,
+				2B34FAE22AF5102D006D6835 /* SimpleTableViewController.swift */,
+				2B34FAE42AF51507006D6835 /* Wireframe.swift */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		2B34FAE62AF6985C006D6835 /* Birthday */ = {
+			isa = PBXGroup;
+			children = (
+				2BA2AF372AF3CCEC0076324A /* BirthdayViewModel.swift */,
+				0412806E2AEFAD2D00972552 /* BirthdayViewController.swift */,
+			);
+			path = Birthday;
+			sourceTree = "<group>";
+		};
+		2B34FAE72AF6986E006D6835 /* Nickname */ = {
+			isa = PBXGroup;
+			children = (
+				2BA2AF3B2AF3E95F0076324A /* NicknameViewModel.swift */,
+				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
+			);
+			path = Nickname;
+			sourceTree = "<group>";
+		};
+		2B34FAE82AF6997A006D6835 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2BA2AF332AF2A2DB0076324A /* Extension+String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		2B34FAE92AF69988006D6835 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				0412802E2AEF9BAC00972552 /* LaunchScreen.storyboard */,
+				041280772AF1D14000972552 /* Resource.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		2B34FAEA2AF699B4006D6835 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				041280232AEF9BAB00972552 /* AppDelegate.swift */,
+				041280252AEF9BAB00972552 /* SceneDelegate.swift */,
+				041280272AEF9BAB00972552 /* ViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2B34FAEB2AF699F4006D6835 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				041280612AEFA0BE00972552 /* CustomView */,
+				2B34FAE82AF6997A006D6835 /* Extension */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		2B34FAEC2AF6A0B7006D6835 /* Phone */ = {
+			isa = PBXGroup;
+			children = (
+				2BA2AF392AF3CEE20076324A /* PhoneViewModel.swift */,
+				041280702AEFAD3D00972552 /* PhoneViewController.swift */,
+			);
+			path = Phone;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,16 +416,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B34FAE52AF51507006D6835 /* Wireframe.swift in Sources */,
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
+				2BA2AF3A2AF3CEE20076324A /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
+				2B34FAE12AF4FF8A006D6835 /* SimplePickerViewController.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				2BA2AF342AF2A2DB0076324A /* Extension+String.swift in Sources */,
+				2BA2AF382AF3CCEC0076324A /* BirthdayViewModel.swift in Sources */,
+				2B34FAE32AF5102D006D6835 /* SimpleTableViewController.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
+				2BA2AF3C2AF3E95F0076324A /* NicknameViewModel.swift in Sources */,
 				0412806A2AEFA91E00972552 /* SignUpViewController.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
