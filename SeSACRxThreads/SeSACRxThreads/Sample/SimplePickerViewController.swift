@@ -48,6 +48,14 @@ class SimplePickerViewController: ViewController {
         return label
     }()
     
+    let tempButton: UIButton = {
+       let button = UIButton()
+        button.layer.borderColor = UIColor.lightGray.cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 25
+        return button
+    }()
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -56,7 +64,38 @@ class SimplePickerViewController: ViewController {
         view.backgroundColor = .white
         configureLayout()
         
-        setPickerView()
+//        setPickerView()
+        setButton()
+    }
+    
+    func setButton() {
+        
+        // subscribe: 메인쓰레드에서 동작하게 변경 필요, next.error.completed 이벤트 처리
+        // bind: next 이벤트만 처리
+        
+        tempButton.rx.tap
+            .observe(on: MainScheduler.instance)
+            .subscribe { _ in
+                self.resultLabel1.text = "hi"
+            }
+            .disposed(by: disposeBag)
+        
+        tempButton.rx.tap
+            .bind { _ in
+                self.resultLabel1.text = "hello"
+            }
+            .disposed(by: disposeBag)
+        
+        tempButton.rx.tap
+            .map { "안녕" }
+            .bind(to: resultLabel1.rx.text)
+            .disposed(by: disposeBag)
+        
+        tempButton.rx.tap
+            .map { "안녕하세요" }
+            .asDriver(onErrorJustReturn: "error")
+            .drive(resultLabel1.rx.text)
+            .disposed(by: disposeBag)
     }
     
     func setPickerView() {
@@ -113,40 +152,52 @@ class SimplePickerViewController: ViewController {
     }
     
     func configureLayout() {
-        [pickerView1, resultLabel1, pickerView2, resultLabel2, pickerView3, resultLabel3].forEach {
-            view.addSubview($0)
+//        [pickerView1, resultLabel1, pickerView2, resultLabel2, pickerView3, resultLabel3].forEach {
+//            view.addSubview($0)
+        view.addSubview(tempButton)
+        view.addSubview(resultLabel1)
+        
+        tempButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.equalTo(120)
+            make.height.equalTo(80)
         }
         
         resultLabel1.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.horizontalEdges.equalToSuperview()
+            make.bottom.equalTo(tempButton.snp.top).offset(-50)
+            make.horizontalEdges.equalToSuperview().inset(50)
         }
         
-        pickerView1.snp.makeConstraints { make in
-            make.top.equalTo(resultLabel1.snp.bottom)
-            make.horizontalEdges.equalToSuperview()
-        }
-        
-        resultLabel2.snp.makeConstraints { make in
-            make.top.equalTo(pickerView1.snp.bottom)
-            make.horizontalEdges.equalToSuperview()
-        }
-        
-        pickerView2.snp.makeConstraints { make in
-            make.top.equalTo(resultLabel2.snp.bottom)
-            make.horizontalEdges.equalToSuperview()
-        }
-        
-        resultLabel3.snp.makeConstraints { make in
-            make.top.equalTo(pickerView2.snp.bottom)
-            make.horizontalEdges.equalToSuperview()
-        }
-        
-        pickerView3.snp.makeConstraints { make in
-            make.top.equalTo(resultLabel3.snp.bottom)
-            make.horizontalEdges.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
+//        resultLabel1.snp.makeConstraints { make in
+//            make.top.equalTo(view.safeAreaLayoutGuide)
+//            make.horizontalEdges.equalToSuperview()
+//        }
+//        
+//        pickerView1.snp.makeConstraints { make in
+//            make.top.equalTo(resultLabel1.snp.bottom)
+//            make.horizontalEdges.equalToSuperview()
+//        }
+//        
+//        resultLabel2.snp.makeConstraints { make in
+//            make.top.equalTo(pickerView1.snp.bottom)
+//            make.horizontalEdges.equalToSuperview()
+//        }
+//        
+//        pickerView2.snp.makeConstraints { make in
+//            make.top.equalTo(resultLabel2.snp.bottom)
+//            make.horizontalEdges.equalToSuperview()
+//        }
+//        
+//        resultLabel3.snp.makeConstraints { make in
+//            make.top.equalTo(pickerView2.snp.bottom)
+//            make.horizontalEdges.equalToSuperview()
+//        }
+//        
+//        pickerView3.snp.makeConstraints { make in
+//            make.top.equalTo(resultLabel3.snp.bottom)
+//            make.horizontalEdges.equalToSuperview()
+//            make.bottom.equalTo(view.safeAreaLayoutGuide)
+//        }
     }
     
     
