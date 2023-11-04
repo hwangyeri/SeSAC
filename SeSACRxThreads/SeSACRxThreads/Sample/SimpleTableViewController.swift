@@ -64,10 +64,20 @@ class SimpleTableViewController: ViewController {
             .disposed(by: disposeBag)
         
         tableView.rx.modelSelected(String.self)
-            .subscribe { value in
-                DefaultWireframe.presentAlert("")
-            }
+//            .subscribe { value in
+//                DefaultWireframe.presentAlert("\(value)를 클릭했어요.")
+//            }
+            .subscribe(onNext:  { value in
+                DefaultWireframe.presentAlert("\(value)를 클릭했어요.")
+            })
             .disposed(by: disposeBag)
+        
+//        tableView.rx
+//            .itemAccessoryButtonTapped
+//            .subscribe(onNext: { indexPath in
+//                DefaultWireframe.presentAlert("@ \(indexPath.section), @\(indexPath.row)")
+//            })
+//            .disposed(by: disposeBag)
     }
     
     func configureLayout() {
