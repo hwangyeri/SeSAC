@@ -39,7 +39,7 @@ class SearchViewController: UIViewController {
      
     func bind() {
         
-        //MARK: - cellForRowAt
+        // MARK: - cellForRowAt
         items
             .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) { (row, element, cell) in
                 cell.appNameLabel.text = element
@@ -54,7 +54,7 @@ class SearchViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        //MARK: - didSelectRowAt
+        // MARK: - didSelectRowAt
         tableView.rx.itemSelected
             .subscribe(with: self) { owner, indexPath in
                 print("itemSelected:", indexPath)
@@ -72,7 +72,7 @@ class SearchViewController: UIViewController {
             .bind(to: navigationItem.rx.title)
             .disposed(by: disposeBag)
         
-        //MARK: - SearchBar
+        // MARK: - SearchBar
         searchBar
             .rx.searchButtonClicked // Observable
             .withLatestFrom(searchBar.rx.text.orEmpty) { void, text in // Observable
