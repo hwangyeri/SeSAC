@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B34FB292AF7826A006D6835 /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FB282AF7826A006D6835 /* ShoppingListViewController.swift */; };
+		2B34FB2B2AF782D2006D6835 /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FB2A2AF782D2006D6835 /* ShoppingListTableViewCell.swift */; };
+		2B34FB2E2AF784E2006D6835 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B34FB2D2AF784E2006D6835 /* SnapKit */; };
+		2B34FB312AF78510006D6835 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2B34FB302AF78510006D6835 /* RxCocoa */; };
+		2B34FB332AF78510006D6835 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B34FB322AF78510006D6835 /* RxSwift */; };
+		2B34FB382AF7C5C6006D6835 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FB372AF7C5C6006D6835 /* DetailViewController.swift */; };
 		2BAAFDF92A724CFC000E18FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAFDF82A724CFC000E18FD /* AppDelegate.swift */; };
 		2BAAFDFB2A724CFC000E18FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAFDFA2A724CFC000E18FD /* SceneDelegate.swift */; };
 		2BAAFDFD2A724CFC000E18FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAFDFC2A724CFC000E18FD /* ViewController.swift */; };
@@ -18,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B34FB282AF7826A006D6835 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
+		2B34FB2A2AF782D2006D6835 /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
+		2B34FB372AF7C5C6006D6835 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2BAAFDF52A724CFC000E18FD /* Setting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BAAFDF82A724CFC000E18FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BAAFDFA2A724CFC000E18FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,12 +44,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B34FB332AF78510006D6835 /* RxSwift in Frameworks */,
+				2B34FB312AF78510006D6835 /* RxCocoa in Frameworks */,
+				2B34FB2E2AF784E2006D6835 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B34FB342AF7B290006D6835 /* ShoppingList */ = {
+			isa = PBXGroup;
+			children = (
+				2B34FB282AF7826A006D6835 /* ShoppingListViewController.swift */,
+				2B34FB2A2AF782D2006D6835 /* ShoppingListTableViewCell.swift */,
+				2B34FB372AF7C5C6006D6835 /* DetailViewController.swift */,
+			);
+			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		2B34FB392AF7EAC5006D6835 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2BAAFDF82A724CFC000E18FD /* AppDelegate.swift */,
+				2BAAFDFA2A724CFC000E18FD /* SceneDelegate.swift */,
+				2BAAFDFC2A724CFC000E18FD /* ViewController.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2B34FB3A2AF7EADD006D6835 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				2BAAFE102A725E96000E18FD /* SettingTableViewController.swift */,
+				2BAAFE122A727023000E18FD /* ShoppingTableViewController.swift */,
+				2BAAFDFE2A724CFC000E18FD /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		2BAAFDEC2A724CFC000E18FD = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +102,9 @@
 		2BAAFDF72A724CFC000E18FD /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				2BAAFDF82A724CFC000E18FD /* AppDelegate.swift */,
-				2BAAFDFA2A724CFC000E18FD /* SceneDelegate.swift */,
-				2BAAFDFC2A724CFC000E18FD /* ViewController.swift */,
-				2BAAFE102A725E96000E18FD /* SettingTableViewController.swift */,
-				2BAAFE122A727023000E18FD /* ShoppingTableViewController.swift */,
-				2BAAFDFE2A724CFC000E18FD /* Main.storyboard */,
+				2B34FB3A2AF7EADD006D6835 /* Storyboard */,
+				2B34FB392AF7EAC5006D6835 /* Application */,
+				2B34FB342AF7B290006D6835 /* ShoppingList */,
 				2BAAFE012A724CFD000E18FD /* Assets.xcassets */,
 				2BAAFE032A724CFD000E18FD /* LaunchScreen.storyboard */,
 				2BAAFE062A724CFD000E18FD /* Info.plist */,
@@ -89,6 +128,11 @@
 			dependencies = (
 			);
 			name = Setting;
+			packageProductDependencies = (
+				2B34FB2D2AF784E2006D6835 /* SnapKit */,
+				2B34FB302AF78510006D6835 /* RxCocoa */,
+				2B34FB322AF78510006D6835 /* RxSwift */,
+			);
 			productName = Setting;
 			productReference = 2BAAFDF52A724CFC000E18FD /* Setting.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +161,10 @@
 				Base,
 			);
 			mainGroup = 2BAAFDEC2A724CFC000E18FD;
+			packageReferences = (
+				2B34FB2C2AF784E2006D6835 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				2B34FB2F2AF78510006D6835 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 2BAAFDF62A724CFC000E18FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -144,8 +192,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B34FB382AF7C5C6006D6835 /* DetailViewController.swift in Sources */,
 				2BAAFE112A725E96000E18FD /* SettingTableViewController.swift in Sources */,
 				2BAAFDFD2A724CFC000E18FD /* ViewController.swift in Sources */,
+				2B34FB292AF7826A006D6835 /* ShoppingListViewController.swift in Sources */,
+				2B34FB2B2AF782D2006D6835 /* ShoppingListTableViewCell.swift in Sources */,
 				2BAAFDF92A724CFC000E18FD /* AppDelegate.swift in Sources */,
 				2BAAFE132A727023000E18FD /* ShoppingTableViewController.swift in Sources */,
 				2BAAFDFB2A724CFC000E18FD /* SceneDelegate.swift in Sources */,
@@ -364,6 +415,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2B34FB2C2AF784E2006D6835 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		2B34FB2F2AF78510006D6835 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2B34FB2D2AF784E2006D6835 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B34FB2C2AF784E2006D6835 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		2B34FB302AF78510006D6835 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B34FB2F2AF78510006D6835 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		2B34FB322AF78510006D6835 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B34FB2F2AF78510006D6835 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2BAAFDED2A724CFC000E18FD /* Project object */;
 }
