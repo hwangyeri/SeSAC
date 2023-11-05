@@ -17,9 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let rootViewController = UINavigationController(rootViewController: SignInViewController())
-        let testViewController = UINavigationController(rootViewController: SimplePickerViewController())
+        let testViewController = UINavigationController(rootViewController: SearchViewController())
          
-        window?.rootViewController = rootViewController
+        window?.rootViewController = testViewController
         window?.makeKeyAndVisible()
 
     }
