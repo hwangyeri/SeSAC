@@ -31,6 +31,9 @@
 		2B34FAE12AF4FF8A006D6835 /* SimplePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FAE02AF4FF8A006D6835 /* SimplePickerViewController.swift */; };
 		2B34FAE32AF5102D006D6835 /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FAE22AF5102D006D6835 /* SimpleTableViewController.swift */; };
 		2B34FAE52AF51507006D6835 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FAE42AF51507006D6835 /* Wireframe.swift */; };
+		2B34FAEF2AF760C2006D6835 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FAEE2AF760C2006D6835 /* SampleViewController.swift */; };
+		2B34FAF12AF760E1006D6835 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FAF02AF760E1006D6835 /* SearchViewController.swift */; };
+		2B34FAF32AF7610B006D6835 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FAF22AF7610B006D6835 /* SearchTableViewCell.swift */; };
 		2BA2AF342AF2A2DB0076324A /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF332AF2A2DB0076324A /* Extension+String.swift */; };
 		2BA2AF382AF3CCEC0076324A /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF372AF3CCEC0076324A /* BirthdayViewModel.swift */; };
 		2BA2AF3A2AF3CEE20076324A /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF392AF3CEE20076324A /* PhoneViewModel.swift */; };
@@ -80,6 +83,9 @@
 		2B34FAE02AF4FF8A006D6835 /* SimplePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerViewController.swift; sourceTree = "<group>"; };
 		2B34FAE22AF5102D006D6835 /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		2B34FAE42AF51507006D6835 /* Wireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		2B34FAEE2AF760C2006D6835 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
+		2B34FAF02AF760E1006D6835 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		2B34FAF22AF7610B006D6835 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		2BA2AF332AF2A2DB0076324A /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		2BA2AF372AF3CCEC0076324A /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		2BA2AF392AF3CEE20076324A /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				2B34FAEA2AF699B4006D6835 /* Application */,
+				2B34FAED2AF7603A006D6835 /* Search */,
 				2B34FADF2AF4FF69006D6835 /* Sample */,
 				041280532AEF9C1F00972552 /* SignUp */,
 				041280542AEF9C2600972552 /* SignIn */,
@@ -275,6 +282,16 @@
 				041280702AEFAD3D00972552 /* PhoneViewController.swift */,
 			);
 			path = Phone;
+			sourceTree = "<group>";
+		};
+		2B34FAED2AF7603A006D6835 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2B34FAEE2AF760C2006D6835 /* SampleViewController.swift */,
+				2B34FAF02AF760E1006D6835 /* SearchViewController.swift */,
+				2B34FAF22AF7610B006D6835 /* SearchTableViewCell.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -424,10 +441,12 @@
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
 				2BA2AF3A2AF3CEE20076324A /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
+				2B34FAF32AF7610B006D6835 /* SearchTableViewCell.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				2B34FAE12AF4FF8A006D6835 /* SimplePickerViewController.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				2BA2AF342AF2A2DB0076324A /* Extension+String.swift in Sources */,
+				2B34FAF12AF760E1006D6835 /* SearchViewController.swift in Sources */,
 				2BA2AF382AF3CCEC0076324A /* BirthdayViewModel.swift in Sources */,
 				2B34FAE32AF5102D006D6835 /* SimpleTableViewController.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
@@ -436,6 +455,7 @@
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
 				041280582AEFA05300972552 /* SignInViewModel.swift in Sources */,
+				2B34FAEF2AF760C2006D6835 /* SampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
