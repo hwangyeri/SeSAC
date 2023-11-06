@@ -10,12 +10,6 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-struct ShoppingListItem {
-    var isChecked: Bool
-    var content: String
-    var isLiked: Bool
-}
-
 class ShoppingListViewController: UIViewController {
     
     let backView: UIView = {
@@ -56,8 +50,7 @@ class ShoppingListViewController: UIViewController {
     
     lazy var shoppingListObservable = BehaviorSubject(value: shoppingList)
 
-    let checkboxButtonEnabled = BehaviorSubject(value: false)
-    let starButtonEnabled = BehaviorSubject(value: false)
+    let viewModel = ShoppingListViewModel()
     
     let disposeBag = DisposeBag()
 
@@ -67,7 +60,6 @@ class ShoppingListViewController: UIViewController {
         view.backgroundColor = .white
         configureLayout()
         bind()
-        print(shoppingList)
     }
     
     func bind() {
@@ -189,7 +181,6 @@ class ShoppingListViewController: UIViewController {
         }
         
     }
-
 
 }
 
