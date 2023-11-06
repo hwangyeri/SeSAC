@@ -12,16 +12,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
  
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
+        
+        // MARK: - Navigation Controller
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        
-        let rootViewController = UINavigationController(rootViewController: SignInViewController())
-        let testViewController = UINavigationController(rootViewController: SearchViewController())
-         
-        window?.rootViewController = testViewController
+        let vc = SignInViewController()
+        window?.rootViewController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
+        
+        // MARK: - TabBar Controller
+        let tabBar = UITabBarController()
+        
+        let firstVC = UINavigationController(rootViewController: SearchViewController())
+        firstVC.tabBarItem = UITabBarItem(title: "SearchVC", image: nil,selectedImage: nil)
 
+        let secondVC = UINavigationController(rootViewController: SignInViewController())
+        secondVC.tabBarItem = UITabBarItem(title: "SignInVC", image: nil,selectedImage: nil)
+        
+        let thirdVC = UINavigationController(rootViewController: iTunesSearchViewController())
+        thirdVC.tabBarItem = UITabBarItem(title: "iTunesVC", image: nil,selectedImage: nil)
+        
+        tabBar.viewControllers = [firstVC, secondVC, thirdVC]
+        tabBar.tabBar.backgroundColor = UIColor.systemBackground
+        tabBar.tabBar.tintColor = UIColor.label
+        
+        window?.rootViewController = tabBar
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
