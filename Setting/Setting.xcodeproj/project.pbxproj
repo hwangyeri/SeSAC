@@ -13,6 +13,7 @@
 		2B34FB312AF78510006D6835 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2B34FB302AF78510006D6835 /* RxCocoa */; };
 		2B34FB332AF78510006D6835 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B34FB322AF78510006D6835 /* RxSwift */; };
 		2B34FB382AF7C5C6006D6835 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FB372AF7C5C6006D6835 /* DetailViewController.swift */; };
+		2B34FB432AF8B516006D6835 /* ShoppingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FB422AF8B516006D6835 /* ShoppingListViewModel.swift */; };
 		2BAAFDF92A724CFC000E18FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAFDF82A724CFC000E18FD /* AppDelegate.swift */; };
 		2BAAFDFB2A724CFC000E18FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAFDFA2A724CFC000E18FD /* SceneDelegate.swift */; };
 		2BAAFDFD2A724CFC000E18FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAAFDFC2A724CFC000E18FD /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		2B34FB282AF7826A006D6835 /* ShoppingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewController.swift; sourceTree = "<group>"; };
 		2B34FB2A2AF782D2006D6835 /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
 		2B34FB372AF7C5C6006D6835 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2B34FB422AF8B516006D6835 /* ShoppingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListViewModel.swift; sourceTree = "<group>"; };
 		2BAAFDF52A724CFC000E18FD /* Setting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BAAFDF82A724CFC000E18FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BAAFDFA2A724CFC000E18FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				2B34FB282AF7826A006D6835 /* ShoppingListViewController.swift */,
 				2B34FB2A2AF782D2006D6835 /* ShoppingListTableViewCell.swift */,
 				2B34FB372AF7C5C6006D6835 /* DetailViewController.swift */,
+				2B34FB422AF8B516006D6835 /* ShoppingListViewModel.swift */,
 			);
 			path = ShoppingList;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				2BAAFE112A725E96000E18FD /* SettingTableViewController.swift in Sources */,
 				2BAAFDFD2A724CFC000E18FD /* ViewController.swift in Sources */,
 				2B34FB292AF7826A006D6835 /* ShoppingListViewController.swift in Sources */,
+				2B34FB432AF8B516006D6835 /* ShoppingListViewModel.swift in Sources */,
 				2B34FB2B2AF782D2006D6835 /* ShoppingListTableViewCell.swift in Sources */,
 				2BAAFDF92A724CFC000E18FD /* AppDelegate.swift in Sources */,
 				2BAAFE132A727023000E18FD /* ShoppingTableViewController.swift in Sources */,
