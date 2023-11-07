@@ -20,3 +20,5 @@ extension ReusableViewProtocol where Self: NSObject {
 extension UIViewController: ReusableViewProtocol { }
 
 extension UITableViewCell: ReusableViewProtocol { }
+
+extension UICollectionViewCell: ReusableViewProtocol { }
