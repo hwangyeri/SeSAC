@@ -75,19 +75,18 @@ class iTunesSearchViewController: UIViewController {
                     }
                     .disposed(by: cell.disposeBag)
                 
-                Observable.from(element.screenshotUrls.prefix(3))
-                    .map { URL(string: $0) }
-                    .subscribe(with: self) { owner, url in
-                        // FIXME: 스크린샷 3장 다 보여주기
-//                        print("All", url)
-                        if let url = url {
-                            cell.screenshotImageView1.kf.setImage(with: url)
-                        } else {
-                            cell.screenshotImageView1.image = UIImage(systemName: "xmark.icloud")
-                        }
-                    }
-                    .disposed(by: cell.disposeBag)
+                let urls = element.screenshotUrls.prefix(3).compactMap { URL(string: $0) }
                 
+                for (index, url) in urls.enumerated() {
+                    if index == 0 {
+                        cell.screenshotImageView1.kf.setImage(with: url)
+                    } else if index == 1 {
+                        cell.screenshotImageView2.kf.setImage(with: url)
+                    } else if index == 2 {
+                        cell.screenshotImageView3.kf.setImage(with: url)
+                    }
+                }
+        
                 cell.downloadButton.rx.tap
                     .subscribe(with: self) { owner, value in
                         owner.navigationController?.pushViewController(iTunesDetailViewController(), animated: true)
