@@ -33,6 +33,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         thirdVC.tabBarItem = UITabBarItem(title: "iTunesVC", image: nil,selectedImage: nil)
         
         tabBar.viewControllers = [firstVC, secondVC, thirdVC]
+        tabBar.selectedIndex = 2
         tabBar.tabBar.backgroundColor = UIColor.systemBackground
         tabBar.tabBar.tintColor = UIColor.label
         
