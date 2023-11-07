@@ -10,7 +10,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class iTunesSearchTableViewCell: UITableViewCell {
+final class iTunesSearchTableViewCell: UITableViewCell {
     
     let appNameLabel: UILabel = {
         let label = UILabel()
@@ -71,38 +71,23 @@ class iTunesSearchTableViewCell: UITableViewCell {
         let view = UIStackView()
         view.isLayoutMarginsRelativeArrangement = true
         view.axis = .horizontal
-        view.layoutMargins.left = 15.0
-        view.layoutMargins.right = 15.0
+        view.distribution = .fillEqually
+        view.spacing = 8
         return view
     }()
     
     let screenshotImageView1: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
-        imageView.layer.borderWidth = 0.5
-        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        let imageView = ScreenshotImageView()
         return imageView
     }()
     
     let screenshotImageView2: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
-        imageView.layer.borderWidth = 0.5
-        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        let imageView = ScreenshotImageView()
         return imageView
     }()
     
     let screenshotImageView3: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
-        imageView.layer.borderWidth = 0.5
-        imageView.layer.borderColor = UIColor.lightGray.cgColor
+        let imageView = ScreenshotImageView()
         return imageView
     }()
     
