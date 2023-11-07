@@ -27,5 +27,5 @@ struct AppInfo: Codable {
     let languageCodesISO2A: [String] // 언어 지원
     let trackId: Int
     let version: String
-    let releaseNotes: String
+    let releaseNotes: String // 프로모션 텍스트
 }
