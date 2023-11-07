@@ -41,6 +41,8 @@
 		2B34FB4F2AF90FA9006D6835 /* ReusableViewProtocol+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FB4E2AF90FA9006D6835 /* ReusableViewProtocol+.swift */; };
 		2B34FB522AF91E83006D6835 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2B34FB512AF91E83006D6835 /* Kingfisher */; };
 		2B34FB542AF91F36006D6835 /* iTunesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FB532AF91F36006D6835 /* iTunesDetailViewController.swift */; };
+		2B34FB5F2AFA5E5A006D6835 /* ScreenshotImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FB5E2AFA5E5A006D6835 /* ScreenshotImageView.swift */; };
+		2B34FB612AFA83C1006D6835 /* iTunesDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B34FB602AFA83C1006D6835 /* iTunesDetailCollectionViewCell.swift */; };
 		2BA2AF342AF2A2DB0076324A /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF332AF2A2DB0076324A /* Extension+String.swift */; };
 		2BA2AF382AF3CCEC0076324A /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF372AF3CCEC0076324A /* BirthdayViewModel.swift */; };
 		2BA2AF3A2AF3CEE20076324A /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA2AF392AF3CEE20076324A /* PhoneViewModel.swift */; };
@@ -99,6 +101,8 @@
 		2B34FB4C2AF90F62006D6835 /* iTunesSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchTableViewCell.swift; sourceTree = "<group>"; };
 		2B34FB4E2AF90FA9006D6835 /* ReusableViewProtocol+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableViewProtocol+.swift"; sourceTree = "<group>"; };
 		2B34FB532AF91F36006D6835 /* iTunesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesDetailViewController.swift; sourceTree = "<group>"; };
+		2B34FB5E2AFA5E5A006D6835 /* ScreenshotImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotImageView.swift; sourceTree = "<group>"; };
+		2B34FB602AFA83C1006D6835 /* iTunesDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		2BA2AF332AF2A2DB0076324A /* Extension+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		2BA2AF372AF3CCEC0076324A /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		2BA2AF392AF3CEE20076324A /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 			children = (
 				041280622AEFA0CE00972552 /* PointButton.swift */,
 				041280642AEFA2F000972552 /* SignTextField.swift */,
+				2B34FB5E2AFA5E5A006D6835 /* ScreenshotImageView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				2B34FB462AF90CA8006D6835 /* iTunesSearchViewController.swift */,
 				2B34FB4C2AF90F62006D6835 /* iTunesSearchTableViewCell.swift */,
 				2B34FB532AF91F36006D6835 /* iTunesDetailViewController.swift */,
+				2B34FB602AFA83C1006D6835 /* iTunesDetailCollectionViewCell.swift */,
 				2B34FB452AF90C8E006D6835 /* Network */,
 			);
 			path = iTunes;
@@ -473,6 +479,7 @@
 			files = (
 				2B34FAE52AF51507006D6835 /* Wireframe.swift in Sources */,
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
+				2B34FB612AFA83C1006D6835 /* iTunesDetailCollectionViewCell.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
 				2B34FB4D2AF90F62006D6835 /* iTunesSearchTableViewCell.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
@@ -488,6 +495,7 @@
 				2B34FAF12AF760E1006D6835 /* SearchViewController.swift in Sources */,
 				2B34FB542AF91F36006D6835 /* iTunesDetailViewController.swift in Sources */,
 				2BA2AF382AF3CCEC0076324A /* BirthdayViewModel.swift in Sources */,
+				2B34FB5F2AFA5E5A006D6835 /* ScreenshotImageView.swift in Sources */,
 				2B34FAE32AF5102D006D6835 /* SimpleTableViewController.swift in Sources */,
 				2B34FB472AF90CA8006D6835 /* iTunesSearchViewController.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
