@@ -7,6 +7,9 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
+import Kingfisher
 
 class iTunesDetailViewController: UIViewController {
     
@@ -32,9 +35,8 @@ class iTunesDetailViewController: UIViewController {
     
     private let appNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textColor = .black
-        label.text = "kakao aka"
         return label
     }()
     
@@ -42,7 +44,6 @@ class iTunesDetailViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13, weight: .regular)
         label.textColor = .lightGray
-        label.text = "kakao aka"
         return label
     }()
     
@@ -58,7 +59,7 @@ class iTunesDetailViewController: UIViewController {
     
     private let newLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
+        label.font = .systemFont(ofSize: 17, weight: .semibold)
         label.text = "새로운 소식"
         label.textColor = .label
         return label
@@ -68,7 +69,6 @@ class iTunesDetailViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = .lightGray
-        label.text = "버전 2.31.5"
         return label
     }()
     
@@ -76,21 +76,23 @@ class iTunesDetailViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = .label
-        label.text = "ㅅㄷㅅ댖슺아루ㅡ나ㅣ릐ㅏㄴ므라ㅣ무러ㅏㅜㄹ저ㅏ두러자ㅜ랃르자ㅣㄷ르잗무 라ㅓㅈ두랒ㄷ루ㅡ다ㅣㅈ르ㅏㅣㅡㄹㅇ님르 ㅣㅏㅈ르 ㅏㅈ드라ㅣ즏리ㅏㄷ즈라즈라 ㅡㅌ ㅍ칮ㅁㄹ"
         label.numberOfLines = 0
         return label
     }()
     
-    lazy var detailCollectionView = UICollectionView(frame: .zero, collectionViewLayout: configureDetailCollectionLayout())
-    
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionLayout())
+
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = .label
-        label.text = "ㅅㄷㅅ댖슺아루ㅡ나ㅣ릐ㅏㄴ므라ㅣ무러ㅏㅜㄹ저ㅏ두러자ㅜ랃르자ㅣㄷ르잗무 라ㅓㅈ두랒ㄷ루ㅡ다ㅣㅈ르ㅏㅣㅡㄹㅇ님르 ㅣㅏㅈ르 ㅏㅈ드라ㅣ즏리ㅏㄷ즈라즈라 ㅡㅌ ㅍ칮ㅁㄹ"
         label.numberOfLines = 0
         return label
     }()
+        
+    var selectedCellData: BehaviorRelay<AppInfo> = BehaviorRelay(value: AppInfo(screenshotUrls: [], trackName: "", genres: [], trackContentRating: "", description: "", price: 0.0, sellerName: "", formattedPrice: "", userRatingCount: 0, averageUserRating: 0.0, artworkUrl512: "", languageCodesISO2A: [], trackId: 0, version: "", releaseNotes: ""))
+    
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,17 +100,52 @@ class iTunesDetailViewController: UIViewController {
         view.backgroundColor = .white
         configureLayout()
         bind()
+//        print("DetailView", selectedCellData)
     }
     
     func bind() {
 
+        selectedCellData
+            .asDriver()
+            .drive(with: self) { owner, data in
+                owner.appNameLabel.text = data.trackName
+                owner.sellerNameLabel.text = data.sellerName
+                owner.descriptionLabel.text = data.description
+                owner.versionLabel.text = "버전 " + data.version
+                owner.releaseNotesLabel.text = data.releaseNotes
+                
+                if let url = URL(string: data.artworkUrl512) {
+                    owner.appIconImageView.kf.setImage(with: url)
+                } else {
+                    owner.appIconImageView.image = UIImage(systemName: "xmark.icloud")
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        selectedCellData
+            .asDriver()
+            .map { $0.screenshotUrls }
+            .drive(collectionView.rx.items(cellIdentifier: iTunesDetailCollectionViewCell.reuseIdentifier, cellType: iTunesDetailCollectionViewCell.self)) { (row, element, cell) in
+                // FIXME: CollectionView Image
+//                if let url = URL(string: element) {
+//                    cell.screenshotImageView1.kf.setImage(with: url)
+//                }
+                cell.screenshotImageView1.image = UIImage(systemName: "star")
+            }
+            .disposed(by: disposeBag)
+
+        downloadButton.rx.tap
+            .subscribe(with: self) { owner, value in
+                print("downloadButton Tap")
+            }
+            .disposed(by: disposeBag)
     }
     
     func configureLayout() {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        [appIconImageView, appNameLabel, sellerNameLabel, downloadButton, newLabel, versionLabel, releaseNotesLabel, detailCollectionView, descriptionLabel].forEach {
+        [appIconImageView, appNameLabel, sellerNameLabel, downloadButton, newLabel, versionLabel, releaseNotesLabel, collectionView, descriptionLabel].forEach {
             contentView.addSubview($0)
         }
         
@@ -130,7 +167,7 @@ class iTunesDetailViewController: UIViewController {
         appNameLabel.snp.makeConstraints { make in
             make.top.equalTo(appIconImageView).inset(10)
             make.leading.equalTo(appIconImageView.snp.trailing).offset(12)
-            make.trailing.equalToSuperview()
+            make.trailing.equalToSuperview().inset(5)
         }
         
         sellerNameLabel.snp.makeConstraints { make in
@@ -144,6 +181,7 @@ class iTunesDetailViewController: UIViewController {
             make.leading.equalTo(appNameLabel)
             make.height.equalTo(32)
             make.width.equalTo(72)
+            make.bottom.equalTo(appIconImageView)
         }
         
         newLabel.snp.makeConstraints { make in
@@ -161,38 +199,28 @@ class iTunesDetailViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(15)
         }
         
-        detailCollectionView.snp.makeConstraints { make in
+        collectionView.register(iTunesDetailCollectionViewCell.self, forCellWithReuseIdentifier: iTunesDetailCollectionViewCell.reuseIdentifier)
+        
+        collectionView.backgroundColor = .link
+        
+        collectionView.snp.makeConstraints { make in
             make.top.equalTo(releaseNotesLabel.snp.bottom).offset(20)
             make.trailing.equalToSuperview()
             make.leading.equalToSuperview().inset(15)
             make.height.equalTo(500)
         }
-        detailCollectionView.backgroundColor = .lightGray
         
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(detailCollectionView.snp.bottom).offset(20)
+            make.top.equalTo(collectionView.snp.bottom).offset(20)
             make.horizontalEdges.equalToSuperview().inset(15)
             make.bottom.equalToSuperview()
         }
     }
     
-    private func configureDetailCollectionLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
-        group.interItemSpacing = .fixed(10)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-        section.interGroupSpacing = 10
-        
-        let configuration = UICollectionViewCompositionalLayoutConfiguration()
-        configuration.scrollDirection = .horizontal
-        
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        
+    static func collectionLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 200, height: 500)
+        layout.scrollDirection = .horizontal
         return layout
     }
 
