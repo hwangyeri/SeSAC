@@ -89,7 +89,7 @@ class iTunesSearchViewController: UIViewController {
         
                 cell.downloadButton.rx.tap
                     .subscribe(with: self) { owner, value in
-                        owner.navigationController?.pushViewController(iTunesDetailViewController(), animated: true)
+                        print("downloadButton Tap")
                     }
                     .disposed(by: cell.disposeBag)
             }
@@ -103,6 +103,12 @@ class iTunesSearchViewController: UIViewController {
             .asDriver(onErrorJustReturn: SearchAppModel(resultCount: 0, results: [])) // error 예외처리
             .drive(with: self) { owner, result in
                 owner.dataSubject.onNext(result.results)
+            }
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .subscribe(with: self) { owner, indexPath in
+                owner.navigationController?.pushViewController(iTunesDetailViewController(), animated: true)
             }
             .disposed(by: disposeBag)
     }
