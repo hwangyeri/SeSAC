@@ -318,10 +318,8 @@
 		2B34FB442AF90C80006D6835 /* iTunes */ = {
 			isa = PBXGroup;
 			children = (
-				2B34FB462AF90CA8006D6835 /* iTunesSearchViewController.swift */,
-				2B34FB4C2AF90F62006D6835 /* iTunesSearchTableViewCell.swift */,
-				2B34FB532AF91F36006D6835 /* iTunesDetailViewController.swift */,
-				2B34FB602AFA83C1006D6835 /* iTunesDetailCollectionViewCell.swift */,
+				2B34FB6B2AFB8335006D6835 /* iTunesSearch */,
+				2B34FB6C2AFB8346006D6835 /* iTunesDetail */,
 				2B34FB452AF90C8E006D6835 /* Network */,
 			);
 			path = iTunes;
@@ -334,6 +332,24 @@
 				2B34FB4A2AF90D15006D6835 /* SearchAppModel.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		2B34FB6B2AFB8335006D6835 /* iTunesSearch */ = {
+			isa = PBXGroup;
+			children = (
+				2B34FB462AF90CA8006D6835 /* iTunesSearchViewController.swift */,
+				2B34FB4C2AF90F62006D6835 /* iTunesSearchTableViewCell.swift */,
+			);
+			path = iTunesSearch;
+			sourceTree = "<group>";
+		};
+		2B34FB6C2AFB8346006D6835 /* iTunesDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2B34FB532AF91F36006D6835 /* iTunesDetailViewController.swift */,
+				2B34FB602AFA83C1006D6835 /* iTunesDetailCollectionViewCell.swift */,
+			);
+			path = iTunesDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
