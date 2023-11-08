@@ -38,8 +38,7 @@ class iTunesSearchViewController: UIViewController {
        return view
      }()
     
-    var data: [AppInfo] = []
-    lazy var dataSubject = BehaviorSubject(value: data)
+    lazy var dataSubject = BehaviorSubject(value: [AppInfo]())
     
     let disposeBag = DisposeBag()
 
@@ -106,9 +105,13 @@ class iTunesSearchViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
-        tableView.rx.itemSelected
-            .subscribe(with: self) { owner, indexPath in
-                owner.navigationController?.pushViewController(iTunesDetailViewController(), animated: true)
+        tableView.rx.modelSelected(AppInfo.self)
+            .observe(on: MainScheduler.instance)
+            .subscribe(with: self) { owner, data in
+                //print("modelSelected", data)
+                let detailVC = iTunesDetailViewController()
+                detailVC.selectedCellData.accept(data)
+                owner.navigationController?.pushViewController(detailVC, animated: true)
             }
             .disposed(by: disposeBag)
     }
