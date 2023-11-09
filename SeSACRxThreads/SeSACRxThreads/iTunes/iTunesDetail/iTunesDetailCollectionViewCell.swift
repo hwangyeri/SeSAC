@@ -12,27 +12,7 @@ import RxCocoa
 
 final class iTunesDetailCollectionViewCell: UICollectionViewCell {
     
-    let screenshotImageView1: UIImageView = {
-        let imageView = ScreenshotImageView()
-        return imageView
-    }()
-    
-    let screenshotImageView2: UIImageView = {
-        let imageView = ScreenshotImageView()
-        return imageView
-    }()
-    
-    let screenshotImageView3: UIImageView = {
-        let imageView = ScreenshotImageView()
-        return imageView
-    }()
-    
-    let screenshotImageView4: UIImageView = {
-        let imageView = ScreenshotImageView()
-        return imageView
-    }()
-    
-    let screenshotImageView5: UIImageView = {
+    let screenshotImageView: UIImageView = {
         let imageView = ScreenshotImageView()
         return imageView
     }()
@@ -55,10 +35,11 @@ final class iTunesDetailCollectionViewCell: UICollectionViewCell {
     }
     
     private func configure() {
-        [screenshotImageView1, screenshotImageView2, screenshotImageView3, screenshotImageView4, screenshotImageView5].forEach {
-            contentView.addSubview($0)
-        }
+        contentView.addSubview(screenshotImageView)
         
+        screenshotImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
 }
