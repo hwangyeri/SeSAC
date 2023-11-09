@@ -122,15 +122,18 @@ class iTunesDetailViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        // MARK: 블로그 글 작성하기 :: selectedCellData 인데 두개로 분리해서 쓰는게 괜찮을까? Unicast, Drive Stream 공유 기능 내장
+        
         selectedCellData
             .asDriver()
             .map { $0.screenshotUrls }
             .drive(collectionView.rx.items(cellIdentifier: iTunesDetailCollectionViewCell.reuseIdentifier, cellType: iTunesDetailCollectionViewCell.self)) { (row, element, cell) in
-                // FIXME: CollectionView Image
-//                if let url = URL(string: element) {
-//                    cell.screenshotImageView1.kf.setImage(with: url)
-//                }
-                cell.screenshotImageView1.image = UIImage(systemName: "star")
+                if let url = URL(string: element) {
+                    cell.screenshotImageView.kf.setImage(with: url)
+                    print(url)
+                } else {
+                    cell.screenshotImageView.image = UIImage(systemName: "xmark.icloud")
+                }
             }
             .disposed(by: disposeBag)
 
@@ -201,8 +204,6 @@ class iTunesDetailViewController: UIViewController {
         
         collectionView.register(iTunesDetailCollectionViewCell.self, forCellWithReuseIdentifier: iTunesDetailCollectionViewCell.reuseIdentifier)
         
-        collectionView.backgroundColor = .link
-        
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(releaseNotesLabel.snp.bottom).offset(20)
             make.trailing.equalToSuperview()
@@ -221,6 +222,7 @@ class iTunesDetailViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 200, height: 500)
         layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 10
         return layout
     }
 
