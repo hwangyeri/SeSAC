@@ -12,36 +12,6 @@ import RxCocoa
 
 class ShoppingListViewController: UIViewController {
     
-    let backView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemGray6
-        view.layer.cornerRadius = 20
-        return view
-    }()
-    
-    let textField: UITextField = {
-       let view = UITextField()
-        view.placeholder = "무엇을 구매하실 건가요?"
-        return view
-    }()
-    
-    let addButton: UIButton = {
-        let view = UIButton()
-        view.setTitle("추가", for: .normal)
-        view.setTitleColor(.black, for: .normal)
-        view.layer.cornerRadius = 12
-        view.backgroundColor = .systemGray5
-        return view
-    }()
-    
-    private let tableView: UITableView = {
-       let view = UITableView()
-        view.register(ShoppingListTableViewCell.self, forCellReuseIdentifier: ShoppingListTableViewCell.identifier)
-        view.rowHeight = 65
-        view.separatorStyle = .singleLine
-       return view
-     }()
-    
     var shoppingList: [ShoppingListItem] = [
        ShoppingListItem(isChecked: false, content: "폰 케이스 구매하기", isLiked: true),
        ShoppingListItem(isChecked: true, content: "신발 사기", isLiked: true),
@@ -49,16 +19,21 @@ class ShoppingListViewController: UIViewController {
     ]
     
     lazy var shoppingListObservable = BehaviorSubject(value: shoppingList)
+    
+    private let mainView = ShoppingListView()
 
-    let viewModel = ShoppingListViewModel()
+    private let viewModel = ShoppingListViewModel()
     
     let disposeBag = DisposeBag()
+    
+    override func loadView() {
+        self.view = mainView
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        configureLayout()
         bind()
     }
     
@@ -66,7 +41,7 @@ class ShoppingListViewController: UIViewController {
         
         // MARK: - cellForRowAt
         shoppingListObservable
-            .bind(to: tableView.rx.items(cellIdentifier: ShoppingListTableViewCell.identifier, cellType: ShoppingListTableViewCell.self)) { (row, element, cell) in
+            .bind(to: mainView.tableView.rx.items(cellIdentifier: ShoppingListTableViewCell.identifier, cellType: ShoppingListTableViewCell.self)) { (row, element, cell) in
                 let index = row
                 cell.contentLabel.text = element.content
                 cell.checkboxButton.isSelected = element.isChecked
@@ -97,7 +72,7 @@ class ShoppingListViewController: UIViewController {
             .disposed(by: disposeBag)
           
         // MARK: - didSelectRowAt
-        tableView.rx.itemSelected
+        mainView.tableView.rx.itemSelected
             //다음 페이지로 화면 전환
             .observe(on: MainScheduler.instance)
             .subscribe(with: self) { owner, indexPath in
@@ -111,7 +86,7 @@ class ShoppingListViewController: UIViewController {
         
         
         //삭제
-        tableView.rx.itemDeleted
+        mainView.tableView.rx.itemDeleted
             .bind(with: self) { owner, indexPath in
                 owner.shoppingList.remove(at: indexPath.row)
                 owner.shoppingListObservable.onNext(owner.shoppingList)
@@ -119,7 +94,7 @@ class ShoppingListViewController: UIViewController {
             .disposed(by: disposeBag)
         
         // MARK: - TextField
-        textField.rx.text.orEmpty
+        mainView.textField.rx.text.orEmpty
             //실시간 검색
             .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
@@ -132,56 +107,17 @@ class ShoppingListViewController: UIViewController {
             .disposed(by: disposeBag)
         
         //추가
-        addButton.rx.tap
+        mainView.addButton.rx.tap
             .observe(on: MainScheduler.instance)
             .subscribe(with: self) { owner, _ in
-                guard let text = owner.textField.text, !text.isEmpty else { return }
+                guard let text = owner.mainView.textField.text, !text.isEmpty else { return }
                 let newItem = ShoppingListItem(isChecked: false, content: text, isLiked: false)
                 owner.shoppingList.insert(newItem, at: 0)
                 owner.shoppingListObservable.onNext(owner.shoppingList)
-                owner.textField.text = ""
+                owner.mainView.textField.text = ""
             }
             .disposed(by: disposeBag)
 
     }
-    
-    func configureLayout() {
-        [backView, tableView].forEach {
-            view.addSubview($0)
-        }
-        
-        [textField, addButton].forEach {
-            backView.addSubview($0)
-        }
-        
-        backView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.horizontalEdges.equalToSuperview().inset(20)
-            make.height.equalTo(66)
-        }
-        
-        textField.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().inset(20)
-            make.height.equalTo(50)
-        }
-        
-        addButton.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.leading.equalTo(textField.snp.trailing)
-            make.trailing.equalToSuperview().inset(15)
-            make.width.equalTo(70)
-            make.height.equalTo(38)
-        }
-        
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(backView.snp.bottom).offset(30)
-            make.horizontalEdges.equalToSuperview().inset(20)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
-        }
-        
-    }
 
 }
-
-
