@@ -17,41 +17,62 @@ struct ShoppingListItem {
 
 class ShoppingListViewModel: ViewModelType {
     
+    var shoppingList: [ShoppingListItem] = []
+    
     struct Input {
-        let tableViewItemSelected: ControlEvent<IndexPath> // tableView.rx.itemSelected
-        let textFieldText: ControlProperty<String?> // textField.rx.text
+        let shoppingListText: BehaviorRelay<[ShoppingListItem]>
+        var textFieldText: ControlProperty<String> // textField.rx.text.orEmpty
         let addButtonTap: ControlEvent<Void> // addButton.rx.tap
     }
     
     struct Output {
-        let items: PublishSubject<[ShoppingListItem]>
-        let textFieldText: PublishSubject<[ShoppingListItem]>
-        let addButtonTap: ControlEvent<Void>
+        let shoppingListItem: BehaviorRelay<[ShoppingListItem]>
+        let newItemAdded: Observable<Void>
     }
     
     let disposeBag = DisposeBag()
     
     func transform(input: Input) -> Output {
         
-        let shoppingList = PublishSubject<[ShoppingListItem]>()
+        let shoppingListBehavior = BehaviorRelay(value: shoppingList)
+        let newItemAddedSubject = PublishSubject<Void>()
         
+        // MARK: - TextField
         input.textFieldText
-            .orEmpty
             //실시간 검색
             .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .bind(with: self) { owner, text in
-//                let result = text == "" ? owner.shoppingList : owner.shoppingList.filter { $0.content.contains(text) }
-//                owner.shoppingListObservable.onNext(result)
-//                print("실시간 검색: \(text)")
+                let result = text == "" ? owner.shoppingList : owner.shoppingList.filter { $0.content.contains(text) }
+                shoppingListBehavior.accept(result)
+                print("실시간 검색: \(text)")
+            }
+            .disposed(by: disposeBag)
+        
+        //추가
+        input.addButtonTap
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .withLatestFrom(input.textFieldText, resultSelector: { _, query in
+                return query
+            })
+            .bind(with: self) { owner, text in
+                let newItem = ShoppingListItem(isChecked: false, content: text, isLiked: false)
+                owner.shoppingList.insert(newItem, at: 0)
+                shoppingListBehavior.accept(self.shoppingList)
+                newItemAddedSubject.onNext(())
+            }
+            .disposed(by: disposeBag)
+        
+        input.shoppingListText
+            .bind(with: self) { owner, value in
+                owner.shoppingList.append(contentsOf: value)
+                shoppingListBehavior.accept(owner.shoppingList)
             }
             .disposed(by: disposeBag)
         
         return Output(
-            items: <#PublishSubject<[ShoppingListItem]>#>,
-            textFieldText: <#PublishSubject<[ShoppingListItem]>#>,
-            addButtonTap: <#ControlEvent<Void>#>
-            
+            shoppingListItem: shoppingListBehavior, 
+            newItemAdded: newItemAddedSubject.asObservable()
         )
     }
     
