@@ -220,7 +220,7 @@ class iTunesDetailViewController: UIViewController {
     
     static func collectionLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 200, height: 500)
+        layout.itemSize = CGSize(width: 300, height: 500)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 10
         return layout
