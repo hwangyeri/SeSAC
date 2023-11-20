@@ -58,7 +58,7 @@ class ShoppingListViewModel: ViewModelType {
             .bind(with: self) { owner, text in
                 let newItem = ShoppingListItem(isChecked: false, content: text, isLiked: false)
                 owner.shoppingList.insert(newItem, at: 0)
-                shoppingListBehavior.accept(self.shoppingList)
+                shoppingListBehavior.accept(owner.shoppingList)
                 newItemAddedSubject.onNext(())
             }
             .disposed(by: disposeBag)
