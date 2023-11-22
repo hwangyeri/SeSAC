@@ -20,6 +20,9 @@
 		2B6D6E3C2B0C7337004A8DA9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D6E3B2B0C7337004A8DA9 /* ListView.swift */; };
 		2B6D6E3E2B0C7390004A8DA9 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D6E3D2B0C7390004A8DA9 /* ListViewModel.swift */; };
 		2B6D6E422B0C809D004A8DA9 /* BannerTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D6E412B0C809D004A8DA9 /* BannerTestView.swift */; };
+		2B6D6E572B0D85F1004A8DA9 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D6E562B0D85F1004A8DA9 /* WalletView.swift */; };
+		2B6D6E592B0D9A64004A8DA9 /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D6E582B0D9A64004A8DA9 /* WalletDetailView.swift */; };
+		2B6D6E5B2B0DA53D004A8DA9 /* WalletModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D6E5A2B0DA53D004A8DA9 /* WalletModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,9 @@
 		2B6D6E3B2B0C7337004A8DA9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		2B6D6E3D2B0C7390004A8DA9 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		2B6D6E412B0C809D004A8DA9 /* BannerTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerTestView.swift; sourceTree = "<group>"; };
+		2B6D6E562B0D85F1004A8DA9 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
+		2B6D6E582B0D9A64004A8DA9 /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
+		2B6D6E5A2B0DA53D004A8DA9 /* WalletModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				2B6D6E192B0B0965004A8DA9 /* Application */,
+				2B6D6E552B0D85DF004A8DA9 /* Animation */,
 				2B6D6E182B0B0952004A8DA9 /* Model */,
 				2B6D6E342B0C4E67004A8DA9 /* Network */,
 				2B6D6E1A2B0B0979004A8DA9 /* View */,
@@ -124,6 +131,16 @@
 				2B6D6E372B0C4E90004A8DA9 /* UpbitAPI.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		2B6D6E552B0D85DF004A8DA9 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				2B6D6E562B0D85F1004A8DA9 /* WalletView.swift */,
+				2B6D6E582B0D9A64004A8DA9 /* WalletDetailView.swift */,
+				2B6D6E5A2B0DA53D004A8DA9 /* WalletModel.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +220,13 @@
 				2B6D6E172B0B094B004A8DA9 /* Money.swift in Sources */,
 				2B6D6E422B0C809D004A8DA9 /* BannerTestView.swift in Sources */,
 				2B6D6E332B0C4A24004A8DA9 /* OverlayView.swift in Sources */,
+				2B6D6E592B0D9A64004A8DA9 /* WalletDetailView.swift in Sources */,
+				2B6D6E5B2B0DA53D004A8DA9 /* WalletModel.swift in Sources */,
 				2B6D6E1C2B0B0A10004A8DA9 /* MainView.swift in Sources */,
 				2B6D6E382B0C4E90004A8DA9 /* UpbitAPI.swift in Sources */,
 				2B6D6E162B0B094B004A8DA9 /* Banner.swift in Sources */,
 				2B6D6E3C2B0C7337004A8DA9 /* ListView.swift in Sources */,
+				2B6D6E572B0D85F1004A8DA9 /* WalletView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
