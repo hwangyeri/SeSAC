@@ -29,6 +29,7 @@
 		2B9406372B143382003FCE94 /* HorizontalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9406362B143382003FCE94 /* HorizontalView.swift */; };
 		2B9406392B1435A7003FCE94 /* HorizontalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9406382B1435A7003FCE94 /* HorizontalData.swift */; };
 		2B94063B2B143C88003FCE94 /* HorizontalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94063A2B143C88003FCE94 /* HorizontalViewModel.swift */; };
+		2B9406442B157F41003FCE94 /* OrderBookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9406432B157F41003FCE94 /* OrderBookModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		2B9406362B143382003FCE94 /* HorizontalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalView.swift; sourceTree = "<group>"; };
 		2B9406382B1435A7003FCE94 /* HorizontalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalData.swift; sourceTree = "<group>"; };
 		2B94063A2B143C88003FCE94 /* HorizontalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalViewModel.swift; sourceTree = "<group>"; };
+		2B9406432B157F41003FCE94 /* OrderBookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderBookModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				2B9406362B143382003FCE94 /* HorizontalView.swift */,
 				2B94063A2B143C88003FCE94 /* HorizontalViewModel.swift */,
 				2B9406382B1435A7003FCE94 /* HorizontalData.swift */,
+				2B9406432B157F41003FCE94 /* OrderBookModel.swift */,
 			);
 			path = WithUIKit;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				2B9406372B143382003FCE94 /* HorizontalView.swift in Sources */,
 				2B9406392B1435A7003FCE94 /* HorizontalData.swift in Sources */,
+				2B9406442B157F41003FCE94 /* OrderBookModel.swift in Sources */,
 				2B94063B2B143C88003FCE94 /* HorizontalViewModel.swift in Sources */,
 				2B6D6E3E2B0C7390004A8DA9 /* ListViewModel.swift in Sources */,
 				2B6D6E3A2B0C596F004A8DA9 /* ContentViewModel.swift in Sources */,
