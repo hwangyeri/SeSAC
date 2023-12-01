@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUICoinOrderbookApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WidgetTabView()
         }
     }
 }

@@ -36,6 +36,17 @@
 		2B94065D2B16D239003FCE94 /* CustomOrderbook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94065C2B16D239003FCE94 /* CustomOrderbook.swift */; };
 		2B94065F2B16D23B003FCE94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B94065E2B16D23B003FCE94 /* Assets.xcassets */; };
 		2B9406632B16D23B003FCE94 /* CustomOrderbookExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2B9406532B16D239003FCE94 /* CustomOrderbookExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2B9406732B1819C6003FCE94 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9406712B1819C2003FCE94 /* Provider.swift */; };
+		2B9406762B181A48003FCE94 /* SimpleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9406752B181A48003FCE94 /* SimpleEntry.swift */; };
+		2B9406782B181A85003FCE94 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9406772B181A85003FCE94 /* EntryView.swift */; };
+		2B94067E2B182334003FCE94 /* UserDefaultsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94067B2B182073003FCE94 /* UserDefaultsGroup.swift */; };
+		2B9406852B18300F003FCE94 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9406552B16D239003FCE94 /* WidgetKit.framework */; };
+		2B9406862B18300F003FCE94 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9406572B16D239003FCE94 /* SwiftUI.framework */; };
+		2B9406892B18300F003FCE94 /* CustomWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9406882B18300F003FCE94 /* CustomWidgetBundle.swift */; };
+		2B94068B2B18300F003FCE94 /* CustomWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B94068A2B18300F003FCE94 /* CustomWidget.swift */; };
+		2B94068D2B183011003FCE94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B94068C2B183011003FCE94 /* Assets.xcassets */; };
+		2B9406912B183011003FCE94 /* CustomWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2B9406842B18300E003FCE94 /* CustomWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2B9406962B183230003FCE94 /* WidgetTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9406952B183230003FCE94 /* WidgetTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +56,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2B9406522B16D239003FCE94;
 			remoteInfo = CustomOrderbookExtension;
+		};
+		2B94068F2B183011003FCE94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2B6D6DFB2B0B000F004A8DA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B9406832B18300E003FCE94;
+			remoteInfo = CustomWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -56,6 +74,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				2B9406632B16D23B003FCE94 /* CustomOrderbookExtension.appex in Embed Foundation Extensions */,
+				2B9406912B183011003FCE94 /* CustomWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +113,18 @@
 		2B94065C2B16D239003FCE94 /* CustomOrderbook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOrderbook.swift; sourceTree = "<group>"; };
 		2B94065E2B16D23B003FCE94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B9406602B16D23B003FCE94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B9406712B1819C2003FCE94 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		2B9406752B181A48003FCE94 /* SimpleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEntry.swift; sourceTree = "<group>"; };
+		2B9406772B181A85003FCE94 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
+		2B9406792B181F04003FCE94 /* SwiftUICoinOrderbook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUICoinOrderbook.entitlements; sourceTree = "<group>"; };
+		2B94067A2B181FCC003FCE94 /* CustomOrderbookExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CustomOrderbookExtension.entitlements; sourceTree = "<group>"; };
+		2B94067B2B182073003FCE94 /* UserDefaultsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsGroup.swift; sourceTree = "<group>"; };
+		2B9406842B18300E003FCE94 /* CustomWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CustomWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B9406882B18300F003FCE94 /* CustomWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWidgetBundle.swift; sourceTree = "<group>"; };
+		2B94068A2B18300F003FCE94 /* CustomWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWidget.swift; sourceTree = "<group>"; };
+		2B94068C2B183011003FCE94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B94068E2B183011003FCE94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B9406952B183230003FCE94 /* WidgetTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,14 +144,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2B9406812B18300E003FCE94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B9406862B18300F003FCE94 /* SwiftUI.framework in Frameworks */,
+				2B9406852B18300F003FCE94 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2B6D6DFA2B0B000F004A8DA9 = {
 			isa = PBXGroup;
 			children = (
+				2B94067A2B181FCC003FCE94 /* CustomOrderbookExtension.entitlements */,
 				2B6D6E052B0B000F004A8DA9 /* SwiftUICoinOrderbook */,
 				2B9406592B16D239003FCE94 /* CustomOrderbook */,
+				2B9406872B18300F003FCE94 /* CustomWidget */,
 				2B9406542B16D239003FCE94 /* Frameworks */,
 				2B6D6E042B0B000F004A8DA9 /* Products */,
 			);
@@ -131,6 +173,7 @@
 			children = (
 				2B6D6E032B0B000F004A8DA9 /* SwiftUICoinOrderbook.app */,
 				2B9406532B16D239003FCE94 /* CustomOrderbookExtension.appex */,
+				2B9406842B18300E003FCE94 /* CustomWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +181,7 @@
 		2B6D6E052B0B000F004A8DA9 /* SwiftUICoinOrderbook */ = {
 			isa = PBXGroup;
 			children = (
+				2B9406792B181F04003FCE94 /* SwiftUICoinOrderbook.entitlements */,
 				2B94062F2B141D66003FCE94 /* WithUIKit */,
 				2B6D6E192B0B0965004A8DA9 /* Application */,
 				2B6D6E552B0D85DF004A8DA9 /* Animation */,
@@ -146,6 +190,8 @@
 				2B6D6E1A2B0B0979004A8DA9 /* View */,
 				2B6D6E0A2B0B0011004A8DA9 /* Assets.xcassets */,
 				2B6D6E0C2B0B0011004A8DA9 /* Preview Content */,
+				2B94067B2B182073003FCE94 /* UserDefaultsGroup.swift */,
+				2B9406952B183230003FCE94 /* WidgetTabView.swift */,
 			);
 			path = SwiftUICoinOrderbook;
 			sourceTree = "<group>";
@@ -233,12 +279,42 @@
 		2B9406592B16D239003FCE94 /* CustomOrderbook */ = {
 			isa = PBXGroup;
 			children = (
-				2B94065A2B16D239003FCE94 /* CustomOrderbookBundle.swift */,
 				2B94065C2B16D239003FCE94 /* CustomOrderbook.swift */,
+				2B94065A2B16D239003FCE94 /* CustomOrderbookBundle.swift */,
+				2B9406742B181A19003FCE94 /* Entry */,
+				2B9406702B1819B3003FCE94 /* Provider */,
 				2B94065E2B16D23B003FCE94 /* Assets.xcassets */,
 				2B9406602B16D23B003FCE94 /* Info.plist */,
 			);
 			path = CustomOrderbook;
+			sourceTree = "<group>";
+		};
+		2B9406702B1819B3003FCE94 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				2B9406712B1819C2003FCE94 /* Provider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		2B9406742B181A19003FCE94 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				2B9406752B181A48003FCE94 /* SimpleEntry.swift */,
+				2B9406772B181A85003FCE94 /* EntryView.swift */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
+		2B9406872B18300F003FCE94 /* CustomWidget */ = {
+			isa = PBXGroup;
+			children = (
+				2B9406882B18300F003FCE94 /* CustomWidgetBundle.swift */,
+				2B94068A2B18300F003FCE94 /* CustomWidget.swift */,
+				2B94068C2B183011003FCE94 /* Assets.xcassets */,
+				2B94068E2B183011003FCE94 /* Info.plist */,
+			);
+			path = CustomWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +333,7 @@
 			);
 			dependencies = (
 				2B9406622B16D23B003FCE94 /* PBXTargetDependency */,
+				2B9406902B183011003FCE94 /* PBXTargetDependency */,
 			);
 			name = SwiftUICoinOrderbook;
 			productName = SwiftUICoinOrderbook;
@@ -280,6 +357,23 @@
 			productReference = 2B9406532B16D239003FCE94 /* CustomOrderbookExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		2B9406832B18300E003FCE94 /* CustomWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B9406922B183011003FCE94 /* Build configuration list for PBXNativeTarget "CustomWidgetExtension" */;
+			buildPhases = (
+				2B9406802B18300E003FCE94 /* Sources */,
+				2B9406812B18300E003FCE94 /* Frameworks */,
+				2B9406822B18300E003FCE94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CustomWidgetExtension;
+			productName = CustomWidgetExtension;
+			productReference = 2B9406842B18300E003FCE94 /* CustomWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -294,6 +388,9 @@
 						CreatedOnToolsVersion = 15.0.1;
 					};
 					2B9406522B16D239003FCE94 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					2B9406832B18300E003FCE94 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
@@ -313,6 +410,7 @@
 			targets = (
 				2B6D6E022B0B000F004A8DA9 /* SwiftUICoinOrderbook */,
 				2B9406522B16D239003FCE94 /* CustomOrderbookExtension */,
+				2B9406832B18300E003FCE94 /* CustomWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -335,6 +433,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2B9406822B18300E003FCE94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B94068D2B183011003FCE94 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -348,10 +454,12 @@
 				2B94063B2B143C88003FCE94 /* HorizontalViewModel.swift in Sources */,
 				2B6D6E3E2B0C7390004A8DA9 /* ListViewModel.swift in Sources */,
 				2B6D6E3A2B0C596F004A8DA9 /* ContentViewModel.swift in Sources */,
+				2B9406962B183230003FCE94 /* WidgetTabView.swift in Sources */,
 				2B6D6E092B0B000F004A8DA9 /* ContentView.swift in Sources */,
 				2B6D6E072B0B000F004A8DA9 /* SwiftUICoinOrderbookApp.swift in Sources */,
 				2B6D6E172B0B094B004A8DA9 /* Money.swift in Sources */,
 				2B6D6E422B0C809D004A8DA9 /* BannerTestView.swift in Sources */,
+				2B94067E2B182334003FCE94 /* UserDefaultsGroup.swift in Sources */,
 				2B6D6E332B0C4A24004A8DA9 /* OverlayView.swift in Sources */,
 				2B6D6E592B0D9A64004A8DA9 /* WalletDetailView.swift in Sources */,
 				2B9406352B1421D9003FCE94 /* MyTextField.swift in Sources */,
@@ -370,8 +478,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B9406762B181A48003FCE94 /* SimpleEntry.swift in Sources */,
 				2B94065D2B16D239003FCE94 /* CustomOrderbook.swift in Sources */,
+				2B9406782B181A85003FCE94 /* EntryView.swift in Sources */,
+				2B9406732B1819C6003FCE94 /* Provider.swift in Sources */,
 				2B94065B2B16D239003FCE94 /* CustomOrderbookBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B9406802B18300E003FCE94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B94068B2B18300F003FCE94 /* CustomWidget.swift in Sources */,
+				2B9406892B18300F003FCE94 /* CustomWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +502,11 @@
 			isa = PBXTargetDependency;
 			target = 2B9406522B16D239003FCE94 /* CustomOrderbookExtension */;
 			targetProxy = 2B9406612B16D23B003FCE94 /* PBXContainerItemProxy */;
+		};
+		2B9406902B183011003FCE94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B9406832B18300E003FCE94 /* CustomWidgetExtension */;
+			targetProxy = 2B94068F2B183011003FCE94 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -511,9 +636,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUICoinOrderbook/SwiftUICoinOrderbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUICoinOrderbook/Preview Content\"";
+				DEVELOPMENT_TEAM = 7T88N7TX7W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -540,9 +667,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUICoinOrderbook/SwiftUICoinOrderbook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUICoinOrderbook/Preview Content\"";
+				DEVELOPMENT_TEAM = 7T88N7TX7W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -568,8 +697,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CustomOrderbookExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T88N7TX7W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CustomOrderbook/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CustomOrderbook;
@@ -594,8 +725,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CustomOrderbookExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T88N7TX7W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CustomOrderbook/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CustomOrderbook;
@@ -607,6 +740,60 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yerihwang.SwiftUICoinOrderbook.CustomOrderbook;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2B9406932B183011003FCE94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T88N7TX7W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CustomWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CustomWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yerihwang.SwiftUICoinOrderbook.CustomWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2B9406942B183011003FCE94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7T88N7TX7W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CustomWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CustomWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yerihwang.SwiftUICoinOrderbook.CustomWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -641,6 +828,15 @@
 			buildConfigurations = (
 				2B9406652B16D23B003FCE94 /* Debug */,
 				2B9406662B16D23B003FCE94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B9406922B183011003FCE94 /* Build configuration list for PBXNativeTarget "CustomWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B9406932B183011003FCE94 /* Debug */,
+				2B9406942B183011003FCE94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
